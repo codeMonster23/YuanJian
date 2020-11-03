@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/public.css">
+        <link rel="stylesheet" type="text/css" href="../css/result.css">
+        <link rel="stylesheet" type="text/css" href="../css/reg.css">
+        <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="../js/placeholder.js"></script>
+    </head>
+    <body>
+        <div class="head-wrap">
+            <div class="head-fen inner clearfix">
+                <div class="head-logo left"><img src="../images/result/result_logo.jpg" width="115" height="40"></div>
+                <div class="search-item right">
+                    <div class="result-nav right positionR"><a href="#">首页</a>|<a href="#">文献</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#">知网书</a>|<a href="#">百科</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#" class="more">更多</a>
+                          <ul class="positionA"><li class="jiao positionA"></li><li><a href="#">学术图片</a></li><li><a href="#">科技成果</a></li><li class="nborder"><a href="#">标准</a></li></ul></div>
+                </div> 
+            </div>
+        </div>
+        <script>
+            $(".more").click(
+                function(event){
+                $(this).siblings("ul").show();
+                event.stopPropagation();//阻止子元素继承父级事件
+                /*return false;  //阻止子元素继承父级事件*/
+            })
+            $("body").click(
+         function(){ 
+            $(".result-nav ul").hide()
+            })
+        </script>
+        <div class="banner">
+            <div class="inner">
+                <div class="modal register">
+                    <div class="modal-header clearfix">
+                        <div class="modal-title left">用户注册</div>
+                        <div class="right">已有中国知网账号？<a href="">登录</a></div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group"><input type="text" placeholder="用户名（可使用常用邮箱）"><i></i><div class="tip">用户名格式不正确，请重新输入</div></div>
+                        <div class="input-group pwd"><input type="password" placeholder="密码"><i></i><div class="tip">请输入6-20位字母、数字或下划线</div></div>
+                        <div class="input-group pwd"><input type="password" placeholder="确认密码"><i></i><div class="tip">请再次输入密码</div></div>
+                        <div class="input-group email"><input type="text" placeholder="电子邮箱"><i></i><div class="tip">请输入真实电子邮箱，便于密码找回</div></div>
+                        <a href="#" class="btn">立即注册</a>        
+                        <div class="actions">
+                            <label class="checkbox"><i></i>我已阅读 <a href="">《CNKI远见搜索会员注册协议》</a></label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <p>使用合作网站账号登录</p>
+                        <p class="icon"><a href=""><img src="../images/login/qq.png" height="27" width="28" alt=""></a><a href=""><img src="../images/login/wb.png" height="27" width="28" alt=""></a><a href=""><img src="../images/login/wx.png" height="27" width="28" alt=""></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    	<div class="footer">
+            <div class="inner clearfix">
+                <div class="left col1"><p>数字出版：《中国学术期刊（光盘版）》电子杂志社有限公司</p><p>京ICP证040431号  互联网出版许可证 新出网证(京)字008号</p> </div>
+                <div class="left col2"><p>在线发行：同方知网（北京）技术有限公司</p><p>北京市公安局海淀分局 备案号11010802020475</p></div>
+                                
+            </div> 
+        </div>
+        <script type="text/javascript">
+        $('input').focus(function() {
+            $(this).parent('.input-group').addClass('active');
+        	$(this).parents('.input-group').addClass('active');
+        });
+        $('input').blur(function() {
+            $(this).parent('.input-group').removeClass('active');
+        	$(this).parents('.input-group').removeClass('active');
+        });
+        $('.checkbox').click(function() {
+            $(this).find('i').toggleClass('active');
+        });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>报纸-详情页</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css">
+<link href="../css/result.css" rel="stylesheet" type="text/css">
+<link href="../css/book.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.8.2.min.js"></script>
+<script src="../js/jquery.promptToggle.js"></script>
+<script src="../js/jquery-ui-1.9.1.custom.min.js"></script>
+</head>
+
+<body>
+<div class="head-wrap">
+  <div class="head-fen clearfix">
+    <div class="head-logo left"><img src="../images/result/result_logo.jpg" width="115" height="40"></div>
+    <div class="search-item left">
+      <div class="result-nav positionR"><a href="#" class="active">全部</a>|<a href="#">文献</a>|<a href="#">百科</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#">标准</a>|<a href="#" class="more">更多</a>
+        <ul class="positionA">
+          <li class="jiao positionA"></li>
+          <li><a href="#">学术图片</a></li>
+          <li><a href="#">科技成果</a></li>
+          <li class="nborder"><a href="#">文集专著</a></li>
+        </ul>
+        <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".result-nav ul").hide()
+                })
+            </script> 
+      </div>
+      <div class="clearfix choose positionR">
+        
+        
+        
+        
+        <div class="xiugai clearfix">
+          <div class="btn" id="btn"><a class="add" href="#"></a> </div>
+          <div class="selectwrap" id="selectwrap">
+            <div class="select">
+              <p class="item">全&nbsp;&nbsp;文</p>
+              <input class="left" type="text" value="">
+              <a class="positionA sweep" href="#"></a>
+              <div class="yearwrap displayN">
+                <div class="fromwrap left positionR"><i class="left">从</i>
+                  <p class="p from right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="fromlist positionA">
+                    <li>不&nbsp;&nbsp;限</li>
+                    <li>1915年</li>
+                    <li>1949年</li>
+                    <li>1979年</li>
+                  </ul>
+                </div>
+                <div class="towrap left positionR"><i class="left">到</i>
+                  <p class="p to right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="tolist positionA">
+                    <li class="ndy">不&nbsp;&nbsp;限</li>
+                    <li>1979年</li>
+                    <li>1949年</li>
+                    <li>1915年</li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="itemlist">
+                <li>全&nbsp;&nbsp;文</li>
+                <li>主&nbsp;&nbsp;题</li>
+                <li>篇&nbsp;&nbsp;名</li>
+                <li>关键词</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>文献来源</li>
+                <li class="fbsj">发表时间</li>
+              </ul>
+            </div>
+            <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a></div>
+          </div>
+        </div>
+        <script>
+   				 (function(){
+					 $(".from").live("click",function(){
+        			var start = 1980; // 指定开始年份
+        			var end = new Date().getFullYear(); // 获取当前年份
+       				 for(i=start;i<=end;i++)
+            		{$(".fromlist").append("<li>"+i+"年</li>")}})})()
+				</script> 
+        <script>
+                   (function(){
+					    $(".to").live("click",function(){
+                        var start = 1980; // 指定开始年份
+                        var end = new Date().getFullYear(); // 获取当前年份
+                        for(i=start;i<=end;i++)
+                            {$(".tolist .ndy").after("<li>"+i+"年</li>")}}) 
+                    })()
+                </script> 
+        <script>
+				(function(){  
+                                      
+					$(".select .item").live("click",
+						function(){
+                        $(".select .itemlist").hide()   
+                        $(this).siblings(".itemlist").show()
+						$(this).parent(".select").css({"z-index":"20"})//ie6、7修正
+						$(this).parents(".selectwrap").css({"z-index":"10"})//ie6、7修正
+							})
+					$(".select .itemlist").live("mouseover",
+                    function(){$(this).show();$(this).parent(".select").css({"z-index":"20"});$(this).parents(".selectwrap").css({"z-index":"10"})}).live("mouseout",function(){
+						$(this).hide()
+						$(this).parent(".select").css({"z-index":"1"})
+						$(this).parents(".selectwrap").css({"z-index":"1"})
+						}	
+					)
+					$(".select .itemlist li").live("mouseover",
+						function(){
+							$(this).addClass("gray")	
+							}).live("mouseout",
+						function(){
+							$(this).removeClass("gray")	
+							}
+					)
+					$(".select .itemlist li").live("click",
+						function(){
+						var Text=$(this).text()	
+						$(this).parent(".select .itemlist").siblings(".item").text(Text)	
+						$(this).parent(".select .itemlist").hide()	
+						$(this).parent(".select").css({"z-index":"1"})
+						$(this).parents(".selectwrap").css({"z-index":"1"})
+						$(this).parent(".select .itemlist").removeClass("itemlistspec")
+						$(this).parents(".select").removeClass("selectspec")
+						$(this).parent().siblings(".sweep").css({"display":"block"})
+						$(this).parent().siblings("input").css({"display":"block"})
+						$(this).parent().siblings(".yearwrap").css({"display":"none"})
+							})
+					$(".select .itemlist .fbsj").live("click",
+						function(){
+						$(this).parent(".select .itemlist").addClass("itemlistspec")
+						$(this).parents(".select").addClass("selectspec")
+						$(this).parent().siblings("input").css({"display":"none"})
+						$(this).parent().siblings(".sweep").css({"display":"none"})
+						$(this).parent().siblings(".yearwrap").css({"display":"block"})
+							})
+					})()
+            </script> 
+        <script>
+				(function(){
+					$(".yearwrap .p").live("mouseover",
+					function(){
+							$(this).addClass("hoverp")}).live("mouseout",
+					function(){
+							$(this).removeClass("hoverp")})
+					$(".yearwrap .p").live("click",
+						function(){
+							$(".yearwrap ul").css({"display":"none"})
+							$(".yearwrap .p").removeClass("clickp")
+							$(this).parents(".selectspec").css({"z-index":100})  
+							$(this).parents(".selectwrap").css({"z-index":10})   
+                        	$(this).siblings("ul").show(5)
+							$(this).addClass("clickp")}//不触发body点击事件用live
+					)
+					$(".yearwrap ul li").live("mouseover",
+						function(){
+							$(this).addClass("hover")}).live("mouseout",function(){
+							$(this).removeClass("hover")})
+					$(".select .yearwrap ul li").live("click",
+						function(){
+						var Text=$(this).text()	
+						$(this).parent("ul").siblings(".p").children("b").text(Text)	
+						$(this).parent("ul").hide()	
+						$(".select .itemlist").removeClass("itemlistspec")
+							})		
+						$(".select .yearwrap ul").live("mouseover",function(){
+						$(this).css({"display":"block"})}).live("mouseout",function(){
+						$(this).css({"display":"none"})
+						$(this).siblings(".p").removeClass("clickp")
+						})
+						$("body").click(
+						function(){
+						$(".select ul").hide()
+						$(".select").css({"z-index":"1"})
+						$(".selectwrap").css({"z-index":"1"})
+						$(".yearwrap .p").removeClass("clickp")	
+							})})()
+                </script> 
+      </div>
+    </div>
+    <div class="headfen-right right"><a href="#" class="home">远见首页</a><i class="left">|</i><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+      <ul class="positionA">
+        <li class="jiao positionA"></li>
+        <li>关闭历史记录</li>
+        <li>清除历史记录</li>
+      </ul>
+      <script>
+                $(".headfen-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".headfen-right ul").hide()
+                })
+            </script> 
+    </div>
+  </div>
+</div>
+<div class="cl"></div>
+<div class="qk-main">
+  <div class="qk-con qk-1118">
+    <div class="add-dhban">文献首页 > 经济管理 > 工业经济 </div>
+    <div class="bz-p01">
+      <div class="bz-p01-left">
+        <div class="bz-p01-left">
+          <div class="l-img"><img src="../images/qikan/bz-pic.jpg" width="300" height="116" /></div>
+          <div class="l-mintext">人民日报</div>
+          <div class="l-ditext">2016年1月22日</div>
+        </div>
+      </div>
+      <div class="bz-p01-right">
+        <div class="bz-r-item">
+          <span><strong>主　　办：</strong>中国共产党中央委员会</span>
+          <span><strong>刊　　期：</strong>日报</span>
+        </div>
+        <div class="bz-r-item">
+          <span><strong>主　　管：</strong>中央政法委</span>
+          <span><strong>刊　　号：</strong>CN 11-0080</span>
+        </div>
+        <div class="bz-r-item">
+          <span><strong>出 版 地：</strong>北京</span>
+          <span><strong>刊　　版：</strong>对开4版、8版、12版</span>
+        </div>
+        <div class="bz-r-btn positionR">
+          <a href="#" class="bz-btn-gz">关注</a>
+          <a href="#" class="bz-btn-fx">分享</a>
+          <span class="fenx-box positionA"><a href="#" class="fx-btn01"></a><a href="#" class="fx-btn02"></a><a href="#" class="fx-btn03"></a><a href="#" class="fx-btn04"></a></span>
+        </div>
+      </div>
+    </div>
+    <div class="part02 wid1118">
+      <!--搜索-->
+      <div class="word_knjs left">报纸类检索:</div>
+      <div class="clearfix choose positionR left">
+          <div class="xiugai clearfix">
+          <!--<div class="btn" id="btn"><a class="bz-add" href="#"></a> </div>-->
+          <div class="btn" id="btn"><a class="bz-jian" href="#"></a> </div>
+          <div class="selectwrap" id="selectwrap">
+            <div class="select add-bz-borderblue">
+              <p class="item">全&nbsp;&nbsp;文</p>
+              <input class="left" type="text" value="">
+              <a class="positionA sweep" href="#"></a>
+              <div class="yearwrap displayN">
+                <div class="fromwrap left positionR"><i class="left">从</i>
+                  <p class="p from right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="fromlist positionA">
+                    <li>不&nbsp;&nbsp;限</li>
+                    <li>1915年</li>
+                    <li>1949年</li>
+                    <li>1979年</li>
+                  </ul>
+                </div>
+                <div class="towrap left positionR"><i class="left">到</i>
+                  <p class="p to right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="tolist positionA">
+                    <li class="ndy">不&nbsp;&nbsp;限</li>
+                    <li>1979年</li>
+                    <li>1949年</li>
+                    <li>1915年</li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="itemlist bz-newborder">
+                <li>全&nbsp;&nbsp;文</li>
+                <li>主&nbsp;&nbsp;题</li>
+                <li>篇&nbsp;&nbsp;名</li>
+                <li>关键词</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>文献来源</li>
+                <li class="fbsj">发表时间</li>
+              </ul>
+            </div>
+            <div class="searchwrap positionA"><a class="search-bz" href="#" id="search">搜索</a></div>
+          </div>
+        </div>
+          <script>
+   				 (function(){
+					 $(".from").live("click",function(){
+        			var start = 1980; // 指定开始年份
+        			var end = new Date().getFullYear(); // 获取当前年份
+       				 for(i=start;i<=end;i++)
+            		{$(".fromlist").append("<li>"+i+"年</li>")}})})()
+				</script> 
+          <script>
+                   (function(){
+					    $(".to").live("click",function(){
+                        var start = 1980; // 指定开始年份
+                        var end = new Date().getFullYear(); // 获取当前年份
+                        for(i=start;i<=end;i++)
+                            {$(".tolist .ndy").after("<li>"+i+"年</li>")}}) 
+                    })()
+                </script> 
+          <script>
+				(function(){  
+                                      
+					$(".select .item").live("click",
+						function(){
+                        $(".select .itemlist").hide()   
+                        $(this).siblings(".itemlist").show()
+						$(this).parent(".select").css({"z-index":"20"})//ie6、7修正
+						$(this).parents(".selectwrap").css({"z-index":"10"})//ie6、7修正
+							})
+					$(".select .itemlist").live("mouseover",
+                    function(){$(this).show();$(this).parent(".select").css({"z-index":"20"});$(this).parents(".selectwrap").css({"z-index":"10"})}).live("mouseout",function(){
+						$(this).hide()
+						$(this).parent(".select").css({"z-index":"1"})
+						$(this).parents(".selectwrap").css({"z-index":"1"})
+						}	
+					)
+					$(".select .itemlist li").live("mouseover",
+						function(){
+							$(this).addClass("gray")	
+							}).live("mouseout",
+						function(){
+							$(this).removeClass("gray")	
+							}
+					)
+					$(".select .itemlist li").live("click",
+						function(){
+						var Text=$(this).text()	
+						$(this).parent(".select .itemlist").siblings(".item").text(Text)	
+						$(this).parent(".select .itemlist").hide()	
+						$(this).parent(".select").css({"z-index":"1"})
+						$(this).parents(".selectwrap").css({"z-index":"1"})
+						$(this).parent(".select .itemlist").removeClass("itemlistspec")
+						$(this).parents(".select").removeClass("selectspec")
+						$(this).parent().siblings(".sweep").css({"display":"block"})
+						$(this).parent().siblings("input").css({"display":"block"})
+						$(this).parent().siblings(".yearwrap").css({"display":"none"})
+							})
+					$(".select .itemlist .fbsj").live("click",
+						function(){
+						$(this).parent(".select .itemlist").addClass("itemlistspec")
+						$(this).parents(".select").addClass("selectspec")
+						$(this).parent().siblings("input").css({"display":"none"})
+						$(this).parent().siblings(".sweep").css({"display":"none"})
+						$(this).parent().siblings(".yearwrap").css({"display":"block"})
+							})
+					})()
+            </script> 
+          <script>
+				(function(){
+					$(".yearwrap .p").live("mouseover",
+					function(){
+							$(this).addClass("hoverp")}).live("mouseout",
+					function(){
+							$(this).removeClass("hoverp")})
+					$(".yearwrap .p").live("click",
+						function(){
+							$(".yearwrap ul").css({"display":"none"})
+							$(".yearwrap .p").removeClass("clickp")
+							$(this).parents(".selectspec").css({"z-index":100})  
+							$(this).parents(".selectwrap").css({"z-index":10})   
+                        	$(this).siblings("ul").show(5)
+							$(this).addClass("clickp")}//不触发body点击事件用live
+					)
+					$(".yearwrap ul li").live("mouseover",
+						function(){
+							$(this).addClass("hover")}).live("mouseout",function(){
+							$(this).removeClass("hover")})
+					$(".select .yearwrap ul li").live("click",
+						function(){
+						var Text=$(this).text()	
+						$(this).parent("ul").siblings(".p").children("b").text(Text)	
+						$(this).parent("ul").hide()	
+						$(".select .itemlist").removeClass("itemlistspec")
+							})		
+						$(".select .yearwrap ul").live("mouseover",function(){
+						$(this).css({"display":"block"})}).live("mouseout",function(){
+						$(this).css({"display":"none"})
+						$(this).siblings(".p").removeClass("clickp")
+						})
+						$("body").click(
+						function(){
+						$(".select ul").hide()
+						$(".select").css({"z-index":"1"})
+						$(".selectwrap").css({"z-index":"1"})
+						$(".yearwrap .p").removeClass("clickp")	
+							})})()
+                </script> 
+        </div>        
+    </div>
+    <div class="bz-p03">
+      <div class="bz-p03-pic"><img src="../images/qikan/bz-pic-s.jpg" width="129" height="51" /></div>
+      <div class="bz-p03-xq">
+        <a class="left font14" href="#">上一期</a>
+        <div class="left">
+          <select name="001" class="w-yy"><option>2016年</option><option>2015年</option><option>2014年</option></select>
+          <select name="002" class="w-mm"><option>1月</option><option>2月</option><option>3月</option><option>4月</option><option>5月</option><option>6月</option><option>7月</option><option>8月</option><option>9月</option><option>10月</option><option>11月</option><option>12月</option></select>
+          <select name="003" class="w-dd"><option>01日</option><option>02日</option><option>03日</option><option>04日</option><option>05日</option><option>06日</option><option>07日</option><option>08日</option><option>09日</option><option>10日</option><option>11日</option><option>12日</option><option>13日</option><option>14日</option><option>15日</option><option>16日</option><option>17日</option><option>18日</option><option>19日</option><option>20日</option><option>21日</option><option>22日</option><option>23日</option><option>24日</option><option>25日</option><option>26日</option><option>27日</option><option>28日</option><option>29日</option><option>30日</option></select>
+        </div>
+        <a class="left font14" href="#">下一期</a>
+      </div>
+    </div>
+    <div class="bz-p04 positionR">
+      <div class="bz04-con01 positionA zuobiao01">
+        <h2><a href="#">习近平致电祝贺df特朗普当df选美国总统</a></h2>
+        <p class="word">新华社北京11月9日电 11月9日，国家主席习近平向美国当选总统唐纳德特朗普致贺电。$$习近平在贺电中指出，作为最大的发展中国家、最大的发达国家、世界前两大经济体，中美两国在维护世界和平稳定、促进全球发展繁荣方面肩负着特殊的重要责任，拥有广泛的共同利益。发展长美国当选总统唐纳德·特朗普致贺电。$$习近平在贺电中指出，作为最大的发展中国家、最大的发达国家、世界前两大经济体，中美两国在维护世界和平稳定、促进全球发展繁荣方面肩负着特殊的重要责任，拥有广泛当选总统唐纳德·特朗普致贺电。拥有广泛当选总统唐纳德·特朗普致贺电。$$习近平在贺电中指出，作为最大的发展中国家、最大的发达国家、世界前两大经济体，中美两国在维护世界和平稳定、促进全球发展...</p>
+      </div>
+      <div class="bz04-con02 positionA zuobiao02">
+        <h3><a href="#">部署党的十九大代表选举工作</a></h3>
+        <p>新华社北京11月9日电 11月9日，国家主席习近平向美国当选总统唐纳德特朗普致贺电。$$习近平在贺电中指出，作为最大的发展中国家、最大的发达国家在贺电中指出，作为最大的发展中国家、最大的发达国家、世界前两大经济体，中美两国在...</p>
+      </div>
+      <div class="bz04-con03 positionA zuobiao03">
+        <h3><a href="#">部署党的十九大代表选举工作</a></h3>
+        <p>新华社北京11月9日电 11月9日，国家主席习近平向美国当选总统唐纳德特朗普致贺电。$$习近平在贺电中指出，作为最大的发展中国家、最大的发达国家在贺电中指出，作为最大的发展中国家、最大的发达国家、世界前两大经济体，中美两国在...</p>
+      </div>
+      <div class="bz04-con04 positionA zuobiao04">
+        <h3><a href="#">部署党的十九大代表选举工作</a></h3>
+        <p>新华社北京11月9日电 11月9日，国家主席习近平向美国当选总统唐纳德特朗普致贺电。$$习近平在贺电中指出，作为最大的发展中国家、最大的发达国家在贺电中指出，作为最大的发展中国家、最大的发达国家、世界前两大经济体，中美两国在...</p>
+      </div>
+    </div>
+    <a class="bz-jzgd" href="#">加载更多...</a>
+  </div>
+        <!--footer-->
+  <div class="foot-wrap">
+     	<div class="footer-fen">
+        	<a href="#">关于CNKI</a>|<a href="#">收藏远见</a>|<a href="#">创建快捷方式</a>|<a href="#">意见反馈</a>|<a href="#">使用帮助</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号
+        </div>
+     </div>
+</div>
+<!--top icon-->
+   <div class="top-icon02">
+		    <a href="#" class="btn1"></a>
+		    <a href="#" class="btn2"></a>
+		  	<a href="#" class="btn3">用户反馈</a>
+		 </div>
+</body>
+</html>

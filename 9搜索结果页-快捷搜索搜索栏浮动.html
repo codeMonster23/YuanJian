@@ -1,0 +1,691 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/result.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/history.js"></script>
+</head>
+<body>
+<!--head-->
+<div class="head-wrap float-head">
+  <div class="head-fen clearfix">
+    <div class="head-logo left"><img src="images/result/result_logo.jpg" width="115" height="40"></div>
+    <div class="search-item left">
+      <div class="result-nav positionR"><a href="#" class="active">全部</a>|<a href="#">文献</a>|<a href="#">百科</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#">标准</a>|<a href="#" class="more">更多</a>
+        <ul class="positionA">
+          <li class="jiao positionA"></li>
+          <li><a href="#">学术图片</a></li>
+          <li><a href="#">科技成果</a></li>
+          <li class="nborder"><a href="#">文集专著</a></li>
+        </ul>
+        <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".result-nav ul").hide()
+                })
+            </script> 
+      </div>
+      <div class="clearfix choose positionR">
+        <div class="xiugai clearfix">
+          <div class="btn" id="btn"> <a class="remove" style="display:none;" href="javascript:void(0)"></a> <a class="add" href="javascript:void(0)"></a> </div>
+          <div class="selectwrap" id="selectwrap">
+            <div class="select">
+              <p class="item" style="display:none;">全&nbsp;&nbsp;文</p>
+              <input class="left" type="text" value="">
+              <div class="history">
+                  <p><span class="text">雅丹地貌</span><a class="clear" href="javascript:void(0)"></a></p>
+                  <p><span class="text">香山红叶</span><a class="clear" href="javascript:void(0)"></a></p>
+                  <p><span class="text">麦田怪圈猜想</span><a class="clear" href="javascript:void(0)"></a></p>
+                  <p><span class="text">美国51区</span><a class="clear" href="javascript:void(0)"></a></p>
+                  <p><span class="text">美国51区</span><a class="clear" href="javascript:void(0)"></a></p>
+                  <div class="cmd"><a class="c" href="#">关闭历史</a> | <a class="d" href="#">删除历史</a></div>
+              </div>
+              <script>
+			  remember();
+			  </script>
+              <a class="positionA sweep" href="#"></a>
+              <div class="yearwrap displayN">
+                <div class="fromwrap left positionR"><i class="left">从</i>
+                  <p class="p from right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="fromlist positionA">
+                    <li>不&nbsp;&nbsp;限</li>
+                    <li>1915年</li>
+                    <li>1949年</li>
+                    <li>1979年</li>
+                  </ul>
+                </div>
+                <div class="towrap left positionR"><i class="left">到</i>
+                  <p class="p to right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="tolist positionA">
+                    <li class="ndy">不&nbsp;&nbsp;限</li>
+                    <li>1979年</li>
+                    <li>1949年</li>
+                    <li>1915年</li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="itemlist">
+                <li>全&nbsp;&nbsp;文</li>
+                <li>主&nbsp;&nbsp;题</li>
+                <li>篇&nbsp;&nbsp;名</li>
+                <li>关键词</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>文献来源</li>
+                <li class="fbsj">发表时间</li>
+              </ul>
+            </div>
+            <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a></div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="headfen-right right"><a href="#" class="home">远见首页</a><i class="left">|</i><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><span class="sz left"><a href="javascript:void(0)">设置</a></span>
+      <ul class="positionA">
+        <li class="jiao positionA"></li>
+        <li>关闭历史记录</li>
+        <li>清除历史记录</li>
+      </ul>
+      <script>
+                $(".headfen-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".headfen-right ul").hide()
+                })
+            </script></div>
+  </div>
+</div>
+<script >
+//搜索栏浮动、添加、删除脚本
+(function(){
+	
+	//添加搜索条目
+	var add=$(".head-fen .search-item .choose .btn .add");
+	var remove=$(".head-fen .search-item .choose .btn .remove");
+	
+	var searchItem=$(".head-fen .search-item .choose .xiugai");
+	var count=searchItem.length;
+	
+	var btn=$(".head-fen .search-item .choose .selectwrap .searchwrap");
+	
+	var scrollTop=0;
+	var zIndex=1;
+	
+	
+	
+	//添加搜索栏
+	add.click(function(){
+		
+		
+		//判断是否为快捷搜索
+		if($(this).parent().siblings(".selectwrap").children(".select").children(".item").css("display")=="none")
+		{
+			$(this).parent().siblings(".selectwrap").children(".select").children(".item").css("display","block");
+			$(this).parent().parent().find(".history").addClass("advance");
+		}
+		if(count<7)
+		{
+			
+			$(this).parent().parent().clone(true,true).insertAfter($(this).parent().parent());
+			searchItem.find(".searchwrap").css("display","none");
+			searchItem=$(".head-fen .search-item .choose .xiugai");
+			count=searchItem.length;
+			//删除复制的历史记录
+			//searchItem.eq(count-1).find(".history").remove();
+			
+			//删除文本框上绑定的事件
+			searchItem.eq(count-1).find("input").unbind("click");
+			
+			searchItem.eq(count-1).find("input").val("");
+			
+			searchItem.find(".remove").css("display","block");
+			searchItem.find(".add").css("display","none");
+			searchItem.eq(count-1).find(".add").css("display","block");
+		}
+		})
+	
+	//删除搜索栏		
+	remove.click(function(){
+		$(this).parent().parent().remove();
+		
+		var searchItem=$(".head-fen .search-item .choose .xiugai");
+		var count=searchItem.length;
+		remember();//绑定历史记录事件
+		
+		searchItem.eq(count-1).find(".searchwrap").css("display","block");
+		if(count>1)
+		{
+			searchItem.eq(count-1).find(".add").css("display","block");
+		}
+		else
+		{
+			searchItem.find(".remove").css("display","none");
+			searchItem.find(".add").css("display","block");
+		}
+		})	
+	
+	//滚动浮动
+	$(window).scroll(function(){
+		scrollTop=document.documentElement.scrollTop || document.body.scrollTop;
+		if(scrollTop>0)
+		{
+			$(".head-wrap").addClass("float-head");
+			searchItem.css("display","none");
+			searchItem.eq(0).css("display","block").find(".searchwrap").css("display","block");
+		}
+		else
+		{
+			$(".head-wrap").removeClass("float-head");
+			if(count>1)
+			{
+				searchItem.eq(0).find(".searchwrap").css("display","none");
+			}
+			searchItem.css("display","block");
+		}
+		})
+	
+	//滚动中 鼠标移动到搜索栏
+	$(".head-fen").hover(function()
+	{
+		if(scrollTop>0)
+		{
+			searchItem.css("display","block");
+			if(count>1)
+			{
+				searchItem.eq(0).find(".searchwrap").css("display","none");
+			}
+		}
+			
+	},function()
+		{
+			/*searchItem=$(".head-fen .search-item .choose .xiugai");
+			count=searchItem.length;
+	
+			if(scrollTop>0)
+			{
+				searchItem.css("display","none");
+				searchItem.eq(0).css("display","block").find(".searchwrap").css("display","block");
+			}*/
+			
+		})
+	
+})()
+
+
+</script>
+
+<script>
+ (function(){
+     $(".from").live("click",function(){
+    var start = 1980; // 指定开始年份
+    var end = new Date().getFullYear(); // 获取当前年份
+     for(i=start;i<=end;i++)
+    {$(".fromlist").append("<li>"+i+"年</li>")}})})()
+</script>
+
+<script>
+   (function(){
+        $(".to").live("click",function(){
+        var start = 1980; // 指定开始年份
+        var end = new Date().getFullYear(); // 获取当前年份
+        for(i=start;i<=end;i++)
+            {$(".tolist .ndy").after("<li>"+i+"年</li>")}}) 
+    })()
+</script>
+     <script>
+(function(){  
+                      
+    $(".select .item").live("click",
+        function(){
+        $(".select .itemlist").hide()   
+        $(this).siblings(".itemlist").show()
+        $(this).parent(".select").css({"z-index":"20"})//ie6、7修正
+        $(this).parents(".selectwrap").css({"z-index":"10"})//ie6、7修正
+            })
+    $(".select .itemlist").live("mouseover",
+    function(){$(this).show();$(this).parent(".select").css({"z-index":"20"});$(this).parents(".selectwrap").css({"z-index":"10"})}).live("mouseout",function(){
+        $(this).hide()
+        $(this).parent(".select").css({"z-index":"1"})
+        $(this).parents(".selectwrap").css({"z-index":"1"})
+        }	
+    )
+    $(".select .itemlist li").live("mouseover",
+        function(){
+            $(this).addClass("gray")	
+            }).live("mouseout",
+        function(){
+            $(this).removeClass("gray")	
+            }
+    )
+    $(".select .itemlist li").live("click",
+        function(){
+        var Text=$(this).text()	
+        $(this).parent(".select .itemlist").siblings(".item").text(Text)	
+        $(this).parent(".select .itemlist").hide()	
+        $(this).parent(".select").css({"z-index":"1"})
+        $(this).parents(".selectwrap").css({"z-index":"1"})
+        $(this).parent(".select .itemlist").removeClass("itemlistspec")
+        $(this).parents(".select").removeClass("selectspec")
+        $(this).parent().siblings(".sweep").css({"display":"block"})
+        $(this).parent().siblings("input").css({"display":"block"})
+        $(this).parent().siblings(".yearwrap").css({"display":"none"})
+            })
+    $(".select .itemlist .fbsj").live("click",
+        function(){
+        $(this).parent(".select .itemlist").addClass("itemlistspec")
+        $(this).parents(".select").addClass("selectspec")
+        $(this).parent().siblings("input").css({"display":"none"})
+        $(this).parent().siblings(".sweep").css({"display":"none"})
+        $(this).parent().siblings(".yearwrap").css({"display":"block"})
+            })
+    })()
+</script>
+     <script>
+(function(){
+    $(".yearwrap .p").live("mouseover",
+    function(){
+            $(this).addClass("hoverp")}).live("mouseout",
+    function(){
+            $(this).removeClass("hoverp")})
+    $(".yearwrap .p").live("click",
+        function(){
+            $(".yearwrap ul").css({"display":"none"})
+            $(".yearwrap .p").removeClass("clickp")
+            $(this).parents(".selectspec").css({"z-index":100})  
+            $(this).parents(".selectwrap").css({"z-index":10})   
+            $(this).siblings("ul").show(5)
+            $(this).addClass("clickp")}//不触发body点击事件用live
+    )
+    $(".yearwrap ul li").live("mouseover",
+        function(){
+            $(this).addClass("hover")}).live("mouseout",function(){
+            $(this).removeClass("hover")})
+    $(".select .yearwrap ul li").live("click",
+        function(){
+        var Text=$(this).text()	
+        $(this).parent("ul").siblings(".p").children("b").text(Text)	
+        $(this).parent("ul").hide()	
+        $(".select .itemlist").removeClass("itemlistspec")
+            })		
+        $(".select .yearwrap ul").live("mouseover",function(){
+        $(this).css({"display":"block"})}).live("mouseout",function(){
+        $(this).css({"display":"none"})
+        $(this).siblings(".p").removeClass("clickp")
+        })
+        $("body").click(
+        function(){
+        $(".select ul").hide()
+        $(".select").css({"z-index":"1"})
+        $(".selectwrap").css({"z-index":"1"})
+		$(".head-fen .search-item .choose .selectwrap").eq(0).css("z-index",2);	
+        $(".yearwrap .p").removeClass("clickp")	
+            })})()
+</script>	
+<!--content-->
+<div class="resault-cont clearfix">
+  <div class="cont-left cont-left-wide left">
+    <div class="filtrate-wrap">
+      <div class="filtrate">
+        <div class="ti">筛选：</div>
+        <div  class="itemm"> <span class="see1">文献类型</span> <span class="see2">文献类型</span> </div>
+        <div class="line1"></div>
+        <div  class="itemm"> <span class="see1">学科分类</span> <span class="see2">学科分类</span> </div>
+        <div class="line1"></div>
+        <div  class="itemm"> <span class="see1">发表年度</span> <span class="see2">发表年度</span> </div>
+        <div class="line1"></div>
+        <div  class="itemm"> <span class="see1">作者</span> <span class="see2">作者</span> </div>
+        <div class="line1"></div>
+        <div  class="itemm"> <span class="see1">机构</span> <span class="see2">机构</span> </div>
+        <div class="line1"></div>
+        <div  class="itemm"> <span class="see1">基金</span> <span class="see2">基金</span> </div>
+        <div class="line1"></div>
+        <div  class="itemm"> <span class="see1">研究层次</span> <span class="see2">研究层次</span> </div>
+      </div>
+    </div>
+    <div class="pop2 clearfix positionR"> <a class="close1 positionA" href="javascript:void(0)"></a>
+      <div class="classes"> <a href="javascript:void(0)">全部</a><span class="num">(8)</span> </div>
+      <div class="classes"> <a href="javascript:void(0)">工业经济</a><span class="num">(282440)</span> </div>
+      <div class="classes"> <a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span> </div>
+      <div class="classes"> <a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span> </div>
+      <div class="classes"> <a href="javascript:void(0)">金融</a><span class="num">(211520)</span> </div>
+      <div class="classes"> <a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span> </div>
+      <div class="classes"> <a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span> </div>
+      <div class="classes"> <a href="javascript:void(0)">轻工业手工业</a><span class="num">(21)</span> </div>
+      <div class="classes"> <a href="javascript:void(0)">投资</a><span class="num">(2121212)</span> </div>
+      <div class="classes"> <a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span> </div>
+      <div class="classes"> <a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span> </div>
+      <div class="classes"> <a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span> </div>
+      <div class="classes"> <a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span> </div>
+      <span class="unfold left"></span>
+      <div class="hide">
+        <div class="classes"> <a href="javascript:void(0)">工业经济</a><span class="num">(282440)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">金融</a><span class="num">(211520)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">轻工业手工业</a><span class="num">(21)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">投资</a><span class="num">(2121212)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">金融</a><span class="num">(211520)</span> </div>
+        <span class="fold left"></span> </div>
+    </div>
+    <script>
+			 	$(".filtrate .itemm").click(
+					function(){
+					$(".filtrate .itemm .see2").css({"display":"none"})
+					$(this).children(".see2").css({"display":"block"})
+					$(".pop2").css({"display":"block"})
+					})
+				$(".pop2 .classes a").click(
+					function(){
+					$(".pop2 .classes a").removeClass("yellow")
+					 $(this).addClass("yellow")
+				})
+				$(".pop2 .unfold").click(
+					function(){
+						$(this).siblings(".hide").show()
+						$(this).hide()
+					})
+				$(".pop2 .fold").click(
+					function(){
+						$(this).parent(".hide").hide()
+						$(".pop2 .unfold").show()
+					})
+				$(".pop2 .close1").click(
+					function(){
+					$(".pop2").css({"display":"none"})
+					$(".pop2 .hide").css({"display":"none"})	
+					$(".pop2 .unfold").css({"display":"block"})	
+					$(".filtrate .itemm .see2").css({"display":"none"})
+					})			
+             </script>
+    <div class="yx clearfix"> <span class="bt left">已选：</span>
+      <p class="tm left positionR">文献类型：<i>期刊文献</i><a href="#" class="close2 positionA"></a></p>
+      <p class="tm left positionR">发表年度：<i>2014年</i><a href="#" class="close2 positionA"></a></p>
+      <p class="tm left positionR">学科分类：<i>企业经济</i><a href="#" class="close2 positionA"></a></p>
+      <p class="tm left positionR">作者：<i>厉以宁</i><a href="#" class="close2 positionA"></a></p>
+      <script>
+					$(".yx .tm").hover(
+						function(){
+						 $(this).addClass("hover").children(".close2").addClass("close2red")},
+						function(){
+						 $(this).removeClass("hover").children(".close2").removeClass("close2red")})
+                </script> 
+    </div>
+    <div class="px clearfix"> <span class="bt left">排序：</span>
+      <div class="rank left">
+        <p>按相关度排序</p>
+        <ul>
+          <li><a href="#">按相关度排序</a></li>
+          <li><a href="#">按发表时间排序</a></li>
+          <li><a href="#">按下载次数排序</a></li>
+          <li><a href="#">按被引次数排序</a></li>
+        </ul>
+        <script>
+				  	$(".px .rank p").click(
+						function(event){
+						$(this).siblings("ul").show()
+						event.stopPropagation()})
+					$(".rank ul li a").click(
+						function(){
+						 var Text1= $(this).text()
+						$(".rank p").text(Text1)	
+						$(this).parent("ul").hide()
+						})
+					$(document).click(function(){
+						$(".rank ul").hide()
+					})
+                  </script> 
+      </div>
+      <div class="mode left clearfix"> <span class="bt left">显示：</span> <a title="列表" href="#" class="lb left"></a> <a title="详细" href="#" class="zyxz left"></a> </div>
+      <div class="count right">CNKI为你找到相关结果<i>118,252</i>条</div>
+    </div>
+    <div class="re-list">
+      <div class="list-item baike">
+        <p class="tit clearfix"><a href="#" class="left"><i>市场营销</i>&nbsp;&nbsp;CNKI百科</a></p>
+        <div class="bk-box">
+          <div class="box">
+            <div class="box-top positionR"><span class="tab current">市场经济学大辞典</span><span class="tab">财经大辞典</span><span href="#" class="tab">现代经济大辞典</span><a href="#" class="all positionA">查看全部512个相关百科</a></div>
+            <div class="tab-cont clearfix"> <a href="#" class="pic left"><img src="imagesTemp/result/baike-pic.jpg" width="110" height="86"></a>
+              <p class="jianj right"><i>市场营销</i>就是指在变化的市场环境中，旨在满足消费需要、实现企业目标的商务务括市场调研、选择目标市场、产品开发、产品定价、渠道选择、产品促销、产品储存储品销售、提供服务等一系列与市场有关的企业业务经营活动...<a href="#" class="qw">[详细]</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="xgbk">相关百科：<a href="#">市场营销策略</a> / <a href="#">市场营销学 </a>/ <a href="#">市场营销管理</a></div>
+      </div>
+      <div class="list-item baike">
+        <p class="tit clearfix"><a href="#" class="left"><i>市场营销</i>&nbsp;&nbsp;CNKI百科</a></p>
+        <div class="bk-box">
+          <div class="box">
+            <div class="box-top positionR"><span class="tab ">市场经济学大辞典</span><span class="tab current">财经大辞典</span><span href="#" class="tab">现代经济大辞典</span><a href="#" class="all positionA">查看全部512个相关百科</a></div>
+            <div class="tab-cont clearfix">
+              <p class="jianj jianjwt"><i>市场营销</i>就是指在变化的市场环境中，旨在满足消费需要、实现企业目标的商务务括市场调研、选择目标市场、产品开发、产品定价、渠道选择、产品促销、产品储存储品销售、提供服务等一系列与市场有关的企业业务经营活动...<a href="#" class="qw">[详细]</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="xgbk">相关百科：<a href="#">市场营销策略</a> / <a href="#">市场营销学 </a> / <a href="#">市场营销管理</a></div>
+      </div>
+      <div class="list-item">
+        <p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+        <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+        <p class="source">陶方&nbsp;&nbsp;吉林大学&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+        <div class="info">
+          <p class="info_left left">关键词：医院 /  市场营销管理 /  对策</p>
+          <p class="info_right right"><span class="time1">下载次数（1309）</span>| <span class="time2">被引次数（2）</span></p>
+        </div>
+      </div>
+      <div class="list-item xspic">
+        <p class="tit clearfix"><a href="#" class="left"><i>市场营销</i>&nbsp;&nbsp;CNKI学术图片</a></p>
+        <div class="picbox clearfix">
+          <ul class="left">
+            <li><a href="#"><img src="imagesTemp/result/related-pic.jpg"  width="179" height="118"></a></li>
+            <li class="ms"><a href="#">企业市场<i>营销战略</i>管理过程</a></li>
+          </ul>
+          <ul class="left">
+            <li><a href="#"><img src="imagesTemp/result/related-pic.jpg"  width="179" height="118"></a></li>
+            <li class="ms"><a href="#">企业市场<i>营销战略</i>管理过程</a></li>
+          </ul>
+          <ul class="left">
+            <li><a href="#"><img src="imagesTemp/result/related-pic.jpg"  width="179" height="118"></a></li>
+            <li class="ms"><a href="#">企业市场<i>营销战略</i>管理过程</a></li>
+          </ul>
+          <ul class="left nomargin">
+            <li><a href="#"><img src="imagesTemp/result/related-pic.jpg"  width="179" height="118"></a></li>
+            <li class="ms"><a href="#">企业市场<i>营销战略</i>管理过程</a></li>
+          </ul>
+        </div>
+        <div class="info clearfix">
+          <div class="info_left left">图片类别：<a href="#">示意图</a> / <a href="#">模型图</a> / <a href="#">流程图</a> / <a href="#">结构图</a> / <a href="#">市场需求图</a></div>
+          <div class="info_right right"><a href="#">查看全部24,406张图片</a></div>
+        </div>
+      </div>
+      <div class="list-item">
+        <p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+        <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+        <p class="source">陶方&nbsp;&nbsp;吉林大学&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+        <div class="info">
+          <p class="info_left left">关键词：医院 /  市场营销管理 /  对策</p>
+          <p class="info_right right"><span class="time1">下载次数（1309）</span>| <span class="time2">被引次数（2）</span></p>
+        </div>
+      </div>
+      <div class="list-item">
+        <p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+        <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+        <p class="source">陶方&nbsp;&nbsp;吉林大学&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+        <div class="info">
+          <p class="info_left left">关键词：医院 /  市场营销管理 /  对策</p>
+          <p class="info_right right"><span class="time1">下载次数（1309）</span>| <span class="time2">被引次数（2）</span></p>
+        </div>
+      </div>
+      <div class="list-item">
+        <p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+        <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+        <p class="source">陶方&nbsp;&nbsp;吉林大学&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+        <div class="info">
+          <p class="info_left left">关键词：医院 /  市场营销管理 /  对策</p>
+          <p class="info_right right"><span class="time1">下载次数（1309）</span>| <span class="time2">被引次数（2）</span></p>
+        </div>
+      </div>
+      <div class="list-item wenji">
+        <p class="tit clearfix"><a href="#" class="left"><i>市场营销</i>&nbsp;&nbsp;CNKI文集</a></p>
+        <div class="piclist clearfix">
+          <ul class="left">
+            <li><a href="#" class="positionR"><img src="imagesTemp/result/wenji-pic.jpg" width="238" height="140"><span class="positionA">主编：厉以宁</span></a></li>
+            <li class="name"><a href="#">70个<i>营销</i>失败案例分析</a></li>
+          </ul>
+          <ul class="left">
+            <li><a href="#" class="positionR"><img src="imagesTemp/result/wenji-pic.jpg" width="238" height="140"><span class="positionA">主编：厉以宁</span></a></li>
+            <li class="name"><a href="#">70个<i>营销</i>失败案例分析</a></li>
+          </ul>
+          <ul class="left nomargin">
+            <li><a href="#" class="positionR"><img src="imagesTemp/result/wenji-pic.jpg" width="238" height="140"><span class="positionA">主编：厉以宁</span></a></li>
+            <li class="name"><a href="#">70个<i>营销</i>失败案例分析</a></li>
+          </ul>
+        </div>
+        <table class="table1" border="0" cellspacing="0" cellpadding="0" width="736">
+          <tr height="24">
+            <td width="8"></td>
+            <td width="230"><a href="#">微赢家——玩转微博<i>营销</i></a></td>
+            <td width="10"></td>
+            <td width="8"></td>
+            <td width="230"><a href="#">粉丝<i>营销</i>：一部新的点钞机</a></td>
+            <td width="10"></td>
+            <td width="8"></td>
+            <td width="230"><a href="#">色彩<i>营销</i>：让企业制胜的色彩法宝</a></td>
+          </tr>
+          <tr height="24">
+            <td width="8"></td>
+            <td width="230"><a href="#">口碑<i>营销</i>：用别人的嘴树自己的品牌</a></td>
+            <td width="10"></td>
+            <td width="8"></td>
+            <td width="230"><a href="#">视觉<i>营销</i>：为消费加温</a></td>
+            <td width="10"></td>
+            <td width="8"></td>
+            <td width="230"><a href="#">珞珈管理评论（<i>市场营销</i>管理卷）</a></td>
+          </tr>
+        </table>
+        <p class="wenji-more"><a href="#">查看更多相关文集17本</a></p>
+      </div>
+    </div>
+    <div class="xgss">
+      <h1>相关搜索</h1>
+      <table class="table2" border="0" cellspacing="0" cellpadding="0" width="632">
+        <tr height="26">
+          <td width="158"><a href="#">市场营销策略</a></td>
+          <td width="158"><a href="#">市场营销战略</a></td>
+          <td width="158"><a href="#">市场营销学</a></td>
+          <td width="158"><a href="#">市场营销策略研究</a></td>
+        </tr>
+        <tr height="26">
+          <td width="158"><a href="#">市场营销管理</a></td>
+          <td width="158"><a href="#">市场营销专业</a></td>
+          <td width="158"><a href="#">市场营销策划</a></td>
+          <td width="158"><a href="#">市场营销论文</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="cont-right rightWidth425 right">
+    <div class="slogan"><img src="images/result/slogan.jpg" width="290" height="26"></div>
+    <div class="translate">
+      <h1>相关翻译</h1>
+      <div class="fanyi"> 
+      	<div class="fanyi-inner">
+          <span class="icon positionA">CNKI翻译助手</span>
+          <p class="word">市场营销</p>
+          <p class="shiyi positionR"><span class="tip positionA">[释义]</span>marketing;  marketing management;</p>
+          <p class="shiyi from positionR textAlignR">来源：<a href="#">英汉大字典</a></p> 
+          <p class="shiyi positionR"><span class="tip positionA">[释义]</span>marketing;  marketing management;</p>
+          <p class="shiyi from positionR textAlignR">来源：<a href="#">英汉大字典</a></p> 
+        </div>
+        </div>
+        <div class="fanyi-btm"></div>
+    </div>
+    <div class="xgqk">
+      <h1 class="positionR">相关期刊 <a href="#" class="positionA more">更多&gt;&gt;</a></h1>
+      <div class="book-list clearfix">
+        <ul>
+          <li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+          <li><a href="#" class="name">销售与市场</a></li>
+          <li class="year">1985-2015</li>
+        </ul>
+        <ul>
+          <li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+          <li><a href="#" class="name">销售与市场</a></li>
+          <li class="year">1985-2015</li>
+        </ul>
+        <ul>
+          <li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+          <li><a href="#" class="name">销售与市场</a></li>
+          <li class="year">1985-2015</li>
+        </ul>
+        <ul>
+          <li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+          <li><a href="#" class="name">销售与市场</a></li>
+          <li class="year">1985-2015</li>
+        </ul>
+        <ul>
+          <li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+          <li><a href="#" class="name">销售与市场</a></li>
+          <li class="year">1985-2015</li>
+        </ul>
+        <ul>
+          <li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+          <li><a href="#" class="name">销售与市场</a></li>
+          <li class="year">1985-2015</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ad"> <a href="#"><img src="imagesTemp/result/ad1.jpg" width="289" height="204"></a> <a href="#"><img src="imagesTemp/result/ad2.jpg" width="289" height="204"></a> </div>
+  </div>
+</div>
+<!--footer-->
+<div class="foot-wrap">
+  <div class="footer-fen"> <a href="#">关于CNKI</a>|<a href="#">收藏远见</a>|<a href="#">创建快捷方式</a>|<a href="#">意见反馈</a>|<a href="#">使用帮助</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号 </div>
+</div>
+<div class="top-icon top-widthmax displayN"> <a href="#" class="top1"></a> <a href="#" class="top2"></a> 
+  <script>
+        	$(".top-icon").hover(
+				function(){
+					$(this).children(".top1").css({"display":"none"})
+					$(this).children(".top2").css({"display":"block"})
+					},
+				function(){
+					$(this).children(".top2").css({"display":"none"})
+					$(this).children(".top1").css({"display":"block"})
+					})
+        </script> 
+  <script >
+$(function(){
+    $(window).scroll(function(){
+    var w_s = $(window).scrollTop();
+        if(w_s >800){
+            $('.top-icon').show();
+        }else{
+             $('.top-icon').hide();
+        }
+    });
+});
+</script> 
+</div>
+</body>
+</html>

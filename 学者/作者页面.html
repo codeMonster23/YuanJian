@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>机构页</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css">
+<link href="../css/result.css" rel="stylesheet" type="text/css">
+<link href="../css/agency-author.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.8.2.min.js"></script>
+<script src="../js/jquery.promptToggle.js"></script>
+</head>
+<body>
+	<!--head-->	
+	<div class="head-wrap">
+    	<div class="head-fen clearfix">
+        	<div class="head-logo left"><img src="../images/result/result_logo.jpg" width="115" height="40"></div>
+            <div class="search-item left">
+            	<div class="result-nav positionR"><a href="#" class="active">全部</a>|<a href="#">文献</a>|<a href="#">百科</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#">标准</a>|<a href="#" class="more">更多</a>
+                      <ul class="positionA"><li class="jiao positionA"></li><li><a href="#">学术图片</a></li><li><a href="#">科技成果</a></li><li class="nborder"><a href="#">文集专著</a></li></ul>
+            <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".result-nav ul").hide()
+                })
+            </script>
+            </div>
+            	<div class="clearfix choose positionR">
+            	<div class="xiugai clearfix">
+                    <div class="btn" id="btn">
+                        <a class="add" href="#"></a>   
+                    </div>
+                    <div class="selectwrap" id="selectwrap">
+                        <div class="select positionR"> 
+                            <input class="left kj" type="text" value="">
+                            
+                            <a class="positionA sweep" href="#"></a>
+                         </div>
+                         <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a></div>
+                        </div>
+                    </div>
+                  
+          </div>
+            </div>      
+            <div class="headfen-right right positionR"><a href="#" class="home">远见首页</a><i class="left">|</i><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+             <ul class="positionA">
+                	<li class="jiao positionA"></li>
+                	<li>关闭历史记录</li>
+                    <li>清除历史记录</li>
+                </ul>
+                <script>
+                $(".headfen-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".headfen-right ul").hide()
+                })
+            </script>
+            
+            
+            </div>
+        </div>   
+    </div>
+    <!--content-->
+    <div class="resault-cont jgWithauthor clearfix">
+    	<div class="cont-left left positionR">
+        	 <div class="author-intro">
+             	<div class="top">
+                	<div class="left name">贾包烈</div>
+                    <div class="left abstract">
+                    	<p class="p1"><a href="#">北京工业大学</a><span>工业通用技术及设备;考古;中医学</span></p>
+                        <p class="p2"><span>总发文量<i>24</i>篇</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span>总被引量<i>24</i>次</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span>总下载量<i>4523</i>次</span></p>
+                    </div>
+                </div>
+                <div class="bottom">
+                	<label class="left">作者印象：</label><span class="left bgpink">图案肌理</span><span class="left bgblue">色彩</span><span class="left bggreen">古典家具</span><span class="left bgyellow">仿生科技应用技术</span>
+                </div>
+             </div>
+       	  	 <div class="filtrate-wrap">
+                <div class="filtrate">
+                        <div class="ti">筛选：</div>
+          				 <div  class="itemm">
+      						<span class="see1">文献类型</span>	
+                            <span class="see2">文献类型</span>
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm cur">
+      						<span class="see1">学科分类</span>	
+                             <span class= "see2">学科分类</span>
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+      						<span class="see1">发表年度</span>
+                             <span class="see2">发表年度</span>	
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+      						<span class="see1">基金</span>
+                             <span class="see2">基金</span>	
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+      						<span class="see1">研究层次</span>	
+                            <span class="see2">研究层次</span>
+                         </div>
+                </div>
+              </div>
+             <div class="pop2 clearfix positionR">
+             	<a class="close1 positionA" href="javascript:void(0)"></a>
+             	<div class="classes">
+        		<a href="javascript:void(0)">全部</a><span class="num">(8)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">工业经济</a><span class="num">(282440)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div> 
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">金融</a><span class="num">(211520)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">轻工业手工业</a><span class="num">(21)</span>
+        		</div>
+                    <div class="classes">
+        		<a href="javascript:void(0)">投资</a><span class="num">(2121212)</span>
+        		</div>
+                 <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                 
+                <div class="classes">
+        		<a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span>
+        		</div>
+                
+                <div class="classes">
+        		<a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span>
+        		</div>
+                <span class="unfold left"></span>
+                <div class="hide">
+                	 <div class="classes">
+        		<a href="javascript:void(0)">工业经济</a><span class="num">(282440)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">金融</a><span class="num">(211520)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">轻工业手工业</a><span class="num">(21)</span>
+        		</div>
+                    <div class="classes">
+        		<a href="javascript:void(0)">投资</a><span class="num">(2121212)</span>
+        		</div>
+                 <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                 <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">金融</a><span class="num">(211520)</span>
+        		</div>
+                <span class="fold left"></span>
+                </div>
+             </div>
+             <script>
+			 	$(".filtrate .itemm").click(
+					function(){
+					$(".filtrate .itemm .see2").css({"display":"none"})
+					$(".filtrate .cur .see1").css({"display":"inline"})
+					$(this).children(".see2").css({"display":"block"})
+					$(".pop2").css({"display":"block"})
+					})
+				$(".pop2 .classes a").click(
+					function(){
+					$(".pop2 .classes a").removeClass("yellow")
+					 $(this).addClass("yellow")
+				})
+				$(".pop2 .unfold").click(
+					function(){
+						$(this).siblings(".hide").show()
+						$(this).hide()
+					})
+				$(".pop2 .fold").click(
+					function(){
+						$(this).parent(".hide").hide()
+						$(".pop2 .unfold").show()
+					})
+				$(".pop2 .close1").click(
+					function(){
+					$(".pop2").css({"display":"none"})
+					$(".pop2 .hide").css({"display":"none"})	
+					$(".pop2 .unfold").css({"display":"block"})	
+					$(".filtrate .itemm .see2").css({"display":"none"})
+					})			
+             </script>
+             <div class="yx clearfix">
+             	<span class="bt left">已选：</span>
+                <p class="tm left positionR">文献类型：<i>期刊文献</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">发表年度：<i>2014年</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">学科分类：<i>企业经济</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">作者：<i>厉以宁</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">文献类型：<i>期刊文献</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">发表年度：<i>2014年</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">学科分类：<i>企业经济</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">作者：<i>厉以宁</i><a href="#" class="close2 positionA"></a></p>
+                <script>
+					$(".yx .tm").hover(
+						function(){
+						 $(this).addClass("hover").children(".close2").addClass("close2red")},
+						function(){
+						 $(this).removeClass("hover").children(".close2").removeClass("close2red")})
+                </script>
+             </div>
+             <div class="allinfo">
+    	<label>排序：</label><span class="ways cur">相关度<i></i></span><span class="ways">时间<i></i></span><span class="ways">被引<i></i></span><span class="ways">下载<i></i></span><span class="count">CNKI为你找到相关结果<i>118,252</i>条</span>
+        <script>
+			$(".allinfo .ways").click(
+				function(){
+				 $(this).addClass("cur").siblings().removeClass("cur")
+					})
+        </script>
+        <div class="mode clearfix"><a title="详细显示" href="#" class="xqxz left"></a><a title="列表显示" href="#" class="lb left"></a></div>
+    </div>
+             <div class="re-list">
+                	<div class="list-item">
+                	<p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+                    <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+                    <p class="source"><a href="#">陶方</a>&nbsp;&nbsp;<a href="#">吉林大学</a>&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+                    <div class="info">
+                    	<p class="info_left left">关键词：<a href="javascript:void(0)">医院</a> /  <a href="javascript:void(0)">市场营销管理</a> /  <a href="javascript:void(0)">对策</a></p><p class="info_right right"><span class="time1">下载（1309）</span>| <span class="time2">被引（2）</span></p>
+                    </div>
+                </div>
+                    <div class="list-item">
+                	<p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+                    <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+                    <p class="source"><a href="#">陶方</a>&nbsp;&nbsp;<a href="#">吉林大学</a>&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+                    <div class="info">
+                    	<p class="info_left left">关键词：<a href="javascript:void(0)">医院</a> /  <a href="javascript:void(0)">市场营销管理</a> /  <a href="javascript:void(0)">对策</a></p><p class="info_right right"><span class="time1">下载（1309）</span>| <span class="time2">被引（2）</span></p>
+                    </div>
+                </div>
+              		<div class="list-item">
+                	<p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+                    <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+                    <p class="source"><a href="#">陶方</a>&nbsp;&nbsp;<a href="#">吉林大学</a>&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+                    <div class="info">
+                    	<p class="info_left left">关键词：<a href="javascript:void(0)">医院</a> /  <a href="javascript:void(0)">市场营销管理</a> /  <a href="javascript:void(0)">对策</a></p><p class="info_right right"><span class="time1">下载（1309）</span>| <span class="time2">被引（2）</span></p>
+                    </div>
+                </div>
+                    <div class="list-item">
+                	<p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+                    <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+                    <p class="source"><a href="#">陶方</a>&nbsp;&nbsp;<a href="#">吉林大学</a>&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+                    <div class="info">
+                    	<p class="info_left left">关键词：<a href="javascript:void(0)">医院</a> /  <a href="javascript:void(0)">市场营销管理</a> /  <a href="javascript:void(0)">对策</a></p><p class="info_right right"><span class="time1">下载（1309）</span>| <span class="time2">被引（2）</span></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                	<p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+                    <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+                    <p class="source"><a href="#">陶方</a>&nbsp;&nbsp;<a href="#">吉林大学</a>&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+                    <div class="info">
+                    	<p class="info_left left">关键词：<a href="javascript:void(0)">医院</a> /  <a href="javascript:void(0)">市场营销管理</a> /  <a href="javascript:void(0)">对策</a></p><p class="info_right right"><span class="time1">下载（1309）</span>| <span class="time2">被引（2）</span></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                	<p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+                    <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+                    <p class="source"><a href="#">陶方</a>&nbsp;&nbsp;<a href="#">吉林大学</a>&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+                    <div class="info">
+                    	<p class="info_left left">关键词：<a href="javascript:void(0)">医院</a> /  <a href="javascript:void(0)">市场营销管理</a> /  <a href="javascript:void(0)">对策</a></p><p class="info_right right"><span class="time1">下载（1309）</span>| <span class="time2">被引（2）</span></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                	<p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+                    <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+                    <p class="source"><a href="#">陶方</a>&nbsp;&nbsp;<a href="#">吉林大学</a>&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+                    <div class="info">
+                    	<p class="info_left left">关键词：<a href="javascript:void(0)">医院</a> /  <a href="javascript:void(0)">市场营销管理</a> /  <a href="javascript:void(0)">对策</a></p><p class="info_right right"><span class="time1">下载（1309）</span>| <span class="time2">被引（2）</span></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                	<p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+                    <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+                    <p class="source"><a href="#">陶方</a>&nbsp;&nbsp;<a href="#">吉林大学</a>&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+                    <div class="info">
+                    	<p class="info_left left">关键词：<a href="javascript:void(0)">医院</a> /  <a href="javascript:void(0)">市场营销管理</a> /  <a href="javascript:void(0)">对策</a></p><p class="info_right right"><span class="time1">下载（1309）</span>| <span class="time2">被引（2）</span></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                	<p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+                    <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+                    <p class="source"><a href="#">陶方</a>&nbsp;&nbsp;<a href="#">吉林大学</a>&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+                    <div class="info"> 
+                    	<p class="info_left left">关键词：<a href="javascript:void(0)">医院</a> /  <a href="javascript:void(0)">市场营销管理</a> /  <a href="javascript:void(0)">对策</a></p><p class="info_right right"><span class="time1">下载（1309）</span>| <span class="time2">被引（2）</span></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                	<p class="tit clearfix"><a href="#" class="left">医院<i>市场营销</i>管理理念和现状的研究&nbsp;&nbsp;CNKI文献</a><a class="download left" href="#"></a></p>
+                    <p class="nr"><i>市场营销</i>学萌生于本世纪初期，形成于本世纪中叶，成熟于80年代，已经历了一个世纪发展。而医疗<i>市场营销</i>却于起步阶段，它是我国市场经济发展的较高阶段的产物，医疗市场的竞争越是，<i>市场营销</i>管理在很大...</p>
+                    <p class="source"><a href="#">陶方</a>&nbsp;&nbsp;<a href="#">吉林大学</a>&nbsp;&nbsp;&nbsp;行政管理专业&nbsp;2012年&nbsp;博士论文</p>
+                    <div class="info">
+                    	<p class="info_left left">关键词：<a href="javascript:void(0)">医院</a> /  <a href="javascript:void(0)">市场营销管理</a> /  <a href="javascript:void(0)">对策</a></p><p class="info_right right"><span class="time1">下载（1309）</span>| <span class="time2">被引（2）</span></p>
+                    </div>
+                </div>
+                    
+             </div>
+          <div class="share">
+    	<span>分享</span>
+        <a href="#" class="qq"></a>
+        <a href="#" class="weibo"></a>
+        <a href="#" class="wechat"></a>
+    </div>   
+        </div>
+        <div class="cont-right right">
+        		<div class="slogan"><img src="../images/result/slogan.jpg" width="290" height="26"></div>   
+            	 <div class="m-author">
+                 	<h1>同机构合作作者</h1>
+                    <p><a href="#">·王军</a><i>(纤维艺术、纺织、设计)</i></p>
+                    <p><a href="#">·张福昌</a><i>(陶瓷产品、3D打印、创新教育)</i></p>
+                    <p><a href="#">·王军</a><i>(纤维艺术、纺织、设计)</i></p>
+                    <p><a href="#">·张福昌</a><i>(陶瓷产品、3D打印、创新教育)</i></p>
+                    <p><a href="#">·王军</a><i>(纤维艺术、纺织、设计)</i></p>
+                    <p><a href="#">·张福昌</a><i>(陶瓷产品、3D打印、创新教育)</i></p>
+                    <p><a href="#">·王军</a><i>(纤维艺术、纺织、设计)</i></p>
+                    <p><a href="#">·张福昌</a><i>(陶瓷产品、3D打印、创新教育)</i></p>
+                    <p><a href="#">·王军</a><i>(纤维艺术、纺织、设计)</i></p>
+                    <p><a href="#">·张福昌</a><i>(陶瓷产品、3D打印、创新教育)</i></p>
+                 </div>
+                 <div class="o-author">
+                 	<h1>其他机构合作作者</h1>
+                    <p>·<a href="#">王军</a><i>西安建筑科技大学</i></p>
+                    <p>·<a href="#">张福昌</a><i>中国美术学院</i></p>
+                   	<p>·<a href="#">王军</a><i>西安建筑科技大学</i></p>
+                    <p>·<a href="#">张福昌</a><i>中国美术学院</i></p>
+                    <p>·<a href="#">王军</a><i>西安建筑科技大学</i></p>
+                    <p>·<a href="#">张福昌</a><i>中国美术学院</i></p>
+                  	<p>·<a href="#">王军</a><i>西安建筑科技大学</i></p>
+                    <p>·<a href="#">张福昌</a><i>中国美术学院</i></p>
+                    <p>·<a href="#">王军</a><i>西安建筑科技大学</i></p>
+                    <p>·<a href="#">张福昌</a><i>中国美术学院</i></p>
+                 </div>
+           		 <div class="xgqk">
+            	<h1 class="positionR">相关期刊</h1>
+                <div class="book-list clearfix">
+                	<ul>
+                    	<li><a href="#"><img src="../imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                    <ul>
+                    	<li><a href="#"><img src="../imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                    <ul>
+                    	<li><a href="#"><img src="../imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                </div>
+            </div>
+            	 <div class="thesis">
+                 	<h1 class="positionR">该机构最新发表论文<a href="#" class="positionA">更多》</a></h1>
+                    <p>·<a href="#">中国最新型神盾战舰解密中国最新型神盾战舰解密</a></p>
+                    <p>·<a href="#">解放军海军在太中国最新型神盾战舰解密</a></p>
+                    <p>·<a href="#">纪念抗战胜利70周年大阅兵令人期待</a></p>
+                    <p>·<a href="#">中国最新型神盾战舰解密</a></p>
+                    <p>·<a href="#">解放军海军在太平洋的崛起中国最新型神</a></p>
+                    <p>·<a href="#">纪念抗战胜利70周年大阅兵令人期待</a></p>
+                     <p>·<a href="#">纪念抗战胜利70周年大阅兵令人期待</a></p>
+                    <p>·<a href="#">中国最新型神盾战舰解密</a></p>
+                    <p>·<a href="#">解放军海军在太平洋的崛起中国最新型神</a></p>
+                    <p>·<a href="#">纪念抗战胜利70周年大阅兵令人期待</a></p>
+                 </div>
+       </div>
+        <!--page-->
+        <div class="page">
+        	<a href="#" class="n">&lt;上一页</a>
+            <a href="#"><span class="fk fkd"></span><span class="pc">1</span></a>
+        	<strong>
+            <span class="fk fk_cur"><i class="c-icon c-icon-bear-p"></i></span>
+            <span class="pc">2</span>
+            </strong>
+            <a href="#"><span class="fk fkd"></span><span class="pc">3</span></a><a href="#"><span class="fk"></span><span class="pc">4</span></a><a href="#"><span class="fk fkd"></span><span class="pc">5</span></a><a href="#"><span class="fk"></span><span class="pc">6</span></a><a href="#"><span class="fk fkd"></span><span class="pc">7</span></a><a href="#"><span class="fk"></span><span class="pc">8</span></a><a href="#"><span class="fk fkd"></span><span class="pc">9</span></a><a href="#"><span class="fk"></span><span class="pc">10</span></a><a href="#" class="n">下一页&gt;</a>
+        </div>
+    </div>
+     <!--footer-->
+     <div class="foot-wrap">
+     	<div class="footer-fen textAlignL">
+        	<a href="#">关于CNKI</a>|<a href="#">收藏远见</a>|<a href="#">创建快捷方式</a>|<a href="#">意见反馈</a>|<a href="#">使用帮助</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号
+        </div>
+     </div>
+     <div class="top-icon ">
+     	<a href="#" class="top1"></a>
+        <a href="#" class="top2"></a>
+        <script>
+        	$(".top-icon").hover(
+				function(){
+					$(this).children(".top1").css({"display":"none"})
+					$(this).children(".top2").css({"display":"block"})
+					},
+				function(){
+					$(this).children(".top2").css({"display":"none"})
+					$(this).children(".top1").css({"display":"block"})
+					})
+        </script>
+     </div>
+</body>
+</html>

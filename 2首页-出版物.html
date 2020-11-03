@@ -1,0 +1,127 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/home.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/history.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<div  class="header-wrap">
+    	<div class="header">
+        	<div class="header-left left"><strong>远见搜索</strong>——站的更高，看得更远！</div>
+            <div class="header-right right positionR"><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><a href="#" class="swzy">设为主页</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+            	<ul class="positionA">
+                	<li class="jiao positionA"></li>
+                	<li>关闭历史记录</li>
+                    <li>清除历史记录</li>
+                </ul>
+                <script>
+                $(".header-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".header-right ul").hide()
+                })
+            </script>
+            </div>
+        </div> 
+    </div>
+    <div class="home-cont">
+            <div class="logo"><a href="#"><img src="images/home/logo.jpg"></a></div>
+            <div class="home-nav positionR"><a href="#" class="active">全部</a>|<a href="#">文献</a>|<a href="#">百科</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#">标准</a>|<a href="#" class="more">更多</a>
+            <ul class="positionA"><li class="jiao positionA"></li><li><a href="#">学术图片</a></li><li><a href="#">科技成果</a></li><li class="nborder"><a href="#">文集专著</a></li></ul>
+            <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".home-nav ul").hide()
+                })
+            </script>
+            </div>
+            <div class="clearfix choose positionR">
+            	<div class="xiugai clearfix">
+                    <div class="btn" id="btn">
+                        <a class="add" href="#"></a>   
+                    </div>
+                    <div class="selectwrap" id="selectwrap">
+                        <div class="select"> 
+                            <input id="kj" class="left kj" type="text" value="">
+                            <div class="history">
+                            	<p><span class="text">雅丹地貌</span><a class="clear" href="javascript:void(0)"></a></p>
+                                <p><span class="text">香山红叶</span><a class="clear" href="javascript:void(0)"></a></p>
+                                <p><span class="text">麦田怪圈猜想</span><a class="clear" href="javascript:void(0)"></a></p>
+                                <p><span class="text">美国51区</span><a class="clear" href="javascript:void(0)"></a></p>
+                                <div class="cmd"><a class="c" href="#">关闭历史</a> | <a class="d" href="#">删除历史</a></div>
+                            </div>
+                            <script>
+                            remember();
+                            </script>
+                         </div>
+                         <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a><a href="home（高级搜索）热搜词-已登录.html" class="positionA gj">高级搜索</a></div>
+                        </div>
+                    </div>
+                  
+          </div>
+            <div class="tab-wrap">
+                  <div class="list positionR"><span  class="current">推荐阅读</span>|<span>教育教学</span>|<span>文学</span>|<span>艺术</span>|<span>心理学</span>|<span>法律</span><span class="addlist positionA"></span></div>
+                  <div class="tab-cont tab-cont1 tab-cont1-2">
+                    	<div class="book-list clearfix">
+                        	<ul>
+                            	<li><a href="http://yuanjian.cnki.net/CJFD/Detail/Index/YLYL" target="_blank"><img src="imagesTemp/home/YLYL.jpg" width="135" height="181"></a></li>
+                                <li class="name"><a href="http://yuanjian.cnki.net/CJFD/Detail/Index/YLYL" target="_blank">意林</a></li>
+                            </ul>
+                            <ul>
+                            	<li><a href="http://yuanjian.cnki.net/CJFD/Detail/Index/CYBA" target="_blank"><img src="imagesTemp/home/CYBA.jpg" width="135" height="181"></a></li>
+                                <li class="name"><a href="http://yuanjian.cnki.net/CJFD/Detail/Index/CYBA" target="_blank">创业邦</a></li>
+                            </ul>
+                            <ul>
+                            	<li><a href="http://yuanjian.cnki.net/CJFD/Detail/Index/ZGQY" target="_blank"><img src="imagesTemp/home/ZGQY.jpg" width="135" height="181"></a></li>
+                                <li class="name"><a href="http://yuanjian.cnki.net/CJFD/Detail/Index/ZGQY" target="_blank">中国企业家</a></li>
+                            </ul>
+                            <ul>
+                            	<li><a href="http://yuanjian.cnki.net/CJFD/Detail/Index/XSYS" target="_blank"><img src="imagesTemp/home/XSYS201612.jpg" width="135" height="181"></a></li>
+                                <li class="name"><a href="http://yuanjian.cnki.net/CJFD/Detail/Index/XSYS" target="_blank">营销与市场</a></li>
+                            </ul>
+                            <ul class="nomargin">
+                            	<li><a href="http://yuanjian.cnki.net/CJFD/Detail/Index/FMBD" target="_blank"><img src="imagesTemp/home/FMBD.jpg" width="135" height="181"></a></li>
+                                <li class="name"><a href="http://yuanjian.cnki.net/CJFD/Detail/Index/FMBD" target="_blank">父母必读</a></li>
+                            </ul>
+                        </div> 
+                        <table class="tablelist" border="0" cellpadding="0" cellspacing="0" width="788">
+                        	<tr height="32">
+                            	<td width="247"><a href="http://search.cnki.net/yuanjian/CJFD/Detail/Index/BWJC"target="_blank">《北京文学》</a><span>2017年01期</span></td>
+                                <td width="247"><a href="http://search.cnki.net/yuanjian/CJFD/Detail/Index/DYSI"target="_blank">《电影世界》</a><span>2017年01期</span></td>
+                                <td width="249"><a href="http://search.cnki.net/yuanjian/CJFD/Detail/Index/XMZK"target="_blank">《新民周刊》</a><span>2017年02期</span></td>
+                            </tr>
+                            <tr height="32">
+                            	<td width="247"><a href="http://search.cnki.net/yuanjian/CJFD/Detail/Index/RYZR"target="_blank">《人与自然》</a><span>2017年01期</span></td>
+                                <td width="247"><a href="http://search.cnki.net/yuanjian/CJFD/Detail/Index/HQDL"target="_blank">《环球人文地理》</a><span>2016年23期</span></td>
+                                <td width="249"><a href="http://search.cnki.net/yuanjian/CJFD/Detail/Index/ZXSJ"target="_blank">《走向世界》</a><span>2017年01期</span></td>
+                            </tr>
+                        </table>
+            		</div>
+                  <div class="bottomlist"><span>热搜词</span><span class="active">出版物</span><span>文集</span><span>文献</span></div>
+           </div>
+              
+    </div>
+    <div class="footer">
+        	<p class="p1"><a href="#">收藏本站</a>｜<a href="#">创建快捷方式</a>｜<a href="#">关于CNKI</a> ｜<a href="#">使用指南</a></p>
+            <p class="p2">© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号 </p>
+        </div>
+</body>
+
+</html>

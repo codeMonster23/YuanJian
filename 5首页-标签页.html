@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- saved from url=(0013)about:internet -->
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/home.css" rel="stylesheet" type="text/css">
+<script src="js/jQuery-v1.11.1.js"></script>
+<script src="js/jquery.promptToggle.js"></script>
+
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<div  class="header-wrap">
+    	<div class="header">
+        	<div class="header-left left"><strong>远见搜索</strong>——站的更高，看得更远！</div>
+            <div class="header-right right positionR"><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><a href="#" class="swzy">设为主页</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+            	<ul class="positionA">
+                	<li class="jiao positionA"></li>
+                	<li>关闭历史记录</li>
+                    <li>清除历史记录</li>
+                </ul>
+                <script>
+                $(".header-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".header-right ul").hide()
+                })
+            </script>
+            </div>
+        </div> 
+    </div>
+    <div class="home-cont">
+            <div class="logo"><a href="#"><img src="images/home/logo.jpg"></a></div>
+            <div class="home-nav positionR"><a href="#" class="active">全部</a>|<a href="#">文献</a>|<a href="#">百科</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#">标准</a>|<a href="#" class="more">更多</a>
+            <ul class="positionA"><li class="jiao positionA"></li><li><a href="#">学术图片</a></li><li><a href="#">科技成果</a></li><li class="nborder"><a href="#">文集专著</a></li></ul>
+            <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".home-nav ul").hide()
+                })
+            </script>
+            </div>
+            <div class="clearfix choose positionR">
+            	<div class="xiugai clearfix">
+                    <div class="btn" id="btn">
+                        <a class="add" href="#"></a>   
+                    </div>
+                    <div class="selectwrap" id="selectwrap">
+                        <div class="select"> 
+                            <input class="left kj" type="text" value="">
+                         </div>
+                        
+                         <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a><a href="#" class="positionA gj">高级搜索</a></div>
+                        </div>
+                    </div>
+                  
+          </div>
+            <div class="tab-wrap">
+                  <div class="list positionR"><span>推荐阅读</span>|<span class="current">教育教学</span>|<span>文学</span>|<span>艺术</span>|<span>心理学</span>|<span>法律</span><span class="addlist positionA"></span></div>
+                  <div class="tab-cont tab-cont2 clearfix">
+                    	 <div class="p-wrap left">
+                         		<p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">谷歌眼镜——戴在鼻子上的智能终端</a><i class="left"></i></p>
+                                <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">谷歌眼镜——戴在鼻子上的智能终端</a><i class="left"></i></p>
+                               <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">短坡长X射线体应力无损分析仪研制成功</a></p>
+                              <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">二位道题材料商观察到磁激发态</a><i class="left"></i></p>
+                              <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">网络攻击技术破解指南——让网络攻击无处遁</a></p>
+                             <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">谷歌眼镜——戴在鼻子上的智能终端</a><i class="left"></i></p>
+                            <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">谷歌眼镜——戴在鼻子上的智能终端</a></p>
+                           <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">谷歌眼镜——戴在鼻子上的智能终端</a></p>
+                          <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">亚太九号卫星发生成功</a><i class="left"></i></p>
+                         <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">谷歌眼镜——戴在鼻子上的智能终端</a></p>
+                         </div>
+                         <div class="p-wrap right">
+                         		<p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">谷歌眼镜——戴在鼻子上的智能终端</a><i class="left"></i></p>
+                                <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">谷歌眼镜——戴在鼻子上的智能终端</a><i class="left"></i></p>
+                               <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">短坡长X射线体应力无损分析仪研制成功</a></p>
+                              <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">二位道题材料商观察到磁激发态</a><i class="left"></i></p>
+                              <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">网络攻击技术破解指南——让网络攻击无处遁</a></p>
+                             <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">谷歌眼镜——戴在鼻子上的智能终端</a><i class="left"></i></p>
+                            <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">谷歌眼镜——戴在鼻子上的智能终端</a></p>
+                           <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">谷歌眼镜——戴在鼻子上的智能终端</a></p>
+                          <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">亚太九号卫星发生成功</a><i class="left"></i></p>
+                         <p class="clearfix"><a href="#" class="classify left">【期刊文献】</a><a href="#" class="tit left">谷歌眼镜——戴在鼻子上的智能终端</a></p>
+                         </div> 
+            	</div>
+                  
+           </div>
+              
+    </div>
+    <div class="footer">
+        	<p class="p1"><a href="#">收藏本站</a>｜<a href="#">创建快捷方式</a>｜<a href="#">关于CNKI</a> ｜<a href="#">使用指南</a></p>
+            <p class="p2">© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号 </p>
+        </div>
+
+<!--弹出框-->
+<div class="shade">
+	<div class="box">
+    	<div class="title">添加关注的标签<span>（最多添加五个标签）</span><a class="close" href="javascript:void(0);"></a></div>
+        <div class="have-not">
+        	<div class="caption">未添加标签</div>
+            <div class="labels clearfix">
+            	<a href="javascript:void(0);">IT/互联网</a>
+                <a href="javascript:void(0);">企业管理1</a>
+                <a href="javascript:void(0);">企业管理2</a>
+                <a href="javascript:void(0);">企业管理3</a>
+                <a href="javascript:void(0);">企业管理4</a>
+                <a href="javascript:void(0);">企业管理5</a>
+                
+                <a href="javascript:void(0);">企业管理6</a>
+                <a href="javascript:void(0);">企业管理7</a>
+                <a href="javascript:void(0);">企业管理8</a>
+                <a href="javascript:void(0);">企业管理9</a>
+                <a href="javascript:void(0);">企业管理10</a>
+                <a href="javascript:void(0);">企业管理11</a>
+                
+                <a href="javascript:void(0);">企业管理12</a>
+                <a href="javascript:void(0);">企业管理13</a>
+                <a href="javascript:void(0);">企业管理14</a>
+            </div>
+          <div class="new">
+            	<input id="add-new-label" maxlength="7" type="text" class="input input-grey" value="自定义关注的标签">
+                <script>PromptToggle($("#add-new-label"),"自定义关注的标签","input-grey");</script>
+                <a class="addLabel" href="javascript:void(0)"></a>
+          </div>
+        </div>
+        
+        <div class="have">
+        	<div class="caption">已添加标签</div>
+            <div class="exist">
+            </div>
+        </div>
+    </div>
+</div>
+	
+<script>
+//添加标签
+$(function()
+{
+	var shade=$(".shade");
+	var labelTop=$(".shade .box .have-not .labels a");
+	var labelBom=$(".shade .box .have .exist a");
+	shade.height(window.screen.availHeight);
+	$(".home-cont .tab-wrap .list .addlist").click(function()
+	{
+		shade.css("display","block");
+		$("body").addClass("hide-scroll-bar");
+	})
+	
+	$(".shade .box .title .close").click(function()
+	{
+		$(this).parent().parent().parent().css("display","none");
+		$("body").removeClass("hide-scroll-bar");
+	})
+	
+	/*/////////-------------------/////////*/
+	
+	//
+	labelTop.click(function()
+	{
+		var addedLabelCount=$(".shade .box .have .exist a").length;
+		if(addedLabelCount<5)
+		{
+			var labelIndex=$(".shade .box .have-not .labels a").index(this); //获取所点击的标签的序号
+			hideLabelTop(this);//隐藏点击的标签
+			var text=$(this).html();
+			var newLabel=createLabel(text,labelIndex);//生成一个标签
+			$(".shade .box").append(newLabel);
+			
+			
+			var labelCount=$(".shade .box .have-not .labels a").length; //未添加标签的数目
+			/*未添加标签的行数*/
+			var labelRow=Math.ceil((labelCount-1)/6);  
+			var labelTop=199+(labelRow)*44;
+			var labelLeft=24+addedLabelCount*131;
+			$(newLabel).animate({left:labelLeft,top:labelTop},200,null,function(){
+				$(".shade .box .have .exist").append(newLabel);
+				$(this).data("left",labelLeft);
+				$(this).data("top",labelTop);
+				newLabel.style.position="relative";
+				newLabel.style.left="auto";
+				newLabel.style.top="auto";
+				});
+		}
+	})
+	
+	
+	/*/////////-------------------/////////*/
+/*	labelBom.hover(function()
+	{
+		console.log(1)
+		$(this).children("span").css("display","block");
+		},function()
+		{
+			$(this).children("span").css("display","none");
+			})
+*/	
+	
+	
+	function calculatePosition(index)
+	{
+		var pos=new Object();
+		var value1=101; //距离弹出框顶部的初始距离
+		var value2=24;  //距离弹出框左边的初始距离
+		pos.eTop=Math.floor(index/6)*44+value1;
+		pos.eLeft=Math.floor(index%6)*131+value2;
+		return pos;
+	}
+	
+	function hideLabelTop(pointer)
+	{
+		$(pointer).hide(200,null,function()
+		{
+			$(this).remove();
+		});
+	}
+	
+	function createLabel(htmlText,labelIndex)
+	{
+		var pos=calculatePosition(labelIndex); //计算点击标签的位置
+		
+		//创建添加的标签
+		var label=document.createElement("a");
+		label.href="javascript:void(0);";
+		var aLen=$(".shade .box .have .exist a").length;
+		label.className="style"+(aLen+1);
+		label.innerHTML=htmlText;
+		label.style.position="absolute";
+		label.style.left=pos.eLeft+"px";
+		label.style.top=pos.eTop+"px";
+		
+		//创建关闭按钮
+		var closeBtn=document.createElement("span");
+		closeBtn.className="close-label";
+		label.appendChild(closeBtn);
+		
+		//绑定事件
+		$(label).hover(function(){$(this).children("span").css("display","block");},function(){$(this).children("span").css("display","none");});
+		$(label).click(function()
+		{
+			var index=$(".shade .box .have .exist a").index(this);
+			$(this).css({
+				"position":"absolute",
+				"left":$(this).data("left"),
+				"top":$(this).data("top")
+				});
+			var len=$(".shade .box .have-not .labels a").length;
+			var pos=calculatePosition(len);
+			
+			$(this).animate({left:pos.eLeft,top:pos.eTop},200,null,function(){
+				var newLabel=document.createElement("a");
+				newLabel.href="javascript:void(0)";
+				newLabel.innerHTML=$(this).text();
+				$(".shade .box .have-not .labels").append(newLabel);
+				$(this).hide(50,null,function(){$(this).remove()});
+				
+				
+				
+				
+				
+					$(newLabel).click(function()
+					{
+						var addedLabelCount=$(".shade .box .have .exist a").length;
+						if(addedLabelCount<5)
+						{
+							var labelIndex=$(".shade .box .have-not .labels a").index(this); //获取所点击的标签的序号
+							hideLabelTop(this);//隐藏点击的标签
+							var text=$(this).html();
+							var newLabel=createLabel(text,labelIndex);//生成一个标签
+							$(".shade .box").append(newLabel);
+							
+							
+							var labelCount=$(".shade .box .have-not .labels a").length; //未添加标签的数目
+							/*未添加标签的行数*/
+							var labelRow=Math.ceil((labelCount-1)/6);  
+							var labelTop=199+(labelRow)*44;
+							var labelLeft=24+addedLabelCount*131;
+							$(newLabel).animate({left:labelLeft,top:labelTop},200,null,function(){
+								$(".shade .box .have .exist").append(newLabel);
+								$(this).data("left",labelLeft);
+								$(this).data("top",labelTop);
+								newLabel.style.position="relative";
+								newLabel.style.left="auto";
+								newLabel.style.top="auto";
+								});
+						}
+					})
+
+				});	
+			
+		})
+		return label;
+	}
+	
+	//添加标签
+	$(".shade .box .new .addLabel").click(function()
+	{
+		if($.trim($(this).siblings("input").val())!="")
+		{
+			var newLabel=document.createElement("a");
+			newLabel.href="javascript:void(0)";
+			newLabel.innerHTML=$(this).siblings("input").val();
+			$(".shade .box .have-not .labels").append(newLabel);
+			
+			
+			
+			
+			$(newLabel).click(function()
+			{
+				var addedLabelCount=$(".shade .box .have .exist a").length;
+				if(addedLabelCount<5)
+				{
+					var labelIndex=$(".shade .box .have-not .labels a").index(this); //获取所点击的标签的序号
+					hideLabelTop(this);//隐藏点击的标签
+					var text=$(this).html();
+					var newLabel=createLabel(text,labelIndex);//生成一个标签
+					$(".shade .box").append(newLabel);
+					
+					
+					var labelCount=$(".shade .box .have-not .labels a").length; //未添加标签的数目
+					/*未添加标签的行数*/
+					var labelRow=Math.ceil((labelCount-1)/6);  
+					var labelTop=199+(labelRow)*44;
+					var labelLeft=24+addedLabelCount*131;
+					$(newLabel).animate({left:labelLeft,top:labelTop},200,null,function(){
+						$(".shade .box .have .exist").append(newLabel);
+						$(this).data("left",labelLeft);
+						$(this).data("top",labelTop);
+						newLabel.style.position="relative";
+						newLabel.style.left="auto";
+						newLabel.style.top="auto";
+						});
+				}
+			})
+			
+			
+			
+			
+		}
+	})
+		
+})
+</script>
+</body>
+</html>

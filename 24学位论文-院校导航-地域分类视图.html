@@ -1,0 +1,498 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>院校导航-专业分类</title>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/college-nav.css" rel="stylesheet" type="text/css">
+<link href="css/result.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+	<!--head-->
+	<div class="head-wrap">
+    	<div class="head-fen clearfix">
+        	<div class="head-logo left"><img src="images/result/result_logo.jpg" width="115" height="40"></div>
+            <div class="search-item left">
+            	<div class="result-nav positionR"><a href="#" class="active">全部</a>|<a href="#">文献</a>|<a href="#">百科</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#">标准</a>|<a href="#" class="more">更多</a>
+                      <ul class="positionA"><li class="jiao positionA"></li><li><a href="#">学术图片</a></li><li><a href="#">科技成果</a></li><li class="nborder"><a href="#">文集专著</a></li></ul>
+            <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".result-nav ul").hide()
+                })
+            </script>
+            </div>
+            	<div class="clearfix choose positionR">
+            	<div class="xiugai clearfix">
+                    <div class="btn" id="btn">
+                        <a class="add" href="#"></a>   
+                    </div>
+                    <div class="selectwrap" id="selectwrap">
+                        <div class="select positionR"> 
+                            <input class="left kj" type="text" value="">
+                            <a class="positionA sweep" href="#"></a>
+                         </div>
+                         <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a></div>
+                        </div>
+                    </div>
+          </div>
+            </div>      
+            <div class="headfen-right right positionR"><a href="#" class="home">远见首页</a><i class="left">|</i><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+             <ul class="positionA">
+                	<li class="jiao positionA"></li>
+                	<li>关闭历史记录</li>
+                    <li>清除历史记录</li>
+                </ul>
+                <script>
+                $(".headfen-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".headfen-right ul").hide()
+                })
+            </script>
+            
+            
+            </div>
+        </div>   
+    </div>
+    <div class="college-navcont">
+    	<div class="container">
+        	<div class="route"><a href="#">学位论文首页</a>&nbsp;>&nbsp;<span>学位授予单位</span></div>
+            <div class="option"><span class="left">硕士学位授予单位</span><span class="cur left">博士学位授予单位</span></div>
+            <div class="de-wrap clearfix">
+            	<div class="menu left">
+                	<div class="switch"><span class="left">专业分类</span><span class="cur left">地域分类</span></div>
+                    <div class="menu-list">
+						<div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line"></div>
+                       <div class="item"><span class="left"><a href="#">北京</a><i>(13)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line"></div>
+                        <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line"></div>
+                     <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line"></div>
+                        <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line"></div>
+                       <div class="item"><span class="left"><a href="#">北京</a><i>(1)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line"></div>
+                        <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(1325)</i></span></div>
+                        <div class="line"></div>
+                        <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line"></div>
+                  <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line"></div>
+                 <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line"></div>
+                         <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line">
+                        </div> <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line">
+                        </div> <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line">
+                        </div> <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line">
+                        </div> <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                        <div class="line">
+                        </div> <div class="item"><span class="left"><a href="#">北京</a><i>(135)</i></span><span class="left"><a href="#">湖南</a><i>(135)</i></span></div>
+                    </div>
+                </div>
+                <script>
+					//选中地域字体变色
+                	$(".college-navcont .container .de-wrap .menu .menu-list .item span a").click(function(){
+							$(".college-navcont .container .de-wrap .menu .menu-list .item span a").removeClass("current");
+							$(this).addClass("current");
+						})
+                </script>
+                <div class="de-right right">
+                	<div class="tj"><span><input type="checkbox" id="all"><label for="all">全部</label></span><span><input type="checkbox" id="211"><label for="211">211工程院校</label></span><span><input type="checkbox" id="985"><label for="985">985工程院校</label></span><span><input type="checkbox" id="zs"><label for="zs">教育部直属院校</label></span></div>
+                    <div class="all-info">
+                    	<span class="ways cur">发表篇数<i></i></span><span class="ways">论文被引<i></i></span><span class="ways">论文下载<i></i></span><span class="ways">导师人数<i></i></span><span class="count">CNKI为你找到相关结果<i>118,252</i>条</span>
+                      <div class="mode clearfix"><a href="#" class="stxz left"></a><a href="#" class="lb left"></a></div>
+        <script>
+			$(".all-info .ways").click(
+				function(){
+				 $(this).addClass("cur").siblings().removeClass("cur")
+					})
+        </script>
+        <div class="mode clearfix"><a title="视图显示" href="#" class="stxz left"></a><a title="列表显示" href="#" class="lb left"></a></div>
+                    </div>
+                    <div class="card-group clearfix">
+                    	<div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i><i class="co211"><img src="images/college-nav/yx211.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left no-margin">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i><i class="co211"><img src="images/college-nav/yx211.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left no-margin">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i><i class="co211"><img src="images/college-nav/yx211.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left no-margin">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i><i class="co211"><img src="images/college-nav/yx211.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left no-margin">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i><i class="co211"><img src="images/college-nav/yx211.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left no-margin">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i><i class="co211"><img src="images/college-nav/yx211.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left no-margin">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i><i class="co211"><img src="images/college-nav/yx211.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left no-margin">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i><i class="co211"><img src="images/college-nav/yx211.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left no-margin">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i><i class="co211"><img src="images/college-nav/yx211.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card left no-margin">
+                        	<a href="#">
+                            	<span class="img-box"><img class="college-pic" src="imagesTemp/college-nav/collegepic.jpg" width="278" height="56"></span>
+                                <div class="card-bottom">
+                                	<p class="name"><span>北京工业大学</span><i class="co985"><img src="images/college-nav/yx985.gif" width="49" height="20"></i></p>
+                                    <div class="intro clearfix">
+                                    	<p class="p1 left">文献：<i>22514225</i>篇<br>导师：<i>21451</i>人</p>
+                                        <p class="p2 left">被引：<i>22514225</i>次<br>下载：<i>2145555241</i>次</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                      <!--page-->
+        			<div class="page">
+        	<a href="#" class="n">&lt;上一页</a>
+            <a href="#"><span class="fk fkd"></span><span class="pc">1</span></a>
+        	<strong>
+            <span class="fk fk_cur"><i class="c-icon c-icon-bear-p"></i></span>
+            <span class="pc">2</span>
+            </strong>
+            <a href="#"><span class="fk fkd"></span><span class="pc">3</span></a><a href="#"><span class="fk"></span><span class="pc">4</span></a><a href="#"><span class="fk fkd"></span><span class="pc">5</span></a><a href="#"><span class="fk"></span><span class="pc">6</span></a><a href="#"><span class="fk fkd"></span><span class="pc">7</span></a><a href="#"><span class="fk"></span><span class="pc">8</span></a><a href="#"><span class="fk fkd"></span><span class="pc">9</span></a><a href="#"><span class="fk"></span><span class="pc">10</span></a><a href="#" class="n">下一页&gt;</a>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!--footer-->
+     <div class="foot-wrap">
+     	<div class="footer-fen">
+        	<a href="#">关于CNKI</a>|<a href="#">收藏远见</a>|<a href="#">创建快捷方式</a>|<a href="#">意见反馈</a>|<a href="#">使用帮助</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号
+        </div>
+     </div>
+     <!--Firefox-->
+<!--<div class="college-top" style="background:#000000"> <a href="#" class="top1"></a></div>-->
+<div class="top-icon top-widthmax-college">
+     	<a href="#" class="feedback feedback-color2">用户反馈</a>
+        <div class="to-top">
+          <a href="#" class="top1"></a>
+          <a href="#" class="top4"></a>
+        </div>
+        <script>
+        	$(".to-top").hover(
+				function(){
+					$(this).children(".top1").css({"display":"none"})
+					$(this).children(".top4").css({"display":"block"})
+					},
+				function(){
+					$(this).children(".top4").css({"display":"none"})
+					$(this).children(".top1").css({"display":"block"})
+					})
+        </script>
+     </div>
+</body>
+</html>

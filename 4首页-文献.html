@@ -1,0 +1,121 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/home.css" rel="stylesheet" type="text/css">
+<script src="js/jQuery-v1.11.1.js"></script>
+<script src="js/jquery.cycle2.js"></script>
+</head>
+<body>
+	<div  class="header-wrap">
+    	<div class="header">
+        	<div class="header-left left"><strong>远见搜索</strong>——站的更高，看得更远！</div>
+            <div class="header-right right positionR"><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><a href="#" class="swzy">设为主页</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+            	<ul class="positionA">
+                	<li class="jiao positionA"></li>
+                	<li>关闭历史记录</li>
+                    <li>清除历史记录</li>
+                </ul>
+                <script>
+                $(".header-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".header-right ul").hide()
+                })
+            </script>
+            </div>
+        </div> 
+    </div>
+    <div class="home-cont">
+            <div class="logo"><a href="#"><img src="images/home/logo.jpg"></a></div>
+            <div class="home-nav positionR"><a href="#" class="active">全部</a>|<a href="#">文献</a>|<a href="#">百科</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#">标准</a>|<a href="#" class="more">更多</a>
+            <ul class="positionA"><li class="jiao positionA"></li><li><a href="#">学术图片</a></li><li><a href="#">科技成果</a></li><li class="nborder"><a href="#">文集专著</a></li></ul>
+            <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".home-nav ul").hide()
+                })
+            </script>
+            </div>
+            <div class="clearfix choose positionR">
+            	<div class="xiugai clearfix">
+                    <div class="btn" id="btn">
+                        <a class="add" href="#"></a>   
+                    </div>
+                    <div class="selectwrap" id="selectwrap">
+                        <div class="select"> 
+                            <input class="left kj" type="text" value="">
+                         </div>
+                        
+                         <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a><a href="#" class="positionA gj">高级搜索</a></div>
+                        </div>
+                    </div>
+                  
+          </div>
+            <div class="tab-wrap">
+                  <div class="list positionR"><span  class="current">推荐阅读</span>|<span>教育教学</span>|<span>文学</span>|<span>艺术</span>|<span>心理学</span>|<span>法律</span><span class="addlist positionA"></span></div>
+                  <div class="tab-cont tab-cont1 tab-cont1-4 clearfix">
+                    	 <div class="lunbo left">
+                         	<div class="lunbo-top positionR cycle-slideshow" data-cycle-slides=".slide1" data-cycle-prev=".pre-btn" data-cycle-next=".next-btn" data-cycle-pager-template="<div><img height='64' width='110'></div>">
+                            	<a href="http://yuanjian.cnki.net/CJFD/Article/index/XDCB201403018"target="_blank" class="img positionR slide1"><img src="imagesTemp/home/wenxian-1.jpg" width="361" height="212"><span class="positionA tit">《最强大脑》:让科学流行起来</span></a>
+                                <a href="http://yuanjian.cnki.net/CJFD/Article/index/ZGHJ201501047" target="_blank"class="img positionR slide1"><img src="imagesTemp/home/wenxian-2.jpg" width="361" height="212"><span class="positionA tit">日本福岛核事故后的海洋放射性监测进展</span></a>
+                                <a href="http://yuanjian.cnki.net/CJFD/Article/index/YLJS200604001" class="img positionR slide1"><img src="imagesTemp/home/wenxian-3.jpg" width="361" height="212"><span class="positionA tit">美海军无人潜航器关键技术综述</span></a>
+                                
+                                <a href="http://xuewen.cnki.net/CCND-KJRB201601040020.html" target="_blank"class="pre-btn positionA"></a>
+                                <a href="http://www.cnki.com.cn/Article/CJFDTOTAL-LBYT201436006.htm" class="next-btn positionA"></a>
+                                
+                                
+                                <div class="lunbo-bottom cycle-pager">
+                                
+                            	</div>
+                                
+                            </div>
+<script>
+$(function(){
+//设置幻灯片缩略图的路径
+$(".home-cont .tab-wrap .tab-cont1-4 img").eq(0).attr("src","imagesTemp/home/wenxian-1.jpg");
+$(".home-cont .tab-wrap .tab-cont1-4 img").eq(1).attr("src","imagesTemp/home/wenxian-2.jpg");
+$(".home-cont .tab-wrap .tab-cont1-4 img").eq(2).attr("src","imagesTemp/home/wenxian-3.jpg").parent().addClass("last");
+	})
+</script>                             
+                            
+                            
+                            
+                            
+                            
+                         </div>
+                          <div class="wx-list left">
+                          	<p class="clearfix"><a href="http://yuanjian.cnki.net/Search/LiteratureResult?ztcode=A005"target="_blank" class="classify left">【物理学】</a><a href="http://yuanjian.cnki.net/CJFD/Article/index/LXXB402.002" target="_blank"class="tit left">低速混合型城市交通的流体力学模型</a><i class="left"></i></p>
+                            <p class="clearfix"><a href="http://yuanjian.cnki.net/Search/LiteratureResult?ztcode=J149"target="_blank" class="classify left">【农业经济】</a><a href="http://yuanjian.cnki.net/CJFD/Article/index/JJYJ201411009" target="_blank"class="tit left">“社会养老”能否替代“家庭养老”?</a><i class="left"></i></p>
+                            <p class="clearfix"><a href="http://yuanjian.cnki.net/Search/LiteratureResult?ztcode=H123"target="_blank" class="classify left">【社会学】</a><a href="http://yuanjian.cnki.net/CJFD/Article/index/SHXJ902.000" target="_blank" class="tit left">中国人人际信任的概念化:一个人际关系的观点</a><i class="left"></i></p>
+                            <p class="clearfix"><a href="http://yuanjian.cnki.net/Search/LiteratureResult?ztcode=H125"target="_blank" class="classify left">【人口学】</a><a href="http://yuanjian.cnki.net/CJFD/Article/index/JJYJ201004002" target="_blank" class="tit left">人口转变、人口红利与刘易斯转折点</a></p>
+                           <p class="clearfix"><a href="http://yuanjian.cnki.net/Search/LiteratureResult?ztcode=I139"target="_blank" class="classify left">【互联网】</a><a href="http://yuanjian.cnki.net/CJFD/Article/index/QHXB201110014" target="_blank" class="tit left">新浪微博数据挖掘方案</a></p>
+                            <p class="clearfix"><a href="http://yuanjian.cnki.net/Search/LiteratureResult?ztcode=B026" target="_blank"class="classify left">【安全科学】</a><a href="http://yuanjian.cnki.net/CJFD/Article/index/XNZS201204009" target="_blank" class="tit left">村民自治背景下的村霸治理</a></p>
+                            <p class="clearfix"><a href="http://yuanjian.cnki.net/Search/LiteratureResult?ztcode=C038"target="_blank" class="classify left">【建筑科学】</a><a href="http://yuanjian.cnki.net/CDMD/Article/Index/CDFD-10003-2003020001" target="_blank" class="tit left">探索北京旧城居住区有机更新的适宜途径</a></p>
+                            <p class="clearfix"><a href="http://yuanjian.cnki.net/Search/LiteratureResult?ztcode=C037"target="_blank" class="classify left">【水利水电工程】</a><a href="http://yuanjian.cnki.net/CJFD/Article/index/CSGH201506009" target="_blank" class="tit left">“海绵城市”理论与实践</a><i class="left"></i></p>
+                            <p class="clearfix"><a href="http://yuanjian.cnki.net/Search/LiteratureResult?ztcode=J152"target="_blank" class="classify left">【企业经济】</a><a href="http://yuanjian.cnki.net/CJFD/Article/index/GGYY201410012" target="_blank" class="tit left">互联网思维与传统企业再造</a><i class="left"></i></p>        
+                          </div>
+            		</div>
+                  <div class="bottomlist"><span>热搜词</span><span>出版物</span><span>文集</span><span class="active">文献</span></div>
+           </div>
+              
+    </div>
+    <div class="footer">
+        	<p class="p1"><a href="#">收藏本站</a>｜<a href="#">创建快捷方式</a>｜<a href="#">关于CNKI</a> ｜<a href="#">使用指南</a></p>
+            <p class="p2">© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号 </p>
+        </div>
+</body>
+</html>

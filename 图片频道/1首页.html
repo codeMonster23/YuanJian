@@ -1,0 +1,223 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图片频道首页</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css">
+<link href="../css/home.css" rel="stylesheet" type="text/css">
+<link href="../css/pic-channel.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<div  class="header-wrap">
+  <div class="header">
+    <div class="header-left left"><strong>远见搜索</strong>——站的更高，看得更远！</div>
+    <div class="header-right right positionR"><span class="sz left"><a href="#">设置</a></span>
+      <ul class="positionA">
+        <li class="jiao positionA"></li>
+        <li>关闭历史记录</li>
+        <li>清除历史记录</li>
+      </ul>
+      <script>
+                $(".header-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".header-right ul").hide()
+                })
+            </script> 
+    </div>
+  </div>
+</div>
+<div class="home-cont picChannel">
+  <div class="logo"><a href="#"><img src="../images/home/logo.jpg"></a></div>
+  <div class="home-nav positionR"><a href="#">全部</a>|<a href="#">文献</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#">知网书</a>|<a href="#" class="active">学术图片</a>|<a href="#">百科</a>|<a href="#">会议</a>|<a href="#" class="more">更多</a>
+    <ul class="positionA">
+      <li class="jiao positionA"></li>
+      <li><a href="#">年鉴</a></li>
+      <li><a href="#">专利</a></li>
+      <li><a href="#">标准</a></li>
+      <li class="nborder"><a href="#">科技成果</a></li>
+    </ul>
+    <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".home-nav ul").hide()
+                })
+            </script> 
+  </div>
+  <div class="clearfix choose positionR">
+    <div class="xiugai clearfix">
+      <div class="btn" id="btn"> <!--<a class="remove" href="#"></a>--> </div>
+      <div class="selectwrap" id="selectwrap">
+        <div class="select">
+          <p class="item">图片主题</p>
+          <a href="javascript:void(0)" class="positionA sweep" title="上传图片，查找相似图片！"></a>
+          <input class="left " type="text" value="">
+          <ul class="itemlist">
+            <li>图片主题</li>
+            <li>相似搜索</li>
+          </ul>
+         <div class="uploadImg">
+            <a href="javascript:void(0)" class="title">本地上传图片</a>
+            <p>上传图片，查找相似图片！</p>
+            <a href="javascript:void(0)" class="close">&times;</a>
+          </div>
+        </div>
+        <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a></div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $('.selectwrap  .sweep').click(function() {
+        $(this).hide();
+        $(this).siblings('.item').hide().siblings('input').css('width',535).attr('placeholder','输入图片网址检索').siblings('.uploadImg').show();
+    });
+    $('.selectwrap .uploadImg .close').click(function() {
+      $(this).parent().hide().siblings('.item').show().siblings('.sweep').show().siblings('input').css('width',344).attr('placeholder','');
+    });
+  </script>
+  <!--图片频道首页-->
+  <div class="pic-index">
+      <div class="title">共收录图片<i>31，299，963</i>张</div>
+      <div class="section">
+        <div class="tab">
+            <ul  class="tabNav clearfix">
+              <li class="active"><a href="javascript:void(0)">基础学科</a><i></i></li>
+              <li><a href="javascript:void(0)">工程科技Ⅰ</a></li>
+              <li><a href="javascript:void(0)">工程科技Ⅱ</a></li>
+              <li><a href="javascript:void(0)">农业科技</a></li>
+              <li><a href="javascript:void(0)">医药卫生</a></li>
+              <li><a href="javascript:void(0)">哲学人文</a></li>
+              <li><a href="javascript:void(0)">社会科学Ⅰ</a></li>
+              <li><a href="javascript:void(0)">社会科学Ⅱ</a></li>
+              <li><a href="javascript:void(0)">信息科技</a></li>
+              <li class="last"><a href="javascript:void(0)">经济管理</a></li>
+            </ul>
+            <div class="tabContent">
+              <div class="item active">
+                <a href="">数学</a><a href="">非线性科学与系统科学</a><a href="">天文学</a><a href="">力学</a><a href="">物理学</a><a href="">生物学</a><a href="">自然科学理论与方法</a><a href="">气象学</a><a href="">海洋学</a><a href="">地质学</a><a href="">更多>></a>
+              </div>
+              <div class="item">
+                <a href="">数学</a><a href="">非线性科学与系统科学</a><a href="">天文学</a><a href="">力学</a><a href="">物理学</a><a href="">更多>></a>
+              </div>
+              <div class="item">
+                <a href="">数学</a><a href="">非线性科学与系统科学</a><a href="">天文学</a><a href="">力学</a><a href="">物理学</a><a href="">生物学</a><a href="">自然科学理论与方法</a><a href="">气象学</a><a href="">海洋学</a><a href="">更多>></a>
+              </div>
+            </div>
+        </div>
+        <div class="imageList clearfix">
+          <dl>
+            <dt><img src="../images/pic-channel/classify1.jpg" height="99" width="152" alt=""></dt>
+            <dd class="name">形态图</dd>
+            <dd class="classify clearfix">
+              <div class="left">
+                <a href="">断面图</a>
+                <a href="">立体图</a>
+                <a href="">轴测图</a>
+              </div>
+              <div class="right">
+                <a href="">布置图</a>
+                <a href="">透视图</a>
+                <a href="">更多>></a>
+              </div>
+            </dd>
+          </dl>
+          <dl>
+            <dt><img src="../images/pic-channel/classify2.jpg" height="99" width="152" alt=""></dt>
+            <dd class="name">曲线图</dd>
+            <dd class="classify clearfix">
+              <div class="left">
+                <a href="">衰减曲线</a>
+                <a href="">误差曲线</a>
+                <a href="">K线图</a>
+              </div>
+              <div class="right">
+                <a href="">心电图</a>
+                <a href="">脑电图</a>
+                <a href="">更多>></a>
+              </div>
+            </dd>
+          </dl>
+          <dl>
+            <dt><img src="../images/pic-channel/classify3.jpg" height="99" width="152" alt=""></dt>
+            <dd class="name">谱线图</dd>
+            <dd class="classify clearfix">
+              <div class="left">
+                <a href="">色谱图</a>
+                <a href="">波形图</a>
+                <a href="">温谱图</a>
+              </div>
+              <div class="right">
+                <a href="">光谱图</a>
+                <a href="">频谱图</a>
+                <a href="">更多>></a>
+              </div>
+            </dd>
+          </dl>
+          <dl>
+            <dt><img src="../images/pic-channel/classify4.jpg" height="99" width="152" alt=""></dt>
+            <dd class="name">分析图</dd>
+            <dd class="classify clearfix">
+              <div class="left">
+                <a href="">对比图</a>
+                <a href="">分岔图</a>
+                <a href="">PAD图</a>
+              </div>
+              <div class="right">
+                <a href="">横道图</a>
+                <a href="">雷达图</a>
+                <a href="">更多>></a>
+              </div>
+            </dd>
+          </dl>
+          <dl class="last">
+            <dt><img src="../images/pic-channel/classify5.jpg" height="99" width="152" alt=""></dt>
+            <dd class="name">系统图</dd>
+            <dd class="classify clearfix">
+              <div class="left">
+                <a href="">工况图</a>
+                <a href="">装置图</a>
+                <a href="">原理图</a>
+              </div>
+              <div class="right">
+                <a href="">功能图</a>
+                <a href="">结构图</a>
+                <a href="">更多>></a>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+  </div>
+
+  <div class="footer">
+    <p class="p1"><a href="#">收藏本站</a>｜<a href="#">创建快捷方式</a>｜<a href="#">关于CNKI</a> ｜<a href="#">使用指南</a></p>
+    <p class="p2">© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号 </p>
+  </div>
+</div>
+<script>  
+  $('.pic-index .section .tabNav li').click(function() {
+    var index=$(this).index();
+    $('.pic-index .section .tabNav li i').remove();
+    $(this).append('<i></i>')
+    $(this).addClass('active').siblings().removeClass('active');
+    $(this).parent().siblings().find('.item').eq(index).addClass('active').siblings().removeClass('active');
+  });
+</script> 
+<script src="../js/literature-search.js"></script> 
+<script>
+literatureSearch();
+</script>
+</body>
+</html>

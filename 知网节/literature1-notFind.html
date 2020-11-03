@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文献</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.8.2.min.js"></script>
+<script src="../js/super_slider.js"></script>
+
+<style type="text/css">
+.column { width:360px; height:500px; border:1px solid #E1E1E1; border-top:4px solid #02889F; background-color:#ffffff; margin-bottom:20px; }
+.column .c-head { height:58px; padding-top:12px; padding-left:9px; padding-right:13px; border-bottom:1px solid #E4E9EE; position:relative; }
+.column .c-head .large { font-family:"微软雅黑"; font-size:20px; color:#323232; line-height:28px; padding-left:30px; background:url(../images/cnki-node/node-icon3.gif) no-repeat left center; }
+.column .c-head .small { color:#909090; padding-left:30px; line-height:24px; }
+.column .c-head .select { position:absolute; right:13px; top:25px; width:76px; height:24px; line-height:24px; border:1px solid #96C1C8; cursor:pointer; }
+.column .c-head .select p { padding-left:10px; color:#02889F; background:url(../images/cnki-node/node-list-icon1-1.gif) no-repeat 60px center; }
+.column .c-head .select p.click { background-image:url(../images/cnki-node/node-list-icon1-2.gif); }
+.column .c-head .select ul { display:none; position:absolute; left:-1px; top:24px; width:76px; border:1px solid #9DC5CB; background-color:#ffffff; }
+.column .c-head .select ul li { color:#646464; line-height:30px; padding-left:10px; }
+.column .c-head .select ul li:hover { background-color:#E6F4F6; }
+.column .items { padding:15px; }
+.column .items p { line-height:35px; padding-left:14px; font-size:14px; color:#0B5ECF; }
+.column .items p a { color:#0B5ECF; }
+.column .items p a:hover{color:#FF5807;}
+.column .pages { text-align:center; }
+.column .pages a { display:inline-block; *display:inline;
+*zoom:1;
+width:25px; height:26px; line-height:26px; text-align:center; font-family:Arial; color:#70A4E7; margin-right:12px; }
+.column .pages .prev { background:url(../images/cnki-node/node-page-pre.gif) no-repeat; }
+.column .pages .next { background:url(../images/cnki-node/node-page-next.gif) no-repeat; }
+.column .pages .page { background:url(../images/cnki-node/node-page.gif) no-repeat; font-size:12px; padding:0; }
+.column .pages .page:hover { background:url(../images/cnki-node/node-pagecur.gif); color:#ffffff; }
+.column .pages .page.cur { background:url(../images/cnki-node/node-pagecur.gif); color:#ffffff; }
+.gap { width:16px; height:1px; }
+.column2 { border-top-color:#6076D6; }
+.column2 .c-head .select { border-color:#B7BDD5; }
+.column2 .c-head .select p { color:#7D8CC9; background-image:url(../images/cnki-node/node-list-icon2-1.gif); }
+.column2 .c-head .select p.click { background-image: url(../images/cnki-node/node-list-icon2-2.gif); }
+.column2 .c-head .select ul { border-color:#B7BDD5; }
+.column2 .c-head .select ul li:hover { background-color:#E5EBF7; }
+/*文献为空*/
+.column .empty{ margin:15px; text-align:center; padding-top:257px; line-height:18px; font-size:16px; font-weight:bold; color:#6991C2; padding-bottom:126px; background:#F7F9FD url(../images/cnki-node/node-empty.png) no-repeat center 94px;}
+/*文献加载*/
+.column .loading{display:table-cell;height:410px; width:360px; vertical-align:middle; text-align:center;}
+.column .loading img{ vertical-align:middle;}
+
+</style>
+</head>
+
+<body>
+<div class="column column1 left">
+                	<div class="c-head">
+                    	<p class="large">二级参考文献</p>
+                        <p class="small">本文参考文献的参考文献</p>
+                        <div class="select">
+                        	<p>期刊</p>
+                            <ul>
+                            	<li>期刊</li>
+                                <li>博士论文</li>
+                                <li>硕士论文</li>
+                                <li>会议</li>
+                                <li>报纸</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="empty">暂未查询到相关文献</div>
+                </div>
+<script>
+//所有下拉框脚本
+		$(function(){
+			$(".select p").click(function(event){
+				var droplist =$(this).siblings("ul")
+				 if(droplist.css("display")=="none"){
+           			droplist.slideDown("fast");
+					$(this).addClass("click")
+       			 }
+				 else{
+           		 droplist.slideUp("fast");
+				 $(this).removeClass("click")
+       			 }
+				event.stopPropagation()
+				})
+		  $(".select ul li").click(function(){
+			   var txt = $(this).text();
+			   $(this).parents(".select").find("p").text(txt)
+				$(this).parents(".select").find("p").removeClass("click")
+				$(this).parent().slideUp("fast");
+				})
+		$(document).click(function(){
+			$(".select p").removeClass("click")
+			$(".select ul").slideUp("fast");
+			});
+		//引用部分段落隔行变色
+		$(".column .items p:even").css({"background-color":"#F7F9FD"})
+		});	
+		//左侧悬浮菜单
+		$('.side-icon .btn3').click(function() {
+			if($(".share").css("display")=="block"){
+    		$('.share').slideUp(200);}
+			else{$('.share').slideDown(200);}
+    	});
+	</script>     
+</body>
+</html>

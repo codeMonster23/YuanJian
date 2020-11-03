@@ -1,0 +1,535 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>检索结果</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css">
+<link href="../css/result.css" rel="stylesheet" type="text/css">
+<link href="../css/pic-channel.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.8.2.min.js"></script>
+<script src="../js/jquery.promptToggle.js"></script>
+<script src="../js/waterfall.js"></script>
+</head>
+<body>
+<!--head-->
+<div class="head-wrap mgb0">
+  <div class="head-fen clearfix">
+    <div class="head-logo picChannel-logo left"><img src="../images/result/result_logo.jpg" width="115" height="40"></div>
+    <div class="search-item left">
+      <div class="result-nav positionR"><a href="#">全部</a>|<a href="#">文献</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#" class="active">学术图片</a>|<a href="#">百科</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#">标准</a>|<a href="#" class="more">更多</a>
+        <ul class="positionA">
+          <li class="jiao positionA"></li>
+          <li><a href="#">学术图片</a></li>
+          <li><a href="#">科技成果</a></li>
+          <li class="nborder"><a href="#">文集专著</a></li>
+        </ul>
+        <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".result-nav ul").hide()
+                })
+            </script> 
+      </div>
+      <div class="clearfix choose positionR">
+        <div class="xiugai word5 clearfix">
+          <div class="selectwrap" id="selectwrap" style="z-index: 1;">
+            <div class="select" style="z-index: 1;">
+              <p class="item">图片主题</p>
+              <input class="left" type="text" value="">
+              <a href="" class="positionA sweep" title="上传图片，查找相似图片！"></a>
+              <ul class="itemlist" style="display: none;">
+                <li>图片主题</li>
+                <li>相似搜索</li>
+              </ul>
+            </div>
+            <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a></div>
+          </div>
+        </div>
+        <script>
+   				 (function(){
+					 $(".from").live("click",function(){
+        			var start = 1980; // 指定开始年份
+        			var end = new Date().getFullYear(); // 获取当前年份
+       				 for(i=start;i<=end;i++)
+            		{$(".fromlist").append("<li>"+i+"年</li>")}})})()
+				</script> 
+        <script>
+                   (function(){
+					    $(".to").live("click",function(){
+                        var start = 1980; // 指定开始年份
+                        var end = new Date().getFullYear(); // 获取当前年份
+                        for(i=start;i<=end;i++)
+                            {$(".tolist .ndy").after("<li>"+i+"年</li>")}}) 
+                    })()
+                </script> 
+        <script>
+				(function(){  
+                                      
+					$(".select .item").live("click",
+						function(){
+                        $(".select .itemlist").hide()   
+                        $(this).siblings(".itemlist").show()
+						$(this).parent(".select").css({"z-index":"20"})//ie6、7修正
+						$(this).parents(".selectwrap").css({"z-index":"10"})//ie6、7修正
+							})
+					$(".select .itemlist").live("mouseover",
+                    function(){$(this).show();$(this).parent(".select").css({"z-index":"20"});$(this).parents(".selectwrap").css({"z-index":"10"})}).live("mouseout",function(){
+						$(this).hide()
+						$(this).parent(".select").css({"z-index":"1"})
+						$(this).parents(".selectwrap").css({"z-index":"1"})
+						}	
+					)
+					$(".select .itemlist li").live("mouseover",
+						function(){
+							$(this).addClass("gray")	
+							}).live("mouseout",
+						function(){
+							$(this).removeClass("gray")	
+							}
+					)
+					$(".select .itemlist li").live("click",
+						function(){
+						var Text=$(this).text()	
+						$(this).parent(".select .itemlist").siblings(".item").text(Text)	
+						$(this).parent(".select .itemlist").hide()	
+						$(this).parent(".select").css({"z-index":"1"})
+						$(this).parents(".selectwrap").css({"z-index":"1"})
+						$(this).parent(".select .itemlist").removeClass("itemlistspec")
+						$(this).parents(".select").removeClass("selectspec")
+						$(this).parent().siblings(".sweep").css({"display":"block"})
+						$(this).parent().siblings("input").css({"display":"block"})
+						$(this).parent().siblings(".yearwrap").css({"display":"none"})
+							})
+					$(".select .itemlist .fbsj").live("click",
+						function(){
+						$(this).parent(".select .itemlist").addClass("itemlistspec")
+						$(this).parents(".select").addClass("selectspec")
+						$(this).parent().siblings("input").css({"display":"none"})
+						$(this).parent().siblings(".sweep").css({"display":"none"})
+						$(this).parent().siblings(".yearwrap").css({"display":"block"})
+							})
+					})()
+            </script> 
+        <script>
+				(function(){
+					$(".yearwrap .p").live("mouseover",
+					function(){
+							$(this).addClass("hoverp")}).live("mouseout",
+					function(){
+							$(this).removeClass("hoverp")})
+					$(".yearwrap .p").live("click",
+						function(){
+							$(".yearwrap ul").css({"display":"none"})
+							$(".yearwrap .p").removeClass("clickp")
+							$(this).parents(".selectspec").css({"z-index":100})  
+							$(this).parents(".selectwrap").css({"z-index":10})   
+                        	$(this).siblings("ul").show(5)
+							$(this).addClass("clickp")}//不触发body点击事件用live
+					)
+					$(".yearwrap ul li").live("mouseover",
+						function(){
+							$(this).addClass("hover")}).live("mouseout",function(){
+							$(this).removeClass("hover")})
+					$(".select .yearwrap ul li").live("click",
+						function(){
+						var Text=$(this).text()	
+						$(this).parent("ul").siblings(".p").children("b").text(Text)	
+						$(this).parent("ul").hide()	
+						$(".select .itemlist").removeClass("itemlistspec")
+							})		
+						$(".select .yearwrap ul").live("mouseover",function(){
+						$(this).css({"display":"block"})}).live("mouseout",function(){
+						$(this).css({"display":"none"})
+						$(this).siblings(".p").removeClass("clickp")
+						})
+						$("body").click(
+						function(){
+						$(".select ul").hide()
+						$(".select").css({"z-index":"1"})
+						$(".selectwrap").css({"z-index":"1"})
+						$(".yearwrap .p").removeClass("clickp")	
+							})})()
+                </script> 
+      </div>
+    </div>
+    <div class="headfen-right right"><a href="#" class="home">远见首页</a><i class="left">|</i><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+      <ul class="positionA">
+        <li class="jiao positionA"></li>
+        <li>关闭历史记录</li>
+        <li>清除历史记录</li>
+      </ul>
+      <script>
+                $(".headfen-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".headfen-right ul").hide()
+                })
+            </script> 
+    </div>
+  </div>
+</div>
+<!--content-->
+<div class="resault-cont w1200 pic-result clearfix">
+  <div class="cont-left  w1200 left">
+    <div class="current-keyword clearfix"><div class="left">搜索“<span>设计</span>”的相关结果如下</div><div class="count">相关搜索：<a href="">设计学</a><a href="">设计规范</a><a href="">形象设计</a><a href="">室内设计</a><a href="">ui设计</a></div></div>
+    <div class="filtrate-wrap w1200">
+      <div class="filtrate w1200">
+        <div class="ti">筛选：</div>
+        <div  class="itemm"> <span class="see1">图片类型</span> <span class="see2">图片类型</span> </div>
+        <div class="line1"></div>
+        <div  class="itemm"> <span class="see1">发表年度</span> <span class="see2">发表年度</span> </div>
+        <div class="line1"></div>
+        <div  class="itemm"> <span class="see1">关键词</span> <span class="see2">关键词</span> </div>
+        <div class="line1"></div>
+        <div  class="itemm"> <span class="see1">来源数据库</span> <span class="see2">来源数据库</span> </div>
+        <div class="line1"></div>
+        <div  class="itemm"> <span class="see1">颜色</span> <span class="see2">颜色</span> </div>
+        <div class="line1"></div>
+        <div  class="itemm"> <span class="see1">大小</span> <span class="see2">大小</span> </div>
+        <div class="count right">CNKI为你找到相关结果<i>118,252</i>条</div>
+      </div>
+    </div>
+    <div class="pop2 pop2-wide clearfix positionR"> <a class="close1 positionA" href="javascript:void(0)">&times;</a>
+      <div class="checkboxWrap clearfix">
+        <div class="col">
+          <div class="item active"><span class="checkbox"></span><span>模型图（3%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>流程图（4%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>灰度图（2%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>模型图（3%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>流程图（4%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>灰度图（2%）</span></div>
+       
+          <div class="item"><span class="checkbox"></span><span>示意图（7%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>原理图（6%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>波形图（2%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>示意图（7%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>原理图（6%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>波形图（2%）</span></div>
+        
+          <div class="item"><span class="checkbox"></span><span>曲线图（6%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>模块图（3%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>波形图（2%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>曲线图（6%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>模块图（3%）</span></div>
+          <div class="item"><span class="checkbox"></span><span>波形图（2%）</span></div>
+       
+          <div class="item"><span class="checkbox"></span>算法图（5%）</div>
+          <div class="item"><span class="checkbox"></span>图像（2%）</div>
+          <div class="item"><span class="checkbox"></span>频率图（3%）</div>
+          <div class="item"><span class="checkbox"></span>算法图（5%）</div>
+          <div class="item"><span class="checkbox"></span>图像（2%）</div>
+          <div class="item"><span class="checkbox"></span>频率图（3%）</div>
+        
+          <div class="item"><span class="checkbox"></span>电路图（4%）</div>
+          <div class="item"><span class="checkbox"></span>分布图（2%）</div>
+          <div class="item"><span class="checkbox"></span>拓扑图（3%）</div>
+          <div class="item"><span class="checkbox"></span>电路图（4%）</div>
+          <div class="item"><span class="checkbox"></span>分布图（2%）</div>
+          <div class="item"><span class="checkbox"></span>拓扑图（3%）</div>
+       
+          <div class="item"><span class="checkbox"></span>界面图（3%）</div>
+          <div class="item"><span class="checkbox"></span>电磁学参数特征曲线（2%）</div>
+          <div class="item"><span class="checkbox"></span>函数图（3%）</div>
+          <div class="item"><span class="checkbox"></span>界面图（3%）</div>
+          <div class="item"><span class="checkbox"></span>电磁学参数特征曲线（2%）</div>
+          <div class="item"><span class="checkbox"></span>函数图（3%）</div>
+        
+          <div class="item"><span class="checkbox"></span>程序图（5%）</div>
+          <div class="item"><span class="checkbox"></span>仿真图（2%）</div>
+          <div class="item"><span class="checkbox"></span>场景图（3%）</div>
+          <div class="item"><span class="checkbox"></span>程序图（5%）</div>
+          <div class="item"><span class="checkbox"></span>仿真图（2%）</div>
+          <div class="item"><span class="checkbox"></span>场景图（3%）</div>
+        </div>
+
+        <span class="unfold left"></span>
+        <div class="hide">
+          <div class="col">
+            <div class="item"><span class="checkbox"></span>模型图（3%）</div>
+            <div class="item"><span class="checkbox"></span>流程图（4%）</div>
+
+          </div>
+          <div class="col">
+            <div class="item"><span class="checkbox"></span>示意图（7%）</div>
+            <div class="item"><span class="checkbox"></span>原理图（6%）</div>
+          </div>
+          <div class="col">
+            <div class="item"><span class="checkbox"></span>曲线图（6%）</div>
+            <div class="item"><span class="checkbox"></span>模块图（3%）</div>
+          </div>
+          <div class="col">
+            <div class="item"><span class="checkbox"></span>算法图（5%）</div>
+            <div class="item"><span class="checkbox"></span>图像（2%）</div>
+          </div>
+          <div class="col">
+            <div class="item"><span class="checkbox"></span>电路图（4%）</div>
+            <div class="item"><span class="checkbox"></span>分布图（2%）</div>
+          </div>
+          <div class="col">
+            <div class="item"><span class="checkbox"></span>界面图（3%）</div>
+            <div class="item"><span class="checkbox"></span>电磁学参数特征曲线（2%）</div>
+          </div>
+          <div class="col">
+            <div class="item"><span class="checkbox"></span>程序图（5%）</div>
+            <div class="item"><span class="checkbox"></span>仿真图（2%）</div>
+          </div>
+          <span class="fold left"></span> 
+        </div>
+      </div>
+      <div class="btns">
+        <a href="" class="btn1">取消</a>
+        <a href="" class="btn2 orangeBg">确定</a>
+      </div>
+    </div>
+    <script>
+			 	$(".filtrate .itemm").click(
+					function(){
+					$(".filtrate .itemm .see2").css({"display":"none"})
+					$(this).children(".see2").css({"display":"block"})
+					$(".pop2").css({"display":"block"})
+					})
+				$(".pop2 .classes a").click(
+					function(){
+					$(".pop2 .classes a").removeClass("yellow")
+					 $(this).addClass("yellow")
+				})
+				$(".pop2 .unfold").click(
+					function(){
+						$(this).siblings(".hide").show()
+						$(this).hide()
+					})
+				$(".pop2 .fold").click(
+					function(){
+						$(this).parent(".hide").hide()
+						$(".pop2 .unfold").show()
+					})
+				$(".pop2 .close1").click(
+					function(){
+					$(".pop2").css({"display":"none"})
+					$(".pop2 .hide").css({"display":"none"})	
+					$(".pop2 .unfold").css({"display":"block"})	
+					$(".filtrate .itemm .see2").css({"display":"none"})
+					})			
+          $('.resault-cont .checkboxWrap .col .item').click(function() {
+            $(this).addClass('active');
+          })
+             </script>
+    <div class="yx w1200 clearfix"> <span class="bt left">已选：</span>
+      <p class="tm left positionR">图片类型：<i>期刊文献</i><a href="#" class="close2 positionA"></a></p>
+      <p class="tm left positionR">发表年度：<i>2014年</i><a href="#" class="close2 positionA"></a></p>
+      <p class="tm left positionR">颜色：<i>彩色</i><a href="#" class="close2 positionA"></a></p>
+      <script>
+					$(".yx .tm").hover(
+						function(){
+						 $(this).addClass("hover").children(".close2").addClass("close2red")},
+						function(){
+						 $(this).removeClass("hover").children(".close2").removeClass("close2red")})
+                </script> 
+    </div>
+    <div class="px clearfix"> <span class="bt left">排序：</span>
+      <div class="rank greenBorder left">
+        <p>综合排序</p>
+        <ul class="greenBorder">
+          <li><a href="#">综合排序</a></li>
+          <li><a href="#">相关度</a></li>
+          <li><a href="#">出版日期</a></li>
+          <li><a href="#">图片大小</a></li>
+          <li><a href="#">信息量</a></li>
+          <li><a href="#">清晰度</a></li>
+        </ul>
+        <script>
+				  	$(".px .rank p").click(
+						function(event){
+						$(this).siblings("ul").show()
+						event.stopPropagation()})
+					$(".rank ul li a").click(
+						function(){
+						 var Text1= $(this).text()
+						$(".rank p").text(Text1)	
+						$(this).parent("ul").hide()
+						})
+					$(document).click(function(){
+						$(".rank ul").hide()
+					})
+                  </script> 
+      </div>
+      <div class="search right clearfix">
+        <input type="text" value="在结果内检索" class="s-input"><a href="#" class="btn-search"></a>
+      </div>
+      <script type="text/javascript">
+        PromptToggle($(".s-input"),"在结果内检索","s-input grey","s-input");      
+      </script>
+    </div>
+    <div class="relatedPic">
+      <ul class="waterfall" id="waterfall2">
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic1.jpg" width="205" alt="">
+            <p>图中的尖阁列岛实为我方钓鱼岛.且其划定该丽经济区的依据存在诸多...</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic2.jpg" width="205" alt="">
+            <p>大数据技术应用框架</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic3.jpg" width="205" alt="">
+            <p>图1双母线供电方案</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic4.jpg" width="205" alt="">
+            <p>电信技术演进背后的价值法则的变化趋势</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic5.jpg" width="205" alt="">
+            <p>智能器件类型和输出功率优化输出窗口</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic6.jpg" width="205" alt="">
+            <p>大面积的太阳能发电板.其划定该丽经济区的依据存在诸多...</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic7.jpg" width="205" alt="">
+            <p>大数据技术应用框架</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic8.jpg" width="205" alt="">
+            <p>COBIT内部控制框架</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic9.jpg" width="205" alt="">
+            <p>电信技术演进背后的价值法则的变化趋势</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic10.jpg" width="205" alt="">
+            <p>中国移动排名情况</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic11.jpg" width="205" alt="">
+            <p>大面积的太阳能发电板.其划定该丽经济区的依据存在诸多...</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic12.jpg" width="205" alt="">
+            <p>从业人员和职工工资(其他单位)单位从业人员和劳动报酬情况(2)</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic13.jpg" width="205" alt="">
+            <p>网络拓扑图</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic14.jpg" width="205" alt="">
+            <p>通信学会·概述(2)电信技术演进背后的价值法则的变化趋势</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+        <li>
+          <a href="" class="pic">
+            <img src="../imagesTemp/pic-channel/resultPic15.jpg" width="205" alt="">
+            <p>虚拟现实的道具</p>
+          </a>
+          <div class="actions"><a href="" class="like"></a><a href="" class="download"></a></div>
+        </li>
+      </ul>
+      <div class="loading">
+        正在努力加载......
+      </div>
+    </div>
+    
+    <script type="text/javascript">
+    $('.relatedPic .waterfall li').hover(function() {
+      $(this).toggleClass('active').find('.actions').toggle();
+    });
+    </script>
+    <script type="text/javascript">
+      window.onload=function() {
+        waterfall("#waterfall2",1200,240);
+      }
+    </script>
+  </div>
+</div>
+<!--footer-->
+<div class="foot-wrap">
+  <div class="footer-fen"> <a href="#">关于CNKI</a>|<a href="#">收藏远见</a>|<a href="#">创建快捷方式</a>|<a href="#">意见反馈</a>|<a href="#">使用帮助</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号 </div>
+</div>
+<div class="top-icon top-widthmax">
+  <a href="#" class="feedback">用户反馈</a>
+    <div class="to-top">
+      <a href="#" class="top1" style="display: block;"></a>
+      <a href="#" class="top2" style="display: none;"></a>
+    </div>
+    <script>
+      $(".to-top").hover(
+    function(){
+      $(this).children(".top1").css({"display":"none"})
+      $(this).children(".top2").css({"display":"block"})
+      },
+    function(){
+      $(this).children(".top2").css({"display":"none"})
+      $(this).children(".top1").css({"display":"block"})
+      })
+    </script>
+ </div>
+<!-- <div class="top-icon top-widthmax"> <a href="#" class="top1"></a> <a href="#" class="top2"></a> 
+  <script>
+        	$(".top-icon").hover(
+				function(){
+					$(this).children(".top1").css({"display":"none"})
+					$(this).children(".top2").css({"display":"block"})
+					},
+				function(){
+					$(this).children(".top2").css({"display":"none"})
+					$(this).children(".top1").css({"display":"block"})
+					})
+        </script> 
+</div> -->
+</body>
+</html>

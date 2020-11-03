@@ -1,0 +1,52 @@
+﻿a {
+    background: none repeat scroll 0px 0px transparent;
+}
+.pagination {
+    margin: 30px auto 0px;
+	display: inline-block;
+	padding-left: 0px;
+	margin: 2px 0px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: 14px;
+	line-height: 1.42857;
+	color: #333;
+}
+.pagination > li {
+	display: inline;
+}
+.pagination > li > a, .pagination > li > span {
+    position: relative;
+    float: left;
+    height:20px;
+    padding: 2px 7px;
+    line-height: 1.42857;
+    text-decoration: none;
+    color: #428BCA;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    margin-right:8px; 
+    border-radius: 2px;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+    color: #2A6496;
+    background-color: #EEE;
+    border-color: #DDD;
+}
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+    color: #999;
+    background-color: #FFF;
+    border-color: #DDD;
+    cursor: not-allowed;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 2;
+    color: #FFF;
+    background-color: #428BCA;
+    border-color: #428BCA;
+    cursor: default;
+}
+
+.page {
+     padding-left: 0px; 
+}

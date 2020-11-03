@@ -1,0 +1,76 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>用户反馈</title>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/feedback.css" rel="stylesheet" type="text/css">
+<script src="js/jQuery-v1.11.1.js"></script>
+<script src="js/jquery.cycle2.js"></script>
+</head>
+<body class="feedback">
+	<div class="header-wrap">
+    	<div class="header">
+        	<div class="feedback-logo left"><img src="images/feedback/fb1.jpg" width="455" height="97"><a href="http://search.cnki.net/yuanjian"></a></div>
+            <div class="header-right right positionR"><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><a href="#" class="swzy">设为主页</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+            	<ul class="positionA">
+                	<li class="jiao positionA"></li>
+                	<li>关闭历史记录</li>
+                    <li>清除历史记录</li>
+                </ul>
+                <script>
+                $(".header-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".header-right ul").hide()
+                })
+            </script>
+            </div>
+        </div> 
+    </div>
+    
+    <div class="umain">
+   	  <div class="main">
+        	<div class="fb-nav"><a href="#">首页</a> &gt; 用户反馈</div>
+            <div class="fd clearfix">
+            	<div class="fd-left">用户反馈</div>
+                <div class="fd-right">
+                	<div class="text1">请提出您的宝贵建议，您的建议与意见是我们不断进步的动力。</div>
+                    <div class="text2 clearfix">
+                    	<div class="sub1">反馈内容<span>（*必填）</span></div>
+                        <div class="sub2">当前已输入2个字, 您还可以输入398个字。</div>
+                    </div>
+                    <textarea class="ta">请将内容控制在400字以内。</textarea>
+                    
+                    <div class="errorMessage"><div class="in">请填写反馈内容</div></div>
+                    
+                    <div class="text2 marginTop20px">联系方式</div>
+                    <input class="input" type="text" value="请留下您的联系方式，以便我们及时回复您。">
+                    <div class="btn">
+                    	<a href="javascript:void(0)">提交反馈</a>
+                    </div>
+                    
+                   <script>
+                   
+                   var fi=$(".feedback .fd .fd-right .errorMessage .in");
+				   $(".feedback .btn a").click(function(){
+					  fi.fadeIn(500,null,function(){setTimeout(function(){fi.fadeOut(1000);},1000);});   
+				   })
+                   </script>
+                    
+                </div>
+            </div>
+      </div>
+    
+    </div>
+    
+    <div class="footer">
+            <p class="p2">© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号</p>
+        </div>
+</body>
+</html>

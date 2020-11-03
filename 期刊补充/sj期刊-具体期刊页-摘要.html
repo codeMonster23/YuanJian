@@ -1,0 +1,510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>具体期刊页</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css">
+<link href="../css/result.css" rel="stylesheet" type="text/css">
+<link href="../css/book.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.8.2.min.js"></script>
+<script src="../js/jquery.promptToggle.js"></script>
+<script src="../js/jquery-ui-1.9.1.custom.min.js"></script>
+</head>
+<body>
+<!--head-->
+<div class="head-wrap">
+  <div class="head-fen clearfix">
+    <div class="head-logo left"><img src="../images/result/result_logo.jpg" width="115" height="40"></div>
+    <div class="search-item left">
+      <div class="result-nav positionR"><a href="#" class="active">全部</a>|<a href="#">文献</a>|<a href="#">百科</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#">标准</a>|<a href="#" class="more">更多</a>
+        <ul class="positionA">
+          <li class="jiao positionA"></li>
+          <li><a href="#">学术图片</a></li>
+          <li><a href="#">科技成果</a></li>
+          <li class="nborder"><a href="#">文集专著</a></li>
+        </ul>
+        <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".result-nav ul").hide()
+                })
+            </script> 
+      </div>
+      <div class="clearfix choose positionR">     
+        <div class="xiugai clearfix">
+          <div class="btn" id="btn"><a class="add" href="#"></a> </div>
+          <div class="selectwrap" id="selectwrap">
+            <div class="select">
+              <p class="item">全&nbsp;&nbsp;文</p>
+              <input class="left" type="text" value="">
+              <a class="positionA sweep" href="#"></a>
+              <div class="yearwrap displayN">
+                <div class="fromwrap left positionR"><i class="left">从</i>
+                  <p class="p from right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="fromlist positionA">
+                    <li>不&nbsp;&nbsp;限</li>
+                    <li>1915年</li>
+                    <li>1949年</li>
+                    <li>1979年</li>
+                  </ul>
+                </div>
+                <div class="towrap left positionR"><i class="left">到</i>
+                  <p class="p to right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="tolist positionA">
+                    <li class="ndy">不&nbsp;&nbsp;限</li>
+                    <li>1979年</li>
+                    <li>1949年</li>
+                    <li>1915年</li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="itemlist">
+                <li>全&nbsp;&nbsp;文</li>
+                <li>主&nbsp;&nbsp;题</li>
+                <li>篇&nbsp;&nbsp;名</li>
+                <li>关键词</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>文献来源</li>
+                <li class="fbsj">发表时间</li>
+              </ul>
+            </div>
+            <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a></div>
+          </div>
+        </div>
+        <script>
+   				 (function(){
+					 $(".from").live("click",function(){
+        			var start = 1980; // 指定开始年份
+        			var end = new Date().getFullYear(); // 获取当前年份
+       				 for(i=start;i<=end;i++)
+            		{$(".fromlist").append("<li>"+i+"年</li>")}})})()
+				</script> 
+        <script>
+                   (function(){
+					    $(".to").live("click",function(){
+                        var start = 1980; // 指定开始年份
+                        var end = new Date().getFullYear(); // 获取当前年份
+                        for(i=start;i<=end;i++)
+                            {$(".tolist .ndy").after("<li>"+i+"年</li>")}}) 
+                    })()
+                </script> 
+        <script>
+				(function(){  
+                                      
+					$(".select .item").live("click",
+						function(){
+                        $(".select .itemlist").hide()   
+                        $(this).siblings(".itemlist").show()
+						$(this).parent(".select").css({"z-index":"20"})//ie6、7修正
+						$(this).parents(".selectwrap").css({"z-index":"10"})//ie6、7修正
+							})
+					$(".select .itemlist").live("mouseover",
+                    function(){$(this).show();$(this).parent(".select").css({"z-index":"20"});$(this).parents(".selectwrap").css({"z-index":"10"})}).live("mouseout",function(){
+						$(this).hide()
+						$(this).parent(".select").css({"z-index":"1"})
+						$(this).parents(".selectwrap").css({"z-index":"1"})
+						}	
+					)
+					$(".select .itemlist li").live("mouseover",
+						function(){
+							$(this).addClass("gray")	
+							}).live("mouseout",
+						function(){
+							$(this).removeClass("gray")	
+							}
+					)
+					$(".select .itemlist li").live("click",
+						function(){
+						var Text=$(this).text()	
+						$(this).parent(".select .itemlist").siblings(".item").text(Text)	
+						$(this).parent(".select .itemlist").hide()	
+						$(this).parent(".select").css({"z-index":"1"})
+						$(this).parents(".selectwrap").css({"z-index":"1"})
+						$(this).parent(".select .itemlist").removeClass("itemlistspec")
+						$(this).parents(".select").removeClass("selectspec")
+						$(this).parent().siblings(".sweep").css({"display":"block"})
+						$(this).parent().siblings("input").css({"display":"block"})
+						$(this).parent().siblings(".yearwrap").css({"display":"none"})
+							})
+					$(".select .itemlist .fbsj").live("click",
+						function(){
+						$(this).parent(".select .itemlist").addClass("itemlistspec")
+						$(this).parents(".select").addClass("selectspec")
+						$(this).parent().siblings("input").css({"display":"none"})
+						$(this).parent().siblings(".sweep").css({"display":"none"})
+						$(this).parent().siblings(".yearwrap").css({"display":"block"})
+							})
+					})()
+            </script> 
+        <script>
+				(function(){
+					$(".yearwrap .p").live("mouseover",
+					function(){
+							$(this).addClass("hoverp")}).live("mouseout",
+					function(){
+							$(this).removeClass("hoverp")})
+					$(".yearwrap .p").live("click",
+						function(){
+							$(".yearwrap ul").css({"display":"none"})
+							$(".yearwrap .p").removeClass("clickp")
+							$(this).parents(".selectspec").css({"z-index":100})  
+							$(this).parents(".selectwrap").css({"z-index":10})   
+                        	$(this).siblings("ul").show(5)
+							$(this).addClass("clickp")}//不触发body点击事件用live
+					)
+					$(".yearwrap ul li").live("mouseover",
+						function(){
+							$(this).addClass("hover")}).live("mouseout",function(){
+							$(this).removeClass("hover")})
+					$(".select .yearwrap ul li").live("click",
+						function(){
+						var Text=$(this).text()	
+						$(this).parent("ul").siblings(".p").children("b").text(Text)	
+						$(this).parent("ul").hide()	
+						$(".select .itemlist").removeClass("itemlistspec")
+							})		
+						$(".select .yearwrap ul").live("mouseover",function(){
+						$(this).css({"display":"block"})}).live("mouseout",function(){
+						$(this).css({"display":"none"})
+						$(this).siblings(".p").removeClass("clickp")
+						})
+						$("body").click(
+						function(){
+						$(".select ul").hide()
+						$(".select").css({"z-index":"1"})
+						$(".selectwrap").css({"z-index":"1"})
+						$(".yearwrap .p").removeClass("clickp")	
+							})})()
+                </script> 
+      </div>
+    </div>
+    <div class="headfen-right right"><a href="#" class="home">远见首页</a><i class="left">|</i><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+      <ul class="positionA">
+        <li class="jiao positionA"></li>
+        <li>关闭历史记录</li>
+        <li>清除历史记录</li>
+      </ul>
+      <script>
+                $(".headfen-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".headfen-right ul").hide()
+                })
+            </script> 
+    </div>
+  </div>
+</div>
+<div class="cl"></div>
+<div class="qk-main">
+  <div class="add-width-con">
+    <div class="add-dhban">首页 > 学科分类 > 哲学人文 > 美术书法雕塑与摄影 > 装饰</div>
+    <div class="add-part01">
+      <div class="p01-l">
+        <div class="p01-l-l left"><img src="../images/qikan/qk-img03.jpg" width="181" height="237" /></div>
+        <div class="p01-l-r right">
+          <div class="r01">装饰  <span>16年10期</span></div>
+          <div class="r02"><span class="tip01">独家</span><span class="tip02">核心</span><span class="tip03">优先</span><span class="tip04">获奖</span><span class="tip05">EI</span><span class="tip06">SCI</span></div>
+          <div class="r03">复合影响因子：<span class="yin01">3.3160</span>&nbsp;|&nbsp;综合影响因子：<span class="yin02">2.3620</span></div>
+          <div class="r04">
+            <span class="wid01">主&emsp;办：中国社会科学院工业经济研究所</span>
+            <span class="wid02">ISSN：中国社会科学院工业经济研究所</span>
+          </div>
+          <div class="r04">
+            <span class="wid01">周&emsp;期：月刊</span>
+            <span class="wid02">CN：月刊</span>
+          </div>
+          <div class="r04">
+            <span class="wid01">出版地：北京市</span>
+            <span class="wid02">创刊时间：北京市</span>
+          </div>
+          <div class="r05"><a href="#" class="btn-zxyd">在线阅读</a><a href="#" class="btn-xzbk">下载本刊</a><!-- <a href="#" class="btn-tg">向本刊投稿</a> -->
+            <a href="#" class="p01-r-bottom right"></a>
+            <div class="mobile-ewm clearfix" id="mobile-ewm">
+              <!-- <span>支持设备：</span> -->
+              <div class="mobile-icon">
+                <div class="m m1"> <a href="#"></a> </div>
+                <div class="m m2">
+                  <a href="#"></a>
+                  <div class="Mcode"><img src="../images/qikan/platformpic8-apple.png" width="115" height="115"></div>
+                </div>
+                <div class="m m3">
+                  <a href="#"></a>
+                  <div class="Mcode"><img src="../images/qikan/platformpic8-andriod.png" width="115" height="115"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+       <script>
+        $("#mobile-ewm .m").hover(function(){
+          $(this).children(".Mcode").show();
+        },function(){
+          $(this).children(".Mcode").hide();
+        });
+      </script>
+      <div class="p01-r">
+        <div class="p01-r-top"><!-- <a href="#" class="gz left">1375</a><a href="#" class="sc left">451</a> -->
+          <h1 class="positionR" name="c_qst">研究热点 Top 10(近一年)<span class="positionA xiangq"><a style="cursor:pointer;" id="trendDetail">详情&gt;&gt;</a></span></h1>
+        </div>
+        <div class="p01-r-mid"></div>
+      </div>
+    </div>
+  </div> 
+  <div class="add-part02">
+    <div class="p02-left">
+      <div class="p02-l">
+      <div class="qieh width01">
+      <ul>
+        <li class="on">本期目录</li>
+        <li><a href="#">更多往期</a></li>
+      </ul>
+    </div>
+      <div class="p02-l-tit">—目 录—</div>
+      <div class="p02-l-caozuo">
+        <div class="cz-left">
+          <span class="l-arrow"></span>
+          <select class="s-yy" name="01"><option>2016年</option><option>2017年</option><option>2018年</option><option>2019年</option></select>
+          <select class="s-mm" name="02"><option>1月</option><option>2月</option><option>3月</option><option>4月</option></select>
+          <span class="r-arrow"></span>
+        </div>
+        <div class="cz-mid">
+          <select class="s-xz" name="03"><option>全文</option><option>主题</option><option>篇名</option><option>关键词</option><option>作者</option><option>单位</option><option>摘要</option><option>参考文献</option><option>基金</option></select>
+          <div class="s-search"><input name="01" type="text" value="刊内检索" /><a class="btn-jing" href="#"></a></div>
+        </div>
+        <div class="cz-right"><span class="ml-icon01-now"></span><a href="#" class="ml-icon02"></a></div>
+      </div>
+      <div class="l-box">
+        <div class="r-ban r-ban775">信息时空</div>
+        <div class="r-list bian-width">
+            <div class="list-tab02 border-bottom">
+              <div class="hang-01">
+                <div class="hang01-link"><a href="#">2016《中国工业经济》青年学者论坛暨“经济新常态背景下中国产业转讨会经济新常态背景下中国产业</a></div>
+                <div class="hang01-icon"><a href="#" class="icon-xz"></a><a href="#" class="icon-sc"></a></div>
+              </div>
+              <div class="hang-02"><a href="#">欧阳</a>;<a href="#">陈扬科</a>;</div>
+              <div class="hang-03">我国的司法机关依法独立行使职权原则强调法院整体的独立性,实践中依法独立行使职权原则异化为司法的地方化以及司法的行政化。在司法改革的背景下,应当把握改革契机,推动司法机关依法独立行使职权。在我国,应当淡化司...</div>
+            </div>
+            <div class="list-tab02">
+              <div class="hang-01">
+                <div class="hang01-link"><a href="#">经济周期下的中国制造企业服务转型:嵌入还是混入</a></div>
+                <div class="hang01-icon"><a href="#" class="icon-xz"></a><a href="#" class="icon-sc"></a></div>
+              </div>
+              <div class="hang-02"><a href="#">欧阳</a>;<a href="#">陈扬科</a>;</div>
+              <div class="hang-03">我国的司法机关依法独立行使职权原则强调法院整体的独立性,实践中依法独立行使职权原则异化为司法的地方化以及司法的行政化。在司法改革的背景下,应当把握改革契机,推动司法机关依法独立行使职权。在我国,应当淡化司...</div>
+            </div>
+
+          </div>
+      </div>
+      <div class="l-box">
+        <div class="r-ban r-ban775">特别关注:《装饰》创刊50周年纪念活动</div>
+        <div class="r-list bian-width">
+            <div class="list-tab02 border-bottom">
+              <div class="hang-01">
+                <div class="hang01-link"><a href="#">2016《中国工业经济》青年学者论坛暨“经济新常态背景下中国产业转讨会经济新常态背景下中国产业</a></div>
+                <div class="hang01-icon"><a href="#" class="icon-xz"></a><a href="#" class="icon-sc"></a></div>
+              </div>
+              <div class="hang-02"><a href="#">欧阳</a>;<a href="#">陈扬科</a>;</div>
+              <div class="hang-03">我国的司法机关依法独立行使职权原则强调法院整体的独立性,实践中依法独立行使职权原则异化为司法的地方化以及司法的行政化。在司法改革的背景下,应当把握改革契机,推动司法机关依法独立行使职权。在我国,应当淡化司...</div>
+            </div>
+            <div class="list-tab02">
+              <div class="hang-01">
+                <div class="hang01-link"><a href="#">经济周期下的中国制造企业服务转型:嵌入还是混入</a></div>
+                <div class="hang01-icon"><a href="#" class="icon-xz"></a><a href="#" class="icon-sc"></a></div>
+              </div>
+              <div class="hang-02"><a href="#">欧阳</a>;<a href="#">陈扬科</a>;</div>
+              <div class="hang-03">我国的司法机关依法独立行使职权原则强调法院整体的独立性,实践中依法独立行使职权原则异化为司法的地方化以及司法的行政化。在司法改革的背景下,应当把握改革契机,推动司法机关依法独立行使职权。在我国,应当淡化司...</div>
+            </div>
+
+          </div>
+      </div>
+      <div class="l-box">
+        <div class="r-ban r-ban775">特别策划:历史主义</div>
+        <div class="r-list bian-width">
+            <div class="list-tab02 border-bottom">
+              <div class="hang-01">
+                <div class="hang01-link"><a href="#">2016《中国工业经济》青年学者论坛暨“经济新常态背景下中国产业转讨会经济新常态背景下中国产业</a></div>
+                <div class="hang01-icon"><a href="#" class="icon-xz"></a><a href="#" class="icon-sc"></a></div>
+              </div>
+              <div class="hang-02"><a href="#">欧阳</a>;<a href="#">陈扬科</a>;</div>
+              <div class="hang-03">我国的司法机关依法独立行使职权原则强调法院整体的独立性,实践中依法独立行使职权原则异化为司法的地方化以及司法的行政化。在司法改革的背景下,应当把握改革契机,推动司法机关依法独立行使职权。在我国,应当淡化司...</div>
+            </div>
+            <div class="list-tab02">
+              <div class="hang-01">
+                <div class="hang01-link"><a href="#">经济周期下的中国制造企业服务转型:嵌入还是混入</a></div>
+                <div class="hang01-icon"><a href="#" class="icon-xz"></a><a href="#" class="icon-sc"></a></div>
+              </div>
+              <div class="hang-02"><a href="#">欧阳</a>;<a href="#">陈扬科</a>;</div>
+              <div class="hang-03">我国的司法机关依法独立行使职权原则强调法院整体的独立性,实践中依法独立行使职权原则异化为司法的地方化以及司法的行政化。在司法改革的背景下,应当把握改革契机,推动司法机关依法独立行使职权。在我国,应当淡化司...</div>
+            </div>
+
+          </div>
+      </div>
+      <div class="l-box">
+        <div class="r-ban r-ban775">特别关注:《装饰》创刊50周年纪念活动</div>
+        <div class="r-list bian-width">
+            <div class="list-tab02 border-bottom">
+              <div class="hang-01">
+                <div class="hang01-link"><a href="#">2016《中国工业经济》青年学者论坛暨“经济新常态背景下中国产业转讨会经济新常态背景下中国产业</a></div>
+                <div class="hang01-icon"><a href="#" class="icon-xz"></a><a href="#" class="icon-sc"></a></div>
+              </div>
+              <div class="hang-02"><a href="#">欧阳</a>;<a href="#">陈扬科</a>;</div>
+              <div class="hang-03">我国的司法机关依法独立行使职权原则强调法院整体的独立性,实践中依法独立行使职权原则异化为司法的地方化以及司法的行政化。在司法改革的背景下,应当把握改革契机,推动司法机关依法独立行使职权。在我国,应当淡化司...</div>
+            </div>
+            <div class="list-tab02">
+              <div class="hang-01">
+                <div class="hang01-link"><a href="#">经济周期下的中国制造企业服务转型:嵌入还是混入</a></div>
+                <div class="hang01-icon"><a href="#" class="icon-xz"></a><a href="#" class="icon-sc"></a></div>
+              </div>
+              <div class="hang-02"><a href="#">欧阳</a>;<a href="#">陈扬科</a>;</div>
+              <div class="hang-03">我国的司法机关依法独立行使职权原则强调法院整体的独立性,实践中依法独立行使职权原则异化为司法的地方化以及司法的行政化。在司法改革的背景下,应当把握改革契机,推动司法机关依法独立行使职权。在我国,应当淡化司...</div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+      <div class="cl"></div>
+      <div class="l-wq-ban positionR">更多往期 <a href="#" class="positionA">更多往期>></a></div>
+      <div class="cl"></div>
+      <div class="l-wq-con positionR">
+        <a href="#" class="positionA more-l-btn"></a>
+        <a href="#" class="positionA more-r-btn"></a>
+        <dl><dt><a href="#"><img src="../images/qikan/qk-more-img01.jpg" width="147" height="192" /></a></dt><dd><a href="#">2016年15期</a></dd></dl>
+        <dl><dt><a href="#"><img src="../images/qikan/qk-more-img01.jpg" width="147" height="192" /></a></dt><dd><a href="#">2016年15期</a></dd></dl>
+        <dl><dt><a href="#"><img src="../images/qikan/qk-more-img01.jpg" width="147" height="192" /></a></dt><dd><a href="#">2016年15期</a></dd></dl>
+        <dl><dt><a href="#"><img src="../images/qikan/qk-more-img01.jpg" width="147" height="192" /></a></dt><dd><a href="#">2016年15期</a></dd></dl>
+        <dl><dt><a href="#"><img src="../images/qikan/qk-more-img01.jpg" width="147" height="192" /></a></dt><dd><a href="#">2016年15期</a></dd></dl>
+        <dl><dt><a href="#"><img src="../images/qikan/qk-more-img01.jpg" width="147" height="192" /></a></dt><dd><a href="#">2016年15期</a></dd></dl>
+        <dl><dt><a href="#"><img src="../images/qikan/qk-more-img01.jpg" width="147" height="192" /></a></dt><dd><a href="#">2016年15期</a></dd></dl>
+        <dl><dt><a href="#"><img src="../images/qikan/qk-more-img01.jpg" width="147" height="192" /></a></dt><dd><a href="#">2016年15期</a></dd></dl>
+      </div>
+    </div>
+    <div class="p02-r">
+      <div class="p02-r-ban">热门文章</div>
+      <div class="p02-r-list">
+        <ul>
+          <li><a href="#">创客教育:信息技术使能的创新教育实践场</a></li>
+          <li><a href="#">高校微课“趋同进化”教学设计促进翻转课堂教学策略研究</a></li>
+          <li><a href="#">翻转课堂及其在大学英语教学中的应用</a></li>
+          <li><a href="#">翻转课堂教学模式本土化策略研究——基于中美教育文化差异比较的视角</a></li>
+          <li><a href="#">基于大数据的个性化自适应在线学习分析模型及实现实践场</a></li>
+          <li><a href="#">翻转课堂的学习者满意度影响因子分析——基于大学英语教学的实证研究</a></li>
+        </ul>
+      </div>
+      <div class="p02-r-ban">核心作者</div>
+      <div class="p02-r-list02">
+        <ul>
+          <li><a href="#">何克抗</a></li>
+          <li><a href="#">何df克抗</a></li>
+          <li><a href="#">何克抗</a></li>
+          <li><a href="#">何克x抗</a></li>
+          <li><a href="#">何克d抗</a></li>
+          <li><a href="#">df何克抗</a></li>
+          <li><a href="#">何克抗</a></li>
+          <li><a href="#">何克d抗</a></li>
+          <li><a href="#">何df克抗</a></li>
+          <li><a href="#">何克xd抗</a></li>
+          <li><a href="#">何克抗</a></li>
+          <li><a href="#">何克抗</a></li>
+        </ul>
+      </div>
+      <div class="p02-r-ban">相关期刊</div>
+      <div class="p02-r-list03">
+        <div class="list03-box">
+          <div class="box-img"><a href="#"><img src="../images/qikan/qk-r-img01.jpg" width="79" height="105" /></a></div>
+          <div class="box-r">
+            <a href="#" class="tit-r01">祖传秘方大全</a>
+            <p>中国科技出版社</p>
+            <div class="box-tip"><span class="tip01">独家</span><span class="tip02">独家</span><span class="tip03">独家 </span><span class="tip04">独家</span><span class="tip05">独家 </span></div>
+          </div>
+        </div>
+        <div class="list03-box">
+          <div class="box-img"><a href="#"><img src="../images/qikan/qk-r-img01.jpg" width="79" height="105" /></a></div>
+          <div class="box-r">
+            <a href="#" class="tit-r01">祖传秘方大全</a>
+            <p>中国科技出版社</p>
+            <div class="box-tip"><span class="tip01">独家</span><span class="tip02">独家</span><span class="tip03">独家 </span><span class="tip04">独家</span><span class="tip05">独家 </span></div>
+          </div>
+        </div>
+        <div class="list03-box">
+          <div class="box-img"><a href="#"><img src="../images/qikan/qk-r-img01.jpg" width="79" height="105" /></a></div>
+          <div class="box-r">
+            <a href="#" class="tit-r01">祖传秘方大全</a>
+            <p>中国科技出版社</p>
+            <div class="box-tip"><span class="tip01">独家</span><span class="tip04">独家</span><span class="tip05">独家 </span></div>
+          </div>
+        </div>
+        <div class="list03-box">
+          <div class="box-img"><a href="#"><img src="../images/qikan/qk-r-img01.jpg" width="79" height="105" /></a></div>
+          <div class="box-r">
+            <a href="#" class="tit-r01">祖传秘方大全</a>
+            <p>中国科技出版社</p>
+            <div class="box-tip"><span class="tip01">独家</span><span class="tip02">独家</span><span class="tip03">独家 </span><span class="tip04">独家</span><span class="tip05">独家 </span></div>
+          </div>
+        </div>
+        <div class="list03-box">
+          <div class="box-img"><a href="#"><img src="../images/qikan/qk-r-img01.jpg" width="79" height="105" /></a></div>
+          <div class="box-r">
+            <a href="#" class="tit-r01">祖传秘方大全</a>
+            <p>中国科技出版社</p>
+            <div class="box-tip"></div>
+          </div>
+        </div>
+      </div>
+      <div class="p02-r-ban">该主办单位其他期刊&nbsp;&nbsp; <a href="#">更多>></a></div>
+      <div class="p02-r-list04">
+        <dl>
+          <dt><a href="#"><img src="../images/qikan/qk-r-pic01.jpg" width="77" height="104" /></a></dt>
+          <dd><a href="#">成功营销</a></dd>
+        </dl>
+        <dl>
+          <dt><a href="#"><img src="../images/qikan/qk-r-pic01.jpg" width="77" height="104" /></a></dt>
+          <dd><a href="#">成功营销</a></dd>
+        </dl>
+        <dl>
+          <dt><a href="#"><img src="../images/qikan/qk-r-pic01.jpg" width="77" height="104" /></a></dt>
+          <dd><a href="#">成功营销</a></dd>
+        </dl>
+        <dl>
+          <dt><a href="#"><img src="../images/qikan/qk-r-pic01.jpg" width="77" height="104" /></a></dt>
+          <dd><a href="#">成功营销</a></dd>
+        </dl>
+        <dl>
+          <dt><a href="#"><img src="../images/qikan/qk-r-pic01.jpg" width="77" height="104" /></a></dt>
+          <dd><a href="#">成功营销</a></dd>
+        </dl>
+        <dl>
+          <dt><a href="#"><img src="../images/qikan/qk-r-pic01.jpg" width="77" height="104" /></a></dt>
+          <dd><a href="#">成功营销</a></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="cl"></div>
+        <!--footer-->
+  <div class="foot-wrap">
+     	<div class="footer-fen">
+        	<a href="#">关于CNKI</a>|<a href="#">收藏远见</a>|<a href="#">创建快捷方式</a>|<a href="#">意见反馈</a>|<a href="#">使用帮助</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号
+        </div>
+     </div>
+</div>
+<!--top icon-->
+   <div class="top-icon02">
+		    <a href="#" class="btn1"></a>
+		    <a href="#" class="btn2"></a>
+		  	<a href="#" class="btn3">用户反馈</a>
+		 </div>
+</body>
+</html>

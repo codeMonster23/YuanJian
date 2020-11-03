@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>用户反馈</title>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/feedback.css" rel="stylesheet" type="text/css">
+<script src="js/jQuery-v1.11.1.js"></script>
+<script src="js/jquery.cycle2.js"></script>
+</head>
+<body class="feedback">
+	<div class="header-wrap">
+    	<div class="header">
+        	<div class="feedback-logo left"><img src="images/feedback/fb1.jpg" width="455" height="97"><a href="http://search.cnki.net/yuanjian"></a></div>
+            <div class="header-right right positionR"><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><a href="#" class="swzy">设为主页</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+            	<ul class="positionA">
+                	<li class="jiao positionA"></li>
+                	<li>关闭历史记录</li>
+                    <li>清除历史记录</li>
+                </ul>
+                <script>
+                $(".header-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".header-right ul").hide()
+                })
+            </script>
+            </div>
+        </div> 
+    </div>
+    
+    <div class="umain">
+   	  <div class="main">
+         <div class="prompt-wrap">
+            <div class="prompt">感谢您对远见搜索的支持！<br>我们会尽快对您提出的反馈进行处理，并不断优化我们的产品和服务。</div>
+            <div class="btn"><a href="#">返回首页</a></div>
+         </div>	
+            
+            
+      </div>
+    
+    </div>
+    
+    <div class="footer">
+            <p class="p2">© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号</p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+/* 
+* @Author: Administrator
+* @Date:   2016-12-06 11:22:14
+* @Last Modified by:   Administrator
+* @Last Modified time: 2016-12-08 09:01:53
+*/
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #bababa;  
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #bababa;
+}
+
+input:-ms-input-placeholder{
+    color: #bababa;
+}
+
+input::-webkit-input-placeholder{
+    color: #bababa;
+}
+body{
+	line-height: 1.1em;
+}
+.red{
+	color:#ff3b3b !important;
+}
+a,.blue{
+	color:#39a3f4;
+}
+.inner{
+	width: 864px;
+	margin: 0 auto;
+	position: relative;
+}
+.modal{
+	position: absolute;
+	width: 302px;
+	height: 395px;
+	padding: 0 29px;
+	background-color: #fff;
+	border-radius: 3px;
+	top: 55px;
+	right: -35px;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.4),-1px -1px 5px rgba(0,0,0,0.1);
+}
+.modal .modal-title{
+	padding: 30px 0;
+	line-height: 1em;
+	font-weight: normal;
+	font-size: 20px;
+	font-family: "Microsoft Yahei";
+	color:#323232;
+}
+.close{
+	position: absolute;
+	right:18px;
+	top:16px;
+	font-weight: bold;
+	font-size: 20px;
+	color:#b6b9b6;
+}
+.modal-body .input-group{
+	position: relative;
+	height: 36px;
+	margin-bottom: 28px;
+	border: 1px solid #dfdfdf;
+	background: url(../images/login/icon1.png) 10px center no-repeat;
+}
+.modal-body .input-group.active{
+	border-color: #66b2e6;
+	background-color: #f7fcff;
+	background-image: url(../images/login/icon1-a.png);
+}
+.modal-body .input-group.error{
+	border-color: #ef6124;
+}
+.modal-body .input-group.active input{
+	background-color: #f7fcff;
+}
+.modal-body .input-group i{
+	position: absolute;
+	right:13px;
+	top:12px;
+	width: 14px;
+	height: 14px;
+	background: url(../images/login/right.png) no-repeat;
+}
+.modal-body .input-group.error i{
+	background-image: url(../images/login/error.png);
+}
+.modal-body input{
+	border:0 none;
+	width: 230px;
+	padding: 8px 0;
+	margin-left: 36px;
+	*margin-top: -1px;
+	font-size: 14px;
+	font-family: "Microsoft Yahei";
+}
+.modal-body .pwd{
+	background-image: url(../images/login/icon2.png);
+}
+.modal-body .email{
+	background-image: url(../images/login/icon3.png);
+}
+.modal-body .pwd.active{
+	background-image: url(../images/login/icon2-a.png);
+}
+.modal-body .email.active{
+	background-image: url(../images/login/icon3-a.png);
+}
+.modal-body  .tip{
+	position: absolute;
+	left:0;
+	top:45px;
+	color:#787878;
+}
+.modal-body .input-group.error .tip{
+	color:#ff3b3b;
+}
+.modal-body .btn{
+	display: block;
+	width: 100%;
+	height: 38px;
+	background-color: #118bda;
+	color:#fff;
+	text-align: center;
+	font:18px/38px  "Microsoft Yahei";
+}
+.modal-body .btn:hover{
+	background-color: #3fb0f9;
+}
+.modal-body .actions{
+	padding: 16px 0 20px;
+	height: 16px;
+	line-height: 16px;
+	color:#4a4a4a;
+}
+.modal-body .actions p{
+	margin-top: 2px;
+}
+.modal-body .checkbox i{
+	display: inline-block;	
+	vertical-align: middle;
+	margin-top: -2px;
+	margin-right: 7px;
+	width: 13px;
+	height: 13px;
+	border: 1px solid #767676;
+	overflow: hidden;
+}
+.modal-body .checkbox i.active{
+	background: url(../images/login/checkbox-a.png) center no-repeat;
+}
+.modal-footer{
+	border-top: 1px dotted #dcdcdc;
+	padding-top: 16px;
+	color:#8e8e8e;
+}
+.modal-footer .icon{
+	padding-top: 14px;
+}
+.modal-footer a{
+	margin-right: 8px;
+}
+.banner{
+	height: 510px;
+	background: url(../images/login/banner2.jpg) center top no-repeat;
+}
+.footer .inner{
+	padding-left: 110px;
+	padding-top: 20px;
+	width: 754px;
+}
+.footer p{
+	line-height: 24px;
+	text-align: left;
+	color:#9b9c9c;
+}
+.footer .col1{
+	width: 384px;
+}
+.head-wrap{
+	background: #fff;
+	padding: 0;
+	margin: 0;
+}
+.head-fen{
+	height: 104px;
+}
+.head-fen .head-logo{
+	padding-top: 52px;
+}
+.head-fen .search-item .result-nav{
+	padding-top: 65px;
+	padding-right: 10px;
+	background-position: 668px 79px;
+	text-align: right;
+}
+.head-fen .search-item .result-nav ul {
+    right: -13px;
+    top: 97px;
+}
+.head-fen .search-item .result-nav ul .jiao{
+	left:42px;
+}
+.head-fen .search-item .result-nav a{
+	padding: 0 10px;
+}
+.width966Auto{
+	width: 966px;
+	margin: 0 auto;
+}
+.goBack{
+	text-decoration: underline;
+}

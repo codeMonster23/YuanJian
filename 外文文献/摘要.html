@@ -1,0 +1,635 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<title>无标题文档</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css">
+<link href="../css/result.css" rel="stylesheet" type="text/css">
+<link href="../css/result1.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.8.2.min.js"></script>
+<script src="../js/history.js"></script>
+<script src="../js/requestAnimationFrame.js"></script>
+<script src="../js/tz_fly.js"></script>
+</head>
+<body>
+	<!--head-->
+	<div class="head-wrap">
+    	<div class="head-fen clearfix">
+        	<div class="head-logo left"><img src="../images/result/result_logo.jpg" width="115" height="40"></div>
+            <div class="search-item left">
+            	<div class="result-nav positionR"><a href="#">全部</a>|<a href="#">文献</a>|<a href="#">百科</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#" class="active">外文文献</a>|<a href="#">图片</a>|<a href="#" class="more">更多</a>
+                      <ul class="positionA"><li class="jiao positionA"></li><li><a href="#">学术图片</a></li><li><a href="#">科技成果</a></li><li class="nborder"><a href="#">文集专著</a></li></ul>
+            <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".result-nav ul").hide()
+                })
+            </script>
+            </div>
+            	<div class="clearfix choose positionR">
+            	<div class="xiugai clearfix">
+                    <div class="btn" id="btn">
+                        <a class="add" href="#"></a>   
+                    </div>
+                    <div class="selectwrap" id="selectwrap">
+                        <div class="select positionR"> 
+                            <input id="kj" class="left kj" type="text" value="">
+                            <div class="history">
+                            	<p><span class="text">雅丹地貌</span><a class="clear" href="javascript:void(0)"></a></p>
+                                <p><span class="text">香山红叶</span><a class="clear" href="javascript:void(0)"></a></p>
+                                <p><span class="text">麦田怪圈猜想</span><a class="clear" href="javascript:void(0)"></a></p>
+                                <p><span class="text">美国51区</span><a class="clear" href="javascript:void(0)"></a></p>
+                                <div class="cmd"><a class="c" href="#">关闭历史</a> | <a class="d" href="#">删除历史</a></div>
+                            </div>
+                            <script>
+                            remember();
+                            </script>
+                            <a class="positionA sweep" href="#"></a>
+                         </div>
+                         <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a></div>
+                        </div>
+                    </div>
+                  
+          </div>
+            </div>      
+            <div class="headfen-right right positionR"><a href="#" class="home">远见首页</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+             <ul class="positionA">
+                	<li class="jiao positionA"></li>
+                	<li>关闭历史记录</li>
+                    <li>清除历史记录</li>
+                </ul>
+                <script>
+                $(".headfen-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".headfen-right ul").hide()
+                })
+            </script>
+            
+            
+            </div>
+        </div>   
+    </div>
+    <!--content-->
+    <div class="resault-cont clearfix">
+    	<div class="cont-left left cont-left-wide">
+        	<div class="filtrate-wrap">
+                <div class="filtrate">
+                        <div class="ti">筛选：</div>
+          				 <div  class="itemm">
+      						<span class="see1">文献来源</span>	
+                            <span class="see2">文献来源</span>
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+      						<span class="see1">学科分类</span>	
+                             <span class="see2">学科分类</span>
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+      						<span class="see1">发表年度</span>
+                             <span class="see2">发表年度</span>	
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+                  <span class="see1">语言</span>  
+                            <span class="see2">语言</span>
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+      						<span class="see1">作者</span>	
+                            <span class="see2">作者</span>	
+                         </div>
+                         <div class="line1"></div>
+                </div>
+              </div>
+             <div class="pop2 pop2-wide clearfix positionR">
+             	<a class="close1 positionA" href="javascript:void(0)"></a>
+             	<div class="classes">
+        		<a href="javascript:void(0)">全部</a><span class="num">(8)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">工业经济</a><span class="num">(282440)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">金融</a><span class="num">(211520)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">轻工业手工业</a><span class="num">(21)</span>
+        		</div>
+                    <div class="classes">
+        		<a href="javascript:void(0)">投资</a><span class="num">(2121212)</span>
+        		</div>
+                 <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                 
+                <div class="classes">
+        		<a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">金融</a><span class="num">(211520)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">轻工业手工业</a><span class="num">(21)</span>
+        		</div>
+                    <div class="classes">
+        		<a href="javascript:void(0)">投资</a><span class="num">(2121212)</span>
+        		</div>
+                 <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                 
+                <div class="classes">
+        		<a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span>
+        		</div>
+                
+                  <div class="classes">
+        		<a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span>
+        		</div>
+                <span class="unfold"></span>
+                
+             </div>
+             <script>
+			 	$(".filtrate .itemm").click(
+					function(){
+					$(".filtrate .itemm .see2").css({"display":"none"})
+					$(this).children(".see2").css({"display":"block"})
+					$(".pop2").css({"display":"block"})
+					})
+				$(".pop2 .classes a").click(
+					function(){
+					$(".pop2 .classes a").removeClass("yellow")
+					 $(this).addClass("yellow")
+				})
+				$(".pop2 .unfold").click(
+					function(){
+						if($(this)[0].className=="unfold")
+						{
+							$(this)[0].className="unfold fold";
+							$(this).parent().css("height","auto");
+						}
+						else
+						{
+							$(this)[0].className="unfold";
+							$(this).parent().css("height",90);
+						}
+						
+						
+					})
+				
+				$(".pop2 .close1").click(
+					function(){
+					$(".pop2").css({"display":"none"})
+					$(".pop2 .hide").css({"display":"none"})	
+					$(".pop2 .unfold").css({"display":"block"})	
+					$(".filtrate .itemm .see2").css({"display":"none"})
+					})			
+             </script>
+             <div class="yx clearfix">
+             	<span class="bt left">已选：</span>
+                <p class="tm left positionR">文献类型：<i>期刊文献</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">发表年度：<i>2014年</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">学科分类：<i>企业经济</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">作者：<i>厉以宁</i><a href="#" class="close2 positionA"></a></p>
+                <script>
+					$(".yx .tm").hover(
+						function(){
+						 $(this).addClass("hover").children(".close2").addClass("close2red")},
+						function(){
+						 $(this).removeClass("hover").children(".close2").removeClass("close2red")})
+                </script>
+             </div>
+             <div class="px clearfix">
+             	<span class="bt left">排序：</span>
+                <div class="rank left">
+        			<p>按相关度排序</p>
+                    <ul>
+                        <li><a href="#">按相关度排序</a></li>
+                        <li><a href="#">按发表时间排序</a></li>
+                        <li><a href="#">按下载次数排序</a></li>
+                        <li><a href="#">按被引次数排序</a></li>
+                  </ul>
+                  <script>
+				  	$(".px .rank p").hover(
+						function(event){
+						$(this).siblings("ul").css("display","block");
+						event.stopPropagation()},function(){
+							$(this).siblings("ul").css("display","none");
+							})
+						
+					$(".rank ul li a").click(
+						function(){
+						 var Text1= $(this).text()
+						$(".rank p").text(Text1)	
+						$(this).parent("ul").hide()
+						})
+						
+					$(".rank ul").hover(function(){
+							$(this).css("display","block");
+						},function(){
+						$(this).css("display","none");
+						})	
+					$(document).click(function(){
+						$(".rank ul").hide()
+					})
+                  </script>
+        	</div>
+            	<div class="mode left clearfix">
+                    <span class="bt left">显示：</span>
+                    <a title="详细显示" href="#" class="lb left"></a>
+                    <a title="列表显示" href="#" class="zyxz left"></a>
+                </div>
+                 <!-- <div class="cite left">引&nbsp;用</div> -->
+                <div class="count right">CNKI为你找到相关结果<i>118,252</i>条</div>
+             </div>
+              <div class="re-list re-list1">
+                <div class="list-item">
+                    <p class="tit clearfix"><a href="#">The Subsidized Muse or the Market-oriented Muse? Supporting <i>Artistic</i> Creation in Romania between State Intervention and Art Market.<span class="download"></span></a></p>
+                    <p class="nr">...systematic mechanical <i>design methodologies,</i>hat are obtained in part I, to investigate their success in <i>designing mechanics </i>of a flexible printed circuit board assembly (PCBA) rework cell. Design/methodology/approach - The decision of ...</p>
+                    <p class="source">Dan Eugen Ratiu &nbsp;&nbsp;&nbsp;<b>Journal for the Study of Religions and Ideologies</b>&nbsp;&nbsp;&nbsp;2006-13&nbsp;&nbsp;&nbsp;DOAJ期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#"><b>Printed circuit rework</b></a></p>
+                    </div>                   
+                </div>
+                <div class="list-item">
+                  <p class="tit clearfix"><a href="#">Stematic mechanical <i>design approach</i> for a flexible printed circuit board assemblies (PCBA) rework cell: part II - conceptual design of soldering ...</a><span class="download"></span></p>
+                    <p class="nr">Resumen En la Gimnasia Artística, el rendimiento viene determinado por la ejecución de una serie de movimientos conbase en un m--odelo establecido y recogido en el Código de Puntuación. Con base en esto, el objetivo de nuestro trabajo es de...</p>
+                    <p class="source">Necdet Geren&nbsp;&nbsp;&nbsp;Soldering & Surface Mount Technology&nbsp;&nbsp;&nbsp;2012-3&nbsp;&nbsp;&nbsp;Emerald期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#">Printed circuit rework</a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                  <p class="tit clearfix"><a href="#">The structural study of Ti-Si-C alloys produced by mechanical alloy <i>method.</i> </a><span class="download"></span></p>
+                    <p class="nr">.. important that proper design parameters be incorporated when evaluating pile performance using reliability-based design methods. Although augered piles can be distinguished from bored piles, including drilled shafts, and driven piles by t...</p>
+                    <p class="source">Jihe Wang Aircraft&nbsp;&nbsp;&nbsp;Engineering and Aerospace Technology  &nbsp;&nbsp;&nbsp;2012-5&nbsp;&nbsp;&nbsp;Emerald期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#">Printed circuit rework</a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                  <p class="tit clearfix"><a href="#"><i>Design Methodology</i> for Axially Loaded Auger Cast-in-Place and Drilled Displacement.</a><span class="download"></span></p>
+                    <p class="nr">Resumen En la Gimnasia Artística, el rendimiento viene determinado por la ejecución de una serie de movimientos conbase en un m--odelo establecido y recogido en el Código de Puntuación. Con base en esto, el objetivo de nuestro trabajo es de...</p>
+                    <p class="source">Sungwon Park&nbsp;&nbsp;&nbsp;SJournal of Geotechnical and Geoenvironmental Engineering &nbsp;&nbsp;&nbsp;2012-12 &nbsp;&nbsp;&nbsp;ASCE期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#">Printed circuit rework</a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <p class="tit clearfix"><a href="#">The Subsidized Muse or the Market-oriented Muse? Supporting <i>Artistic</i> Creation in Romania between State Intervention and Art Market.</a><span class="download"></span></p>
+                    <p class="nr">...systematic mechanical <i>design methodologies,</i>hat are obtained in part I, to investigate their success in <i>designing mechanics </i>of a flexible printed circuit board assembly (PCBA) rework cell. Design/methodology/approach - The decision of ...</p>
+                    <p class="source">Dan Eugen Ratiu &nbsp;&nbsp;&nbsp;<b>Journal for the Study of Religions and Ideologies</b>&nbsp;&nbsp;&nbsp;2006-13&nbsp;&nbsp;&nbsp;DOAJ期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#"><b>Printed circuit rework</b></a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                  <p class="tit clearfix"><a href="#">Stematic mechanical <i>design approach</i> for a flexible printed circuit board assemblies (PCBA) rework cell: part II - conceptual design of soldering ...</a><span class="download"></span></p>
+                    <p class="nr">Resumen En la Gimnasia Artística, el rendimiento viene determinado por la ejecución de una serie de movimientos conbase en un m--odelo establecido y recogido en el Código de Puntuación. Con base en esto, el objetivo de nuestro trabajo es de...</p>
+                    <p class="source">Necdet Geren&nbsp;&nbsp;&nbsp;Soldering & Surface Mount Technology&nbsp;&nbsp;&nbsp;2012-3&nbsp;&nbsp;&nbsp;Emerald期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#">Printed circuit rework</a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                  <p class="tit clearfix"><a href="#" >The structural study of Ti-Si-C alloys produced by mechanical alloy <i>method.</i> </a><span class="download"></span></p>
+                    <p class="nr">.. important that proper design parameters be incorporated when evaluating pile performance using reliability-based design methods. Although augered piles can be distinguished from bored piles, including drilled shafts, and driven piles by t...</p>
+                    <p class="source">Jihe Wang Aircraft&nbsp;&nbsp;&nbsp;Engineering and Aerospace Technology  &nbsp;&nbsp;&nbsp;2012-5&nbsp;&nbsp;&nbsp;Emerald期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#">Printed circuit rework</a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <p class="tit clearfix"><a href="#"> <i>Design Methodology</i> for Axially Loaded Auger Cast-in-Place and Drilled Displacement.</a><span class="download"></span></p>
+                    <p class="nr">Resumen En la Gimnasia Artística, el rendimiento viene determinado por la ejecución de una serie de movimientos conbase en un m--odelo establecido y recogido en el Código de Puntuación. Con base en esto, el objetivo de nuestro trabajo es de...</p>
+                    <p class="source">Sungwon Park&nbsp;&nbsp;&nbsp;SJournal of Geotechnical and Geoenvironmental Engineering &nbsp;&nbsp;&nbsp;2012-12 &nbsp;&nbsp;&nbsp;ASCE期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#">Printed circuit rework</a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <p class="tit clearfix"><a href="#">The Subsidized Muse or the Market-oriented Muse? Supporting <i>Artistic</i> Creation in Romania between State Intervention and Art Market.</a><span class="download"></span></p>
+                    <p class="nr">...systematic mechanical <i>design methodologies,</i>hat are obtained in part I, to investigate their success in <i>designing mechanics </i>of a flexible printed circuit board assembly (PCBA) rework cell. Design/methodology/approach - The decision of ...</p>
+                    <p class="source">Dan Eugen Ratiu &nbsp;&nbsp;&nbsp;<b>Journal for the Study of Religions and Ideologies</b>&nbsp;&nbsp;&nbsp;2006-13&nbsp;&nbsp;&nbsp;DOAJ期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#"><b>Printed circuit rework</b></a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                  <p class="tit clearfix"><a href="#">Stematic mechanical <i>design approach</i> for a flexible printed circuit board assemblies (PCBA) rework cell: part II - conceptual design of soldering ...</a><span class="download"></span></p>
+                    <p class="nr">Resumen En la Gimnasia Artística, el rendimiento viene determinado por la ejecución de una serie de movimientos conbase en un m--odelo establecido y recogido en el Código de Puntuación. Con base en esto, el objetivo de nuestro trabajo es de...</p>
+                    <p class="source">Necdet Geren&nbsp;&nbsp;&nbsp;Soldering & Surface Mount Technology&nbsp;&nbsp;&nbsp;2012-3&nbsp;&nbsp;&nbsp;Emerald期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#">Printed circuit rework</a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                  <p class="tit clearfix"><a href="#">The structural study of Ti-Si-C alloys produced by mechanical alloy <i>method.</i> </a><span class="download"></span></p>
+                    <p class="nr">.. important that proper design parameters be incorporated when evaluating pile performance using reliability-based design methods. Although augered piles can be distinguished from bored piles, including drilled shafts, and driven piles by t...</p>
+                    <p class="source">Jihe Wang Aircraft&nbsp;&nbsp;&nbsp;Engineering and Aerospace Technology  &nbsp;&nbsp;&nbsp;2012-5&nbsp;&nbsp;&nbsp;Emerald期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#">Printed circuit rework</a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                  <p class="tit clearfix"><a href="#"> <i>Design Methodology</i> for Axially Loaded Auger Cast-in-Place and Drilled Displacement.</a><span class="download"></span></p>
+                    <p class="nr">Resumen En la Gimnasia Artística, el rendimiento viene determinado por la ejecución de una serie de movimientos conbase en un m--odelo establecido y recogido en el Código de Puntuación. Con base en esto, el objetivo de nuestro trabajo es de...</p>
+                    <p class="source">Sungwon Park&nbsp;&nbsp;&nbsp;SJournal of Geotechnical and Geoenvironmental Engineering &nbsp;&nbsp;&nbsp;2012-12 &nbsp;&nbsp;&nbsp;ASCE期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#">Printed circuit rework</a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <p class="tit clearfix"><a href="#">The Subsidized Muse or the Market-oriented Muse? Supporting <i>Artistic</i> Creation in Romania between State Intervention and Art Market.</a><span class="download"></span></p>
+                    <p class="nr">...systematic mechanical <i>design methodologies,</i>hat are obtained in part I, to investigate their success in <i>designing mechanics </i>of a flexible printed circuit board assembly (PCBA) rework cell. Design/methodology/approach - The decision of ...</p>
+                    <p class="source">Dan Eugen Ratiu &nbsp;&nbsp;&nbsp;<b>Journal for the Study of Religions and Ideologies</b>&nbsp;&nbsp;&nbsp;2006-13&nbsp;&nbsp;&nbsp;DOAJ期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#"><b>Printed circuit rework</b></a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                  <p class="tit clearfix"><a href="#">Stematic mechanical <i>design approach</i> for a flexible printed circuit board assemblies (PCBA) rework cell: part II - conceptual design of soldering ...</a><span class="download"></span></p>
+                    <p class="nr">Resumen En la Gimnasia Artística, el rendimiento viene determinado por la ejecución de una serie de movimientos conbase en un m--odelo establecido y recogido en el Código de Puntuación. Con base en esto, el objetivo de nuestro trabajo es de...</p>
+                    <p class="source">Necdet Geren&nbsp;&nbsp;&nbsp;Soldering & Surface Mount Technology&nbsp;&nbsp;&nbsp;2012-3&nbsp;&nbsp;&nbsp;Emerald期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#">Printed circuit rework</a></p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <p class="tit clearfix"><a href="#">The structural study of Ti-Si-C alloys produced by mechanical alloy <i>method.</i> </a><span class="download"></span></p>
+                    <p class="nr">.. important that proper design parameters be incorporated when evaluating pile performance using reliability-based design methods. Although augered piles can be distinguished from bored piles, including drilled shafts, and driven piles by t...</p>
+                    <p class="source">Jihe Wang Aircraft&nbsp;&nbsp;&nbsp;Engineering and Aerospace Technology  &nbsp;&nbsp;&nbsp;2012-5&nbsp;&nbsp;&nbsp;Emerald期刊</p>
+                    <div class="info">
+                      <p class="info_left left"><strong><img src="../images/result/keyword.jpg" height="14" width="16" alt=""></strong><a href="#">Automated PCBA rework</a> / <a href="#">Design </a> / <a href="#">lexible manufacturing</a> / <a href="#">FMS design</a> / <a href="#">Printed circuit rework</a></p>
+                    </div>
+                </div>
+              </div>
+            <div class="relatedSearch">在中文文献中检索 <a href="">设计方法 >></a></div>
+             <div class="xgss">
+              <h1>相关搜索</h1>
+                <table class="table2" border="0" cellspacing="0" cellpadding="0" width="632">
+                  <tr height="26">
+                      <td width="158"><a href="#">现代设计方法</a></td>
+                        <td width="158"><a href="#">设计管理方法</a></td>
+                        <td width="158"><a href="#">雾化器设计方法</a></td>
+                        <td width="158"><a href="#">工程设计方法</a></td>
+                        <td width="158"><a href="#">工程优化设计方法</a></td>
+                    </tr>
+                    <tr height="26">
+                      <td width="158"><a href="#">设计方法学</a></td>
+                        <td width="158"><a href="#">设计方法论</a></td>
+                        <td width="158"><a href="#">设计方法研究</a></td>
+                        <td width="158"><a href="#">设计方法比较</a></td>
+                        <td width="158"><a href="#">设计方法分析</a></td>
+                    </tr>
+                </table>
+             </div>
+        </div>
+        <div class="cont-right right new-right-width322 jg-r-m">
+        	<div class="slogan"><img src="../images/result/slogan.jpg" width="290" height="26"></div>
+            <div class="translate">
+              <h1>相关翻译</h1>
+              <div class="fanyi"> 
+                <div class="fanyi-inner">
+                  <span class="icon positionA">CNKI翻译助手</span>
+                  <p class="word">设计方法</p>
+                  <p class="shiyi positionR"><span class="tip positionA">[释义]</span><a href="">design mdethodology；design  method</a></p>
+                  <p class="shiyi from positionR textAlignR">来源：<a href="#">汉英新词新语辞典</a></p> 
+                  <p class="shiyi positionR"><span class="tip positionA">[释义]</span><a href="">design approach </a></p>
+                  <p class="shiyi from positionR textAlignR">来源：<a href="#">实用英汉—汉英土木工程词汇与术语</a></p> 
+                </div>
+                </div>
+                <div class="fanyi-btm"></div>
+            </div>
+            <div class="xgqk">
+                <h1 class="positionR">学术研究指数分析(近十年)<div class="positionA xiangq"><a href="#">详情>></a></div></h1>
+                <div class="zsfx clearfix">
+                  <div class="zsfx-qh-ban ">
+                    <ul>
+                      <li class="choosed">发文趋势</li>
+                    </ul>
+                  </div>
+                  <div class="zsfx-qh-con">
+                    <div class="b-color">
+                      <span class="l-col"></span>
+                      <span class="r-word">文献数量</span>
+                    </div>
+                    <div class="b-biao"><img src="../imagesTemp/result/biao-06.jpg" width="278" height="129" /></div>
+                  </div>
+                </div>
+                <div class="cl"></div>
+                <div class="keyword">
+                  <h1>关键词</h1>
+                  <ul>
+                    <li><a href="">Design</a></li>
+                    <li><a href="">Design Method</a></li>
+                    <li><a href="">Optimization</a></li>
+                    <li><a href="">inite element method</a>F</li>
+                    <li><a href="">Mechanical properties</a></li>
+                    <li><a href="">Numerical techniques</a></li>
+                    <li><a href="">Metallic alloys</a></li>
+                    <li><a href="">Composites</a></li>
+                    <li><a href="">Simulation</a></li>
+                    <li><a href="">Heat treatment</a></li>
+                    <li><a href="">Casting</a></li>
+                    <li><a href="">Biomaterials</a></li>
+                  </ul>
+                </div>
+                <h1 class="positionR">相关期刊 <a href="#" class="positionA more">更多&gt;&gt;</a></h1>
+                  <div class="book-list clearfix">
+                    <ul>
+                        <li class="withFrame"><a href="#"><img src="../imagesTemp/result/ebook1.jpg" width="81" height="112"></a></li>
+                          <li><a href="#" class="name">Science  Bulletin </a></li>
+                      </ul>
+                      <ul>
+                        <li class="withFrame"><a href="#"><img src="../imagesTemp/result/ebook2.jpg" width="81" height="112"></a></li>
+                          <li><a href="#" class="name">Science China Mathematics</a></li>
+                      </ul>
+                      <ul>
+                        <li class="withFrame"><a href="#"><img src="../imagesTemp/result/ebook3.jpg" width="81" height="112"></a></li>
+                          <li><a href="#" class="name">Science China Chemistry </a></li>
+                      </ul>
+                      <ul>
+                        <li class="withFrame"><a href="#"><img src="../imagesTemp/result/ebook1.jpg" width="81" height="112"></a></li>
+                          <li><a href="#" class="name">Science  Bulletin </a></li>
+                      </ul>
+                      <ul>
+                        <li class="withFrame"><a href="#"><img src="../imagesTemp/result/ebook2.jpg" width="81" height="112"></a></li>
+                          <li><a href="#" class="name">Science China Mathematics</a></li>
+                      </ul>
+                      <ul>
+                        <li class="withFrame"><a href="#"><img src="../imagesTemp/result/ebook3.jpg" width="81" height="112"></a></li>
+                          <li><a href="#" class="name">Science China Chemistry </a></li>
+                      </ul>
+                  </div>
+              </div>
+            <div class="ad">
+              <a href="#"><img src="../imagesTemp/result/ad3.jpg" height="201" width="287"></a>
+            </div>
+        </div>
+        
+        <!--page-->
+        <div class="page">
+        	<a href="#" class="n">&lt;上一页</a>
+            <a href="#"><span class="fk fkd"></span><span class="pc">1</span></a>
+        	<strong>
+            <span class="fk fk_cur"><i class="c-icon c-icon-bear-p"></i></span>
+            <span class="pc">2</span>
+            </strong>
+            <a href="#"><span class="fk fkd"></span><span class="pc">3</span></a><a href="#"><span class="fk"></span><span class="pc">4</span></a><a href="#"><span class="fk fkd"></span><span class="pc">5</span></a><a href="#"><span class="fk"></span><span class="pc">6</span></a><a href="#"><span class="fk fkd"></span><span class="pc">7</span></a><a href="#"><span class="fk"></span><span class="pc">8</span></a><a href="#"><span class="fk fkd"></span><span class="pc">9</span></a><a href="#"><span class="fk"></span><span class="pc">10</span></a><a href="#" class="n">下一页&gt;</a>
+        </div>
+    </div>
+
+     <!--footer-->
+     <div class="foot-wrap">
+     	<div class="footer-fen">
+        	<a href="#">关于CNKI</a>|<a href="#">收藏远见</a>|<a href="#">创建快捷方式</a>|<a href="#">意见反馈</a>|<a href="#">使用帮助</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号
+        </div>
+     </div>
+     <div class="top-icon top-widthmax">
+        <a href="/FeedBack/Index" target="_blank" class="feedback">用户反馈</a>
+        <div class="to-top" style="display: block;">
+            <a href="javascript:void(0)" class="top1" style="display: none;"></a>
+            <a href="javascript:void(0)" class="top2" style="display: none;" onclick="window.scroll(0, 0);"></a>
+        </div>
+        <script>
+            $(".to-top").hover(
+        function () {
+            $(this).children(".top1").css({ "display": "none" })
+            $(this).children(".top2").css({ "display": "block" })
+        },
+        function () {
+            $(this).children(".top2").css({ "display": "none" })
+            $(this).children(".top1").css({ "display": "block" })
+        })
+        </script>
+    </div>
+    <div class="citeBtn">引用</div>
+    <div class="bottomBar">
+      <a href="" class="close"></a>
+      <div class="inner">
+        <ul>
+          <li class="item1"><label><i></i><span>全选</span></label></li>
+          <li class="item2"><a href="javascript:void(0)">全部清除</a></li>
+          <li class="item3"><a href="">已选文献（<i>1</i>）</a></li>
+          <li class="item4"><a href="">生成参考文献</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    $(window).scroll(function(){
+      var A = $(window).scrollTop();
+      if(A >200){
+        $(".top-icon .top1").stop(true).show();
+      }else{
+        $(".top-icon .top1").stop(true).hide();
+      }
+    });
+    var i=0;
+    $('.citeBtn').click(function() {
+        if(i==0){
+          $('.resault-cont .cont-left .list-item').append('<div class="checkbox1"></div>');
+          $('.bottomBar').show();
+          i=1;
+        }else if(i==1){
+          $('.resault-cont .cont-left').find('.checkbox1').remove();
+          $('.bottomBar').hide();
+          i=0;
+        }
+    });
+    
+    $('.bottomBar li.item1 label').click(function() {
+        $(this).find('i').addClass('active');
+        $('.resault-cont .cont-left .checkbox1').addClass('active'); 
+    });
+    $('.bottomBar li.item2 a').click(function() {
+      $('.resault-cont .cont-left .checkbox1, .bottomBar li.item1 label i').removeClass('active');
+    });
+    $('.resault-cont .cont-left').on('click','.checkbox1',function() {
+        $(this).toggleClass('active');
+        if($(this).hasClass('active')){
+          play(event);
+        }else{
+          $('.bottomBar li.item1 label i').removeClass('active');
+        }
+    });
+
+    $('.bottomBar .close').click(function () {
+      $('.bottomBar').hide();
+      $('.resault-cont .cont-left').find('.checkbox1').remove();
+      $('.resault-cont .cont-left .re-table tr').find('.index').show();
+      i=0;
+    })
+    //抛物线函数
+    function play(event){
+      var s_left =event.clientX;
+      var s_top =event.clientY;
+      var e_left =$(".bottomBar li.item3").offset().left+100;
+      var e_top =$(".bottomBar li.item3").offset().top;
+      var _this =$(event.target);
+      var img = _this.parent().siblings("img").attr("src");
+      var flyer =$('<img src="../images/result/addBtn.png" width="15">');//创建图片对象
+
+      flyer.fly({
+        start:{
+          left:s_left,
+          top:s_top
+        },
+        end:{
+          left:e_left,
+          top:e_top
+        },
+        onEnd:function(){
+          flyer.fadeOut("slow",function(){
+            $(this).remove();
+        });
+        }
+      })
+    }
+    </script>
+</body>
+</html>

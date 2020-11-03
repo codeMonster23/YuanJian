@@ -1,0 +1,306 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>文献首页</title>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/home.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery.cycle2.js"></script>
+
+<style type="text/css">
+</style>
+</head>
+<body>
+<div  class="header-wrap">
+  <div class="header">
+    <div class="header-left left"><strong>远见搜索</strong>——站的更高，看得更远！</div>
+    <div class="header-right right positionR"><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><a href="#" class="swzy">设为主页</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+      <ul class="positionA">
+        <li class="jiao positionA"></li>
+        <li>关闭历史记录</li>
+        <li>清除历史记录</li>
+      </ul>
+      <script>
+                $(".header-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".header-right ul").hide()
+                })
+            </script> 
+    </div>
+  </div>
+</div>
+<div class="home-cont">
+  <div class="logo"><a href="#"><img src="images/home/logo.jpg"></a></div>
+  <div class="home-nav positionR"><a href="#">全部</a>|<a class="active" href="#">文献</a>|<a href="#">百科</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#">标准</a>|<a href="#" class="more">更多</a>
+    <ul class="positionA">
+      <li class="jiao positionA"></li>
+      <li><a href="#">学术图片</a></li>
+      <li><a href="#">科技成果</a></li>
+      <li class="nborder"><a href="#">文集专著</a></li>
+    </ul>
+    <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".home-nav ul").hide()
+                })
+            </script> 
+  </div>
+  <div class="clearfix choose positionR">
+  
+  
+    <div class="xiugai clearfix">
+      <div class="btn" id="btn"> <!--<a class="remove" href="#"></a>--> <a class="add" href="#"></a> </div>
+      <div class="selectwrap" id="selectwrap">
+        <div class="select">
+          <p class="item"><!--全&nbsp;&nbsp;文-->授予单位</p>
+          <input class="left " type="text" value="">
+          <div class="yearwrap displayN">
+            <div class="fromwrap left positionR"><i class="left">从</i>
+              <p class="p from right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+              <ul class="fromlist positionA">
+                <li>不&nbsp;&nbsp;限</li>
+                <li>1915年</li>
+                <li>1949年</li>
+                <li>1979年</li>
+              </ul>
+            </div>
+            <div class="towrap left positionR"><i class="left">到</i>
+              <p class="p to right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+              <ul class="tolist positionA">
+                <li class="ndy">不&nbsp;&nbsp;限</li>
+                <li>1979年</li>
+                <li>1949年</li>
+                <li>1915年</li>
+              </ul>
+            </div>
+          </div>
+          <ul class="itemlist">
+            <li>全&nbsp;&nbsp;文</li>
+            <li>主&nbsp;&nbsp;题</li>
+            <li>篇&nbsp;&nbsp;名</li>
+            <li>关键词</li>
+            <li>作&nbsp;&nbsp;者</li>
+            <li>作&nbsp;&nbsp;者</li>
+            <li>文献来源</li>
+            <li class="fbsj">发表时间</li>
+          </ul>
+        </div>
+        <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a></div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </div>
+  <!--文献首页-->
+  <div class="wenxian-index clearfix">
+    <div class="title">共收录<span class="fontSize14px">104,047,089</span>篇文献，内容权威、专业、海量、系统、全面</div>
+    <div class="section">
+      <div class="s1">
+        <div class="menu">学科分类</div>
+        <ul class="subject10">
+          <li><span class="name">基础科学</span> <span class="num">14,964,973</span></li>
+          <li><span class="name">工程科技I</span> <span class="num">14,964,973</span></li>
+          <li><span class="name">工程科技II</span> <span class="num">14,964,973</span></li>
+          <li><span class="name">农业科技</span> <span class="num">14,964,973</span></li>
+          <li><span class="name">医药卫生</span> <span class="num">14,964,973</span></li>
+          <li><span class="name">哲学人文</span> <span class="num">14,964,973</span></li>
+          <li><span class="name">社会科学I</span> <span class="num">14,964,973</span></li>
+          <li><span class="name">社会科学II</span> <span class="num">14,964,973</span></li>
+          <li><span class="name">信息科技</span> <span class="num">14,964,973</span></li>
+          <li><span class="name">经济管理</span> <span class="num">14,964,973</span></li>
+        </ul>
+        
+        <!--基础科学-->
+        <div class="popup popup-position1">
+        	<div class="n">
+              <p><a href="#">自然科学理论与方法</a> | <a href="#">数学</a> | <a href="#">非线性科学与系统科学</a> | <a href="#">地球物理学</a> | <a href="#">物理学</a> | <a href="#">生物学</a> </p>
+              <p class="last"><a href="#">天文学</a> | <a href="#">自然地理学和测绘学</a> | <a href="#">气象学</a> | <a href="#">海洋学</a> | <a href="#">地质学</a> | <a href="#">力学</a> | <a href="#">资源科学</a> </p>
+                </div>
+        </div>
+        <!--工程科技I-->
+        <div class="popup popup-position2">
+        	<div class="n">
+              <p><a href="#">无机化工</a> | <a href="#">有机化工</a> | <a href="#">燃料化工</a> | <a href="#">一般化学工业</a> | <a href="#">金属学及金属工艺</a> | <a href="#">轻工业手工业</a> </p>
+              <p><a href="#">化学</a> | <a href="#">矿业工程</a> | <a href="#">石油天然气工业</a> | <a href="#">冶金工业</a> | <a href="#">安全科学与灾害防治</a> | <a href="#">一般服务业</a> </p>
+              <p class="last"><a href="#">材料科学</a> | <a href="#">环境科学与资源利用</a> </p>
+        	</div>
+        </div>
+        <!--工程科技II-->
+        <div class="popup popup-position3">
+        	<div class="n">
+              <p><a href="#">工业通用技术及设备</a> | <a href="#">机械工业</a> | <a href="#">仪器仪表工业</a> | <a href="#">航空航天科学与工程</a> | <a href="#">核科学技术</a> </p>
+              <p><a href="#">公路与水路运输</a> | <a href="#">汽车工业</a> | <a href="#">船舶工业</a> | <a href="#">水利水电工程</a> | <a href="#">建筑科学与工程</a> | <a href="#">动力工程</a> </p>
+              <p class="last"><a href="#">武器工业与军事技术</a> | <a href="#">铁路运输</a> | <a href="#">新能源</a> | <a href="#">电力工业</a> </p>
+        	</div>
+        </div>
+        <!--农业科技-->
+        <div class="popup popup-position4">
+        	<div class="n">
+              <p><a href="#">农业基础科学</a> | <a href="#">农业工程</a> | <a href="#">农艺学</a> | <a href="#">植物保护</a> | <a href="#">农作物</a> | <a href="#">园艺</a> | <a href="#">林业</a>| <a href="#">水产和渔业</a> </p>
+              <p class="last"><a href="#">畜牧与动物医学</a> | <a href="#">蚕蜂与野生动物保护</a>  </p>
+                </div>
+        </div>
+        <!--医药卫生-->
+        <div class="popup popup-position5">
+        	<div class="n">
+              <p><a href="#">医学教育与医学边缘学科</a> | <a href="#">预防医学与卫生学</a> | <a href="#">感染性疾病及传染病</a> | <a href="#">心血管系统疾病</a> |</p>
+              <p><a href="#">基础医学</a> | <a href="#">临床医学</a> | <a href="#">中医学</a> | <a href="#">中药学</a> | <a href="#">中西医结合</a> | <a href="#">外科学</a> | <a href="#">妇产科学</a> | <a href="#">儿科学</a> </p>
+              <p><a href="#">呼吸系统疾病</a> | <a href="#">医药卫生方针政策与法律法规研究</a> | <a href="#">内分泌腺及全身性疾病</a> | <a href="#">泌尿科学</a> </p>
+              <p><a href="#">消化系统疾病</a> | <a href="#">神经病学</a> | <a href="#">精神病学</a> | <a href="#">肿瘤学</a> | <a href="#">眼科与耳鼻喉科</a> | <a href="#">口腔科学</a> | <a href="#">医药</a> </p>
+              <p class="last"><a href="#">皮肤病与性病</a> | <a href="#">特种医学</a> | <a href="#">急救医学</a> | <a href="#">军事医学与卫生</a> | <a href="#">生物医学工程</a> </p>
+                </div>
+        </div>
+        <!--哲学人文-->
+        <div class="popup popup-position6">
+        	<div class="n">
+              <p><a href="#">文艺理论</a> | <a href="#">世界文学</a> | <a href="#">中国文学</a> | <a href="#">中国语言文字</a> | <a href="#">外国语言文字</a> | <a href="#">音乐舞蹈</a> | <a href="#">地理</a> </p>
+              <p><a href="#">戏剧电影与电视艺术</a> | <a href="#">美术书法雕塑与摄影</a> | <a href="#">文化</a> | <a href="#">史学理论</a> | <a href="#">世界历史</a> | <a href="#">中国通史</a> |</p>
+              <p><a href="#">中国民族与地方史志</a> | <a href="#">中国古代史</a> | <a href="#">中国近现代史</a> | <a href="#">考古</a> | <a href="#">人物传记</a> | <a href="#">哲学</a> | <a href="#">美学</a> </p>
+              <p class="last"><a href="#">逻辑学</a> | <a href="#">伦理学</a> | <a href="#">心理学</a> | <a href="#">宗教</a> </p>
+        	</div>
+        </div>
+        <!--社会科学I-->
+        <div class="popup popup-position7">
+        	<div class="n">
+              <p><a href="#">马克思主义</a> | <a href="#">中国共产党</a> | <a href="#">政治学</a> | <a href="#">中国政治与国际政治</a> | <a href="#">思想政治教育</a> | <a href="#">民商法</a> </p>
+              <p><a href="#">行政学及国家行政管理</a> | <a href="#">政党及群众组织</a> | <a href="#">军事</a> | <a href="#">公安</a> | <a href="#">法理、法史</a> | <a href="#">宪法</a> | <a href="#">刑法</a> </p>
+              <p class="last"><a href="#">行政法及地方法制</a> | <a href="#">经济法</a> | <a href="#">诉讼法与司法制度</a> | <a href="#">国际法</a> </p>
+        	</div>
+        </div>
+        <!--社会科学II-->
+        <div class="popup popup-position8">
+        	<div class="n">
+              <p><a href="#">社会科学理论与方法</a> | <a href="#">社会学及统计学</a> | <a href="#">人口学与计划生育</a> | <a href="#">学前教育</a> | <a href="#">初等教育</a> </p>
+              <p><a href="#">人才学与劳动学科</a> | <a href="#">体育</a> | <a href="#">气象学</a> | <a href="#">教育理论与教育管理</a> | <a href="#">中等教育</a> | <a href="#">高等教育</a> </p>
+              <p class="last"><a href="#">职业教育</a> | <a href="#">成人教育与特殊教育</a> </p>
+        	</div>
+        </div>
+        <!--信息科技-->
+        <div class="popup popup-position9">
+        	<div class="n">
+              <p><a href="#">无线电电子学</a> | <a href="#">电信技术</a> | <a href="#">计算机硬件技术</a> | <a href="#">计算机软件及计算机应用</a> | <a href="#">互联网技术</a> </p>
+              <p class="last"><a href="#">自动化技术</a> | <a href="#">新闻与传媒</a> | <a href="#">出版</a> | <a href="#">图书情报与数字图书馆</a> | <a href="#">档案及博物馆</a> </p>
+                </div>
+        </div>
+        <!--经济管理-->
+        <div class="popup popup-position10">
+        	<div class="n">
+              <p><a href="#">经济管理与可持续发展</a> | <a href="#">经济理论及经济思想史</a> | <a href="#">经济体制改革</a> | <a href="#">经济统计</a> | <a href="#">管理学</a> </p>
+              <p><a href="#">农业经济</a> | <a href="#">工业经济</a> | <a href="#">交通运输经济</a> | <a href="#">企业经济</a> | <a href="#">旅游</a> | <a href="#">文化经济</a> | <a href="#">科学研究管理</a> </p>
+              <p><a href="#">信息经济与邮政经济</a> | <a href="#">服务业经济</a> | <a href="#">贸易经济</a> | <a href="#">财政与税收</a> | <a href="#">金融</a> | <a href="#">证券</a> | <a href="#">保险</a> </p>
+              <p class="last"><a href="#">投资</a> | <a href="#">会计</a> | <a href="#">审计</a> | <a href="#">市场研究与信息</a> | <a href="#">领导学与决策学</a> </p>
+                </div>
+        </div>
+        
+        <script>
+		//弹出框
+			var li=$(".subject10 li");
+			var popup=$(".wenxian-index .popup");
+			
+			//鼠标滑动到li上
+			function hoverInEffection(pointer)
+			{
+				var index=$(pointer).index();
+				li.removeClass("current");
+				$(pointer).addClass("current");
+				popup.css("display","none");
+				popup.eq(index).css("display","block");
+			}
+			
+			//鼠标离开li上
+			function hoverOutEffection(pointer)
+			{
+				var index=$(pointer).index();
+				$(pointer).removeClass("current");
+				popup.eq(index).css("display","none");
+			}
+			
+        	li.hover(function()
+			{
+				hoverInEffection(this);
+			},function()
+			{
+				hoverOutEffection(this)
+			})
+			
+			popup.hover(function()
+			{
+				var index=popup.index(this);
+				li.removeClass("current");
+				li.eq(index).addClass("current");
+				popup.css("display","none");
+				$(this).css("display","block");
+			},function()
+			{
+				var index=popup.index(this);
+				li.removeClass("current");
+				popup.css("display","none");
+			})
+        </script>
+        
+      </div>
+      <div class="s2">
+        <div class="t">
+          <div class="pic cycle-slideshow" data-cycle-pager-template="<li><img height='72' width='82'></li>" data-cycle-slides=".slide">
+          	<div class="slide"><a target="_blank" href="http://yuanjian.cnki.net/CJFD/Article/index/XBZX200401017"target="_blank"><img src="imagesTemp/home/wx-pic1.jpg" width="349" height="285"></a>
+       	    <div class="text">益气养阴法防治癌转移的实验研究</div></div>
+            <div class="slide"><a target="_blank" href="http://yuanjian.cnki.net/CJFD/Article/index/XXYS201105005"target="_blank"><img src="imagesTemp/home/wx-pic2.jpg" width="349" height="285"></a>
+            <div class="text">发展养老产业 助推老龄经济</div></div>
+            <div class="slide"><a target="_blank" href="http://yuanjian.cnki.net/CDMD/Article/Index/CMFD-10497-2007148471"target="_blank"><img src="imagesTemp/home/wx-pic3.jpg" width="349" height="285"></a>
+            <div class="text">人工智能在机器人足球赛中的应用</div></div>
+            <div class="slide"><a target="_blank" href="http://yuanjian.cnki.net/CJFD/Article/index/SYZW201011008"target="_blank"><img src="imagesTemp/home/wx-pic4.jpg" width="349" height="285"></a>
+            <div class="text">太阳能发电的普及与前景</div></div>
+            <ul class="thumbnails cycle-pager"></ul>
+          </div>
+        </div>
+        
+      </div>
+<script>
+$(function(){
+//设置幻灯片缩略图的路径
+$(".s2 .t .pic ul li img").eq(0).attr("src","imagesTemp/home/wx-pic1.jpg");
+$(".s2 .t .pic ul li img").eq(1).attr("src","imagesTemp/home/wx-pic2.jpg");
+$(".s2 .t .pic ul li img").eq(2).attr("src","imagesTemp/home/wx-pic3.jpg");
+$(".s2 .t .pic ul li img").eq(3).attr("src","imagesTemp/home/wx-pic4.jpg").parent().addClass("last");
+	})
+</script>      
+      
+      <div class="s3"> <a href="http://yuanjian.cnki.net/CJFD/Article/index/YYGL201201000"target="_blank">·我国公立医院改革进展、面临的挑战及展望</a>
+ <a href="http://yuanjian.cnki.net/CJFD/Article/index/TRYJ200201019"target="_blank">·土壤中重金属污染现状与防治方法</a> 
+<a href="http://yuanjian.cnki.net/CJFD/Article/index/XDQB200806006"target="_blank">·电子政务信息资源整合与信息孤岛</a> 
+<a href="http://yuanjian.cnki.net/CJFD/Article/index/FXZZ200305014">·论我国惩治拐卖人口犯罪的刑法完善</a> 
+<a href="http://yuanjian.cnki.net/ccnd/Article/index/KJRB201512310110"target="_blank">·高龄妈妈追二胎慎选“试管婴儿”</a> 
+<a href="http://yuanjian.cnki.net/CJFD/Article/index/SPKJ201311084"target="_blank">·白酒中塑化剂的检测方法及控制策略</a> 
+<a href="http://yuanjian.cnki.net/CJFD/Article/index/KJDB201618026"target="_blank">·北京交通限行对城市次干道空气质量的影响</a>
+ <a href="http://yuanjian.cnki.net/CJFD/Article/index/ZGXQ200004022"target="_blank">·禽流感与养禽业发展和人类健康</a>
+ <a href="http://yuanjian.cnki.net/CJFD/Article/index/SCFK200803033"target="_blank">·VR技术在服装量身定制中的应用分析</a> 
+<a href="http://yuanjian.cnki.net/CJFD/Article/index/SWHZ201011005">·细胞自噬与肿瘤发生的关系</a>
+ <a href="http://yuanjian.cnki.net/CJFD/Article/index/LYXK201108005"target="_blank">·中国游客出境游目的地选择与社交媒体营销</a> </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <p class="p1"><a href="#">收藏本站</a>｜<a href="#">创建快捷方式</a>｜<a href="#">关于CNKI</a> ｜<a href="#">使用指南</a></p>
+  <p class="p2">© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号 </p>
+</div>
+</body>
+<script src="js/literature-search.js"></script>
+<script>
+literatureSearch();
+</script>
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>列表</title>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/result.css" rel="stylesheet" type="text/css">
+<link href="css/xueweilunwen-result.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery.promptToggle.js"></script>
+</head>
+<body>
+<!--head-->
+<div class="head-wrap">
+  <div class="head-fen clearfix">
+    <div class="head-logo left"><img src="images/result/result_logo.jpg" width="115" height="40"></div>
+    <div class="search-item left">
+      <div class="result-nav positionR"><a href="#">全部</a>|<a href="#">文献</a>|<a href="#">百科</a>|<a href="#">期刊</a>|<a href="#" class="active">学位论文</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#">标准</a>|<a href="#" class="more">更多</a>
+        <ul class="positionA">
+          <li class="jiao positionA"></li>
+          <li><a href="#">学术图片</a></li>
+          <li><a href="#">科技成果</a></li>
+          <li class="nborder"><a href="#">文集专著</a></li>
+        </ul>
+        <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".result-nav ul").hide()
+                })
+            </script> 
+      </div>
+      <div class="clearfix choose positionR">
+        <div class="xiugai clearfix">
+          <div class="btn" id="btn"> <a class="remove" href="#"></a> </div>
+          <div class="selectwrap" id="selectwrap">
+            <div class="select positionR">
+              <p class="item">全&nbsp;&nbsp;文</p>
+              <input class="left" type="text" value="">
+              <a class="positionA sweep" href="#"></a>
+              <div class="yearwrap displayN">
+                <div class="fromwrap left positionR"><i class="left">从</i>
+                  <p class="p from right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="fromlist positionA">
+                    <li>不&nbsp;&nbsp;限</li>
+                    <li>1915年</li>
+                    <li>1949年</li>
+                    <li>1979年</li>
+                  </ul>
+                </div>
+                <div class="towrap left positionR"><i class="left">到</i>
+                  <p class="p to right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="tolist positionA">
+                    <li class="ndy">不&nbsp;&nbsp;限</li>
+                    <li>1979年</li>
+                    <li>1949年</li>
+                    <li>1915年</li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="itemlist">
+                <li>全&nbsp;&nbsp;文</li>
+                <li>主&nbsp;&nbsp;题</li>
+                <li>篇&nbsp;&nbsp;名</li>
+                <li>关键词</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>文献来源</li>
+                <li class="fbsj">发表时间</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="xiugai clearfix">
+          <div class="btn" id="btn"> <a class="remove" href="#"></a> </div>
+          <div class="selectwrap" id="selectwrap">
+            <div class="select positionR">
+              <p class="item">全&nbsp;&nbsp;文</p>
+              <input class="left" type="text" value="">
+              <a class="positionA sweep" href="#"></a>
+              <div class="yearwrap displayN">
+                <div class="fromwrap left positionR"><i class="left">从</i>
+                  <p class="p from right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="fromlist positionA">
+                    <li>不&nbsp;&nbsp;限</li>
+                    <li>1915年</li>
+                    <li>1949年</li>
+                    <li>1979年</li>
+                  </ul>
+                </div>
+                <div class="towrap left positionR"><i class="left">到</i>
+                  <p class="p to right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="tolist positionA">
+                    <li class="ndy">不&nbsp;&nbsp;限</li>
+                    <li>1979年</li>
+                    <li>1949年</li>
+                    <li>1915年</li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="itemlist">
+                <li>全&nbsp;&nbsp;文</li>
+                <li>主&nbsp;&nbsp;题</li>
+                <li>篇&nbsp;&nbsp;名</li>
+                <li>关键词</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>文献来源</li>
+                <li class="fbsj">发表时间</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="xiugai clearfix">
+          <div class="btn" id="btn"> <a class="remove" href="#"></a> </div>
+          <div class="selectwrap" id="selectwrap">
+            <div class="select">
+              <p class="item">全&nbsp;&nbsp;文</p>
+              <input class="left" type="text" value="">
+              <a class="positionA sweep" href="#"></a>
+              <div class="yearwrap displayN">
+                <div class="fromwrap left positionR"><i class="left">从</i>
+                  <p class="p from right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="fromlist positionA">
+                    <li>不&nbsp;&nbsp;限</li>
+                    <li>1915年</li>
+                    <li>1949年</li>
+                    <li>1979年</li>
+                  </ul>
+                </div>
+                <div class="towrap left positionR"><i class="left">到</i>
+                  <p class="p to right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="tolist positionA">
+                    <li class="ndy">不&nbsp;&nbsp;限</li>
+                    <li>1979年</li>
+                    <li>1949年</li>
+                    <li>1915年</li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="itemlist">
+                <li>全&nbsp;&nbsp;文</li>
+                <li>主&nbsp;&nbsp;题</li>
+                <li>篇&nbsp;&nbsp;名</li>
+                <li>关键词</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>文献来源</li>
+                <li class="fbsj">发表时间</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="xiugai clearfix">
+          <div class="btn" id="btn"> <a class="remove" href="#"></a> </div>
+          <div class="selectwrap" id="selectwrap">
+            <div class="select">
+              <p class="item">全&nbsp;&nbsp;文</p>
+              <input class="left" type="text" value="">
+              <a class="positionA sweep" href="#"></a>
+              <div class="yearwrap displayN">
+                <div class="fromwrap left positionR"><i class="left">从</i>
+                  <p class="p from right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="fromlist positionA">
+                    <li>不&nbsp;&nbsp;限</li>
+                    <li>1915年</li>
+                    <li>1949年</li>
+                    <li>1979年</li>
+                  </ul>
+                </div>
+                <div class="towrap left positionR"><i class="left">到</i>
+                  <p class="p to right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="tolist positionA">
+                    <li class="ndy">不&nbsp;&nbsp;限</li>
+                    <li>1979年</li>
+                    <li>1949年</li>
+                    <li>1915年</li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="itemlist">
+                <li>全&nbsp;&nbsp;文</li>
+                <li>主&nbsp;&nbsp;题</li>
+                <li>篇&nbsp;&nbsp;名</li>
+                <li>关键词</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>文献来源</li>
+                <li class="fbsj">发表时间</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="xiugai clearfix">
+          <div class="btn" id="btn"> <a class="remove" href="#"></a> <a class="add" href="#"></a> </div>
+          <div class="selectwrap" id="selectwrap">
+            <div class="select">
+              <p class="item">全&nbsp;&nbsp;文</p>
+              <input class="left" type="text" value="">
+              <a class="positionA sweep" href="#"></a>
+              <div class="yearwrap displayN">
+                <div class="fromwrap left positionR"><i class="left">从</i>
+                  <p class="p from right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="fromlist positionA">
+                    <li>不&nbsp;&nbsp;限</li>
+                    <li>1915年</li>
+                    <li>1949年</li>
+                    <li>1979年</li>
+                  </ul>
+                </div>
+                <div class="towrap left positionR"><i class="left">到</i>
+                  <p class="p to right positionR"><b>不&nbsp;&nbsp;限</b><span class="positionA"></span></p>
+                  <ul class="tolist positionA">
+                    <li class="ndy">不&nbsp;&nbsp;限</li>
+                    <li>1979年</li>
+                    <li>1949年</li>
+                    <li>1915年</li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="itemlist">
+                <li>全&nbsp;&nbsp;文</li>
+                <li>主&nbsp;&nbsp;题</li>
+                <li>篇&nbsp;&nbsp;名</li>
+                <li>关键词</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>作&nbsp;&nbsp;者</li>
+                <li>文献来源</li>
+                <li class="fbsj">发表时间</li>
+              </ul>
+            </div>
+            <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a></div>
+          </div>
+        </div>
+        <script>
+   				 (function(){
+					 $(".from").live("click",function(){
+        			var start = 1980; // 指定开始年份
+        			var end = new Date().getFullYear(); // 获取当前年份
+       				 for(i=start;i<=end;i++)
+            		{$(".fromlist").append("<li>"+i+"年</li>")}})})()
+				</script> 
+        <script>
+                   (function(){
+					    $(".to").live("click",function(){
+                        var start = 1980; // 指定开始年份
+                        var end = new Date().getFullYear(); // 获取当前年份
+                        for(i=start;i<=end;i++)
+                            {$(".tolist .ndy").after("<li>"+i+"年</li>")}}) 
+                    })()
+                </script> 
+        <script>
+				(function(){  
+                                      
+					$(".select .item").live("click",
+						function(){
+                        $(".select .itemlist").hide()   
+                        $(this).siblings(".itemlist").show()
+						$(this).parent(".select").css({"z-index":"20"})//ie6、7修正
+						$(this).parents(".selectwrap").css({"z-index":"10"})//ie6、7修正
+							})
+					$(".select .itemlist").live("mouseover",
+                    function(){$(this).show();$(this).parent(".select").css({"z-index":"20"});$(this).parents(".selectwrap").css({"z-index":"10"})}).live("mouseout",function(){
+						$(this).hide()
+						$(this).parent(".select").css({"z-index":"1"})
+						$(this).parents(".selectwrap").css({"z-index":"1"})
+						}	
+					)
+					$(".select .itemlist li").live("mouseover",
+						function(){
+							$(this).addClass("gray")	
+							}).live("mouseout",
+						function(){
+							$(this).removeClass("gray")	
+							}
+					)
+					$(".select .itemlist li").live("click",
+						function(){
+						var Text=$(this).text()	
+						$(this).parent(".select .itemlist").siblings(".item").text(Text)	
+						$(this).parent(".select .itemlist").hide()	
+						$(this).parent(".select").css({"z-index":"1"})
+						$(this).parents(".selectwrap").css({"z-index":"1"})
+						$(this).parent(".select .itemlist").removeClass("itemlistspec")
+						$(this).parents(".select").removeClass("selectspec")
+						$(this).parent().siblings(".sweep").css({"display":"block"})
+						$(this).parent().siblings("input").css({"display":"block"})
+						$(this).parent().siblings(".yearwrap").css({"display":"none"})
+							})
+					$(".select .itemlist .fbsj").live("click",
+						function(){
+						$(this).parent(".select .itemlist").addClass("itemlistspec")
+						$(this).parents(".select").addClass("selectspec")
+						$(this).parent().siblings("input").css({"display":"none"})
+						$(this).parent().siblings(".sweep").css({"display":"none"})
+						$(this).parent().siblings(".yearwrap").css({"display":"block"})
+							})
+					})()
+            </script> 
+        <script>
+				(function(){
+					$(".yearwrap .p").live("mouseover",
+					function(){
+							$(this).addClass("hoverp")}).live("mouseout",
+					function(){
+							$(this).removeClass("hoverp")})
+					$(".yearwrap .p").live("click",
+						function(){
+							$(".yearwrap ul").css({"display":"none"})
+							$(".yearwrap .p").removeClass("clickp")
+							$(this).parents(".selectspec").css({"z-index":100})  
+							$(this).parents(".selectwrap").css({"z-index":10})   
+                        	$(this).siblings("ul").show(5)
+							$(this).addClass("clickp")}//不触发body点击事件用live
+					)
+					$(".yearwrap ul li").live("mouseover",
+						function(){
+							$(this).addClass("hover")}).live("mouseout",function(){
+							$(this).removeClass("hover")})
+					$(".select .yearwrap ul li").live("click",
+						function(){
+						var Text=$(this).text()	
+						$(this).parent("ul").siblings(".p").children("b").text(Text)	
+						$(this).parent("ul").hide()	
+						$(".select .itemlist").removeClass("itemlistspec")
+							})		
+						$(".select .yearwrap ul").live("mouseover",function(){
+						$(this).css({"display":"block"})}).live("mouseout",function(){
+						$(this).css({"display":"none"})
+						$(this).siblings(".p").removeClass("clickp")
+						})
+						$("body").click(
+						function(){
+						$(".select ul").hide()
+						$(".select").css({"z-index":"1"})
+						$(".selectwrap").css({"z-index":"1"})
+						$(".yearwrap .p").removeClass("clickp")	
+							})})()
+                </script> 
+      </div>
+    </div>
+    <div class="headfen-right right"><a href="#" class="home">远见首页</a><i class="left">|</i><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+      <ul class="positionA">
+        <li class="jiao positionA"></li>
+        <li>关闭历史记录</li>
+        <li>清除历史记录</li>
+      </ul>
+      <script>
+                $(".headfen-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".headfen-right ul").hide()
+                })
+            </script> 
+    </div>
+  </div>
+</div>
+<!--content-->
+<div class="resault-cont zylw yxlw zylw-st clearfix">
+  <div class="cont-left left positionR">
+  <div class="route"><a href="#">首页</a> > <a href="#">学位授予单位</a> > <a href="#">北京</a> > <span>北京工业大学</span></div>   
+    <div class="college-intro">
+    	<p class="logo left"><a href="#"><img src="imagesTemp/result/college-logo.jpg" width="225" height="69"></a></p>
+        <div class="intro left">
+        	<p class="tit"><a class="left" href="#">清华大学</a><span class="co985 left"><img src="images/lunwen-result/lw-985.gif" width="48"  height="18"></span><span class="co211 left"><img src="images/lunwen-result/lw-211.gif" width="48"  height="18"></span></p>
+            <div class="count clearfix">
+            	<div class="col"><span>论文：<i>612334</i>篇</span><br><span>导师：<i>433423</i>人</span></div>
+                <div class="col"><span>被引：<i>612334</i>次</span><br><span>硕士：<i>433423</i>人</span></div>
+                <div class="col"><span>下载：<i>612334</i>次</span><br><span>博士：<i>433423</i>人</span></div>
+            </div>
+            <div class="in-search clearfix">
+              <input class="in-input grey left" value="在该培养单位内检索">
+              <script>
+                            PromptToggle($(".in-input"),"在该培养单位内检索","in-input grey","in-input");
+              </script> 
+              <a href="#" class="in-btn left"></a> 
+         </div>
+        </div>
+    </div>
+    <div class="lwsx">
+     	<div class="tab1">
+        	<a href="javascript:void(0)" class="cur">硕士论文</a><a href="javascript:void(0)">博士论文</a><a href="javascript:void(0)" >其他文献</a><a href="javascript:void(0)">硕士导师</a><a href="javascript:void(0)" class="has-noborder">博士导师</a>
+        </div>
+        <div class="tab1-cont">
+        	<div class="sort"><span class="ac">哲学</span>|<span>经济学</span>|<span>法学</span>|<span>教育学</span>|<span>文学</span>|<span>历史学</span>|<span>理学</span>|<span>工学</span>|<span>农学</span>|<span>医学</span>|<span>军事学</span>|<span>管理学</span></div>
+            <div class="itemslist clearfix has-height">
+                            <div class="ie7wrap">
+                  <div class="classes"> <a href="javascript:void(0)">全部</a><span class="num">(8)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">工业经济</a><span class="num">(282440)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">金融</a><span class="num">(211520)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span> 
+            </div>
+                      <div class="classes"> <a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">金融</a><span class="num">(211520)</span> </div>
+                   <div class="classes"> <a href="javascript:void(0)">工业经济</a><span class="num">(282440)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span> </div>
+        <div class="classes"> <a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span> </div>
+         <div class="classes"> <a href="javascript:void(0)">金融</a><span class="num">(211520)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2015)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span> 
+            </div> <div class="classes"> <a href="javascript:void(0)">金融</a><span class="num">(211)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span> 
+            </div> <div class="classes"> <a href="javascript:void(0)">金融</a><span class="num">(211520)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span> </div>
+                  <div class="classes"> <a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span> 
+            </div>
+         </div>
+        <a href="javascript:void(0)" class="close"></a>
+        <a href="javascript:void(0)" class="more more-unfold"></a>
+        <script>
+				var flag=false;
+                $(".itemslist .more").click(function()
+				{
+					
+					if(flag=!flag)
+					{
+						$(this).parent(".itemslist").addClass("auto-height").removeClass("has-height");
+						$(this).removeClass("more-unfold").addClass("more-fold");
+					}
+					else
+					{
+						$(this).parent(".itemslist").removeClass("auto-height").addClass("has-height");
+						$(this).removeClass("more-fold").addClass("more-unfold");
+					}
+				})
+					$(".itemslist .classes a").click(
+					function(){
+					$(".itemslist .classes a").removeClass("yellow")
+					 $(this).addClass("yellow")
+				})
+                </script>
+         <script>
+		 	$(".tab1 a").click(
+				function(){
+				$(this).addClass("cur").siblings().removeClass("cur")
+				$(".tab1-cont").css({"display":"block"})
+				$(".lwsx").css({"padding-bottom":"10px","border-bottom-width":"1px"})
+				})
+		 	$(".itemslist .close").click(
+				function(){
+			   $(this).parent(".itemslist").parent(".tab1-cont").css({"display":"none"})
+			   $(this).parents(".lwsx").css({"padding-bottom":"0","border-bottom-width":"0"})
+			   $(".tab1 a").removeClass("cur")}
+			)
+         </script> 
+        </div>
+     	</div> 
+    </div>      
+	<div class="yx clearfix"> <span class="bt left">已选：</span>
+      <p class="tm left positionR">文献类型：<i>期刊文献</i><a href="#" class="close2 positionA"></a></p>
+      <p class="tm left positionR">发表年度：<i>2014年</i><a href="#" class="close2 positionA"></a></p>
+      <p class="tm left positionR">学科分类：<i>企业经济</i><a href="#" class="close2 positionA"></a></p>
+      <p class="tm left positionR">作者：<i>厉以宁</i><a href="#" class="close2 positionA"></a></p>
+      <p class="tm left positionR">文献类型：<i>期刊文献</i><a href="#" class="close2 positionA"></a></p>
+      <p class="tm left positionR">发表年度：<i>2014年</i><a href="#" class="close2 positionA"></a></p>
+      <p class="tm left positionR">学科分类：<i>企业经济</i><a href="#" class="close2 positionA"></a></p>
+      <p class="tm left positionR">作者：<i>厉以宁</i><a href="#" class="close2 positionA"></a></p>
+      <script>
+					$(".yx .tm").hover(
+						function(){
+						 $(this).addClass("hover").children(".close2").addClass("close2red")},
+						function(){
+						 $(this).removeClass("hover").children(".close2").removeClass("close2red")})
+                </script> 
+    </div>
+    <div class="allinfo">
+    	<label>排序：</label><span class="ways cur">发文篇数<i></i></span><span class="ways">论文被引<i></i></span><span class="ways">论文下载<i></i></span><span class="ways">指导论文<i></i></span><span class="count">CNKI为你找到相关结果<i>118,252</i>条</span>
+        <script>
+			$(".allinfo .ways").click(
+				function(){
+				 $(this).addClass("cur").siblings().removeClass("cur")
+					})
+        </script>
+        <div class="mode clearfix"><a title="视图显示" href="#" class="stxz left"></a><a title="列表显示" href="#" class="lb left"></a></div>
+    </div>
+  	<div class="st-list clearfix">
+    	<div class="card left">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card right">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card left">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card right">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card left">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card right">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card left">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card right">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card left">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card right">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card left">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card right">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card left">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card right">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card left">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+        <div class="card right">
+        	<p class="name"><a href="#">张文涛</a><i>导师</i></p>
+            <div class="more-info">
+            	<p class="college"><span>中央美术学院</span><a href="#">工业设计专业</a></p>
+                <p class="num">指导论文：<i>22514</i>篇</p>
+                <p class="num">发表论文：<i>22514</i>篇</p>
+            </div>
+        </div>
+    </div>
+     
+	<div class="share">
+    	<span>分享</span>
+        <a href="#" class="qq"></a>
+        <a href="#" class="weibo"></a>
+        <a href="#" class="wechat"></a>
+    </div>
+</div>
+ 
+  <div class="cont-right right">
+    <div class="related-dw clearfix">
+    	<h1 class="positionR">相关学位授予单位</h1>
+        <div class="list left">
+        	<p><a href="#">·中央美术学院</a></p>
+            <p><a href="#">·石家庄铁道学院</a></p>
+            <p><a href="#">·石家庄铁道学院</a></p>
+            <p><a href="#">·江南大学</a></p>
+            <p><a href="#">·石家庄铁道学院</a></p>
+            <p><a href="#">·石家庄铁道学院江南大学·江南大学</a></p>
+            <p><a href="#">·石家庄铁道学院</a></p>
+            <p><a href="#">·石家庄铁道学院</a></p>
+            <p><a href="#">·石家庄铁道学院</a></p>
+            <p><a href="#">·东北大学秦皇岛分校</a></p>
+        </div>
+         <div class="list left">
+        	<p><a href="#">·中央美术学院</a></p>
+            <p><a href="#">·石家庄铁道学院</a></p>
+            <p><a href="#">·石家庄铁道学院</a></p>
+            <p><a href="#">·江南大学</a></p>
+            <p><a href="#">·石家庄铁道学院</a></p>
+            <p><a href="#">·石家庄铁道学院江南大学·江南大学</a></p>
+            <p><a href="#">·石家庄铁道学院</a></p>
+            <p><a href="#">·石家庄铁道学院</a></p>
+            <p><a href="#">·石家庄铁道学院</a></p>
+            <p><a href="#">·东北大学秦皇岛分校</a></p>
+        </div>
+    </div>
+    <div class="hot-teacher">
+    	<h1 class="positionR">该专业热门导师</h1>
+        <ul class="list">
+        	<li>·<a href="#">王军</a><i>西安建筑科技大学</i></li>
+            <li>·<a href="#">王军</a><i>西安建筑科技大学</i></li>
+            <li>·<a href="#">王军</a><i>西安建筑科技大学</i></li>
+            <li>·<a href="#">王军</a><i>西安建筑科技大学</i></li>
+            <li>·<a href="#">杨名冒</a><i>东北大学秦皇岛分校</i></li>
+            <li>·<a href="#">王军</a><i>西安建筑科技大学</i></li>
+            <li>·<a href="#">王军</a><i>西安建筑科技大学</i></li>
+            <li>·<a href="#">王军</a><i>西安建筑科技大学</i></li>
+            <li>·<a href="#">王军</a><i>西安建筑科技大学</i></li>
+            <li>·<a href="#">王军</a><i>西安建筑科技大学</i></li>
+        </ul>
+    </div>
+    <div class="xgqk">
+            	<h1 class="positionR">相关期刊 <a href="#" class="positionA more">更多&gt;&gt;</a></h1>
+                <div class="book-list clearfix">
+                	<ul>
+                    	<li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                    <ul>
+                    	<li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                    <ul>
+                    	<li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                    <ul>
+                    	<li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                    <ul>
+                    	<li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                    <ul>
+                    	<li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                </div>
+            </div>
+    <div class="ad">
+       <a href="#"><img src="imagesTemp/result/ad1.jpg" width="289" height="204"></a>
+       <a href="#"><img src="imagesTemp/result/ad2.jpg" width="289" height="204"></a>
+    </div>
+  </div>
+  
+  <!--page-->
+  <div class="page">
+        	<a href="#" class="n">&lt;上一页</a>
+            <a href="#"><span class="fk fkd"></span><span class="pc">1</span></a>
+        	<strong>
+            <span class="fk fk_cur"><i class="c-icon c-icon-bear-p"></i></span>
+            <span class="pc">2</span>
+            </strong>
+            <a href="#"><span class="fk fkd"></span><span class="pc">3</span></a><a href="#"><span class="fk"></span><span class="pc">4</span></a><a href="#"><span class="fk fkd"></span><span class="pc">5</span></a><a href="#"><span class="fk"></span><span class="pc">6</span></a><a href="#"><span class="fk fkd"></span><span class="pc">7</span></a><a href="#"><span class="fk"></span><span class="pc">8</span></a><a href="#"><span class="fk fkd"></span><span class="pc">9</span></a><a href="#"><span class="fk"></span><span class="pc">10</span></a><a href="#" class="n">下一页&gt;</a>
+        </div>
+  
+</div>
+<!--footer-->
+<div class="foot-wrap">
+  <div class="footer-fen textAlignL"> <a href="#">关于CNKI</a>|<a href="#">收藏远见</a>|<a href="#">创建快捷方式</a>|<a href="#">意见反馈</a>|<a href="#">使用帮助</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号 </div>
+</div>
+<!--Firefox-->
+<div class="top-icon" style="background:#000000"> <a href="#" class="top1 lwtop"></a></div>
+</body>
+</html>

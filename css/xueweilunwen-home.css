@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+.lunwen-index{ width:918px; border:1px solid #E7E0E0; margin:0 auto 20px; padding-bottom:5px;}
+.lunwen-index .title{height:47px; background:url(../images/home/lunwenhead.jpg) no-repeat; border-bottom:2px solid #2bb8b3; padding-left:9px; position:relative;}
+.lunwen-index .title .tab{ border:1px solid #DBDBDB; border-bottom:1px solid #ffffff; background:#ffffff; color:#2BB8B3; width:140px; height:36px; text-align:center; line-height:36px; font-size:16px;  font-weight:bold; position:relative; top:9px; margin-right:10px; text-decoration:none;}
+.lunwen-index .title .current{color:#ffffff; border:1px solid #2BB8B3; border-bottom:none; height:39px; background:#2BB8B3; background-image:url(../images/home/lunwenhome-jiao1.jpg); background-position:center bottom; background-repeat:no-repeat;}
+.lunwen-index .title .count{ position:absolute;line-height:20px; color:#0e9a95; font-size:16px; right:18px; top:20px; font-family:"微软雅黑";}
+.lunwen-index .tab-container{padding:18px; display:none; }
+.lunwen-index .tab-container .classify{width:880px; border:1px solid #E6E6E6; border-top:1px solid #b4b4b4; margin-bottom:10px;}
+
+.lunwen-index .tab-container .classify .package { display:none;}
+.lunwen-index .tab-container .classify .xz{height:30px; margin-bottom:18px;}
+.lunwen-index .tab-container .classify .xz span{ height:30px; line-height:30px; font-size:14px; color:#666666; text-align:center;background:#F5F5F5; width:110px; cursor:pointer;}
+.lunwen-index .tab-container .classify .xz .active{color:#ffffff; background:#b4b4b4 url(../images/home/lunwenhome-jiao.jpg) no-repeat center bottom;}
+.lunwen-index .tab-container .classify .nav1{height:30px; line-height:30px; border-bottom:1px solid #E2E2E2; padding-left:22px; color:#CCCCCC; font-size:12px;}
+.lunwen-index .tab-container .classify .nav1 span{color:#737373; padding:0 15px 7px; cursor:pointer;}
+.lunwen-index .tab-container .classify .nav1 .ac{border-bottom:2px solid #CC0000;}
+
+.lunwen-index .tab-container .classify .carrier { display:none; }
+.lunwen-index .tab-container .classify .nav-cont{background:#FAFAFA; padding-left:20px; position:relative; padding-top:18px; padding-bottom:5px; position:relative; overflow:hidden; display:none;}
+.lunwen-index .tab-container .classify .nav-cont .row{ overflow:hidden;}
+.lunwen-index .tab-container .classify  .nav-cont .has-height{height:29px;}
+.lunwen-index .tab-container .classify  .nav-cont .auto-height{height:auto;}
+.lunwen-index .tab-container .classify .nav-cont .row .item{ float:left;color:#999999; line-height:14px;white-space:nowrap; margin-right:10px; margin-bottom:15px;}
+.lunwen-index .tab-container .classify .nav-cont .row a{color:#0066CC; text-decoration:none;}
+.lunwen-index .tab-container .classify .nav-cont .more{ position:absolute; width:11px; height:11px; bottom:21px; right:11px; cursor:pointer;}
+.lunwen-index .tab-container .classify .nav-cont .unfold{background:url(../images/home/lunwenhome-jt.jpg) no-repeat; }
+.lunwen-index .tab-container .classify .nav-cont .fold{background: url(../images/home/lwhome-fold.gif) no-repeat; }
+.lunwen-index .tab-container .showarea .s1 { width:373px; height:308px; float:left; position:relative; z-index:98; margin-top:8px;}
+.lunwen-index .tab-container .showarea .s1 .t { width:100%; position:relative; height:212px; }
+.lunwen-index .tab-container .showarea .s1 .t .pic { width:373px; height:308px; }
+.lunwen-index .tab-container .showarea .s1 .t .pic .slide { position:relative; width:373px; height:308px;}
+.lunwen-index .tab-container .showarea .s1 .t .pic .slide .text { position:absolute; bottom:96px; left:0; height:36px; line-height:36px; background-color: #000; filter: alpha(opacity=50); background-color: rgba(0, 0, 0, .5); color:#fff; padding:0 10px; width:353px; overflow:hidden; z-index:101; }
+
+.lunwen-index .tab-container .showarea .s1 .thumbnails { position:relative; z-index:9999;margin-top:-88px; height:79px; background: url(../images/home/lunwenhome-picbg.png) repeat-x; padding-top:9px; padding-left:9px;}
+.lunwen-index .tab-container .showarea .s1 .thumbnails li { float:left; margin-right:9px; _display:inline; cursor:pointer;}
+.lunwen-index .tab-container .showarea .s1 .thumbnails .last { margin-right:0; }
+.lunwen-index .tab-container .showarea .s2{ float:left;width:260px; padding:0px 28px 0 22px;}
+.lunwen-index .tab-container .showarea .s2 h1{font-size:14px; line-height:34px; color:#666666;}
+.lunwen-index .tab-container .showarea .s2 .name-list li{height:34px; line-height:34px; border-bottom:1px dotted #CCCCCA; font-size:14px;}
+.lunwen-index .tab-container .showarea .s2 .name-list li a{color:#13A9A4; text-decoration:none;}
+.lunwen-index .tab-container .showarea .s2 .name-list li i{color:#8F8F8F; font-size:12px;}
+.lunwen-index .tab-container .showarea .s3{ float:left;width:198px;}
+.lunwen-index .tab-container .showarea .s3 h1{font-size:14px; line-height:34px; color:#666666; margin-bottom:2px;}
+.lunwen-index .tab-container .showarea .s3 .sch-list{height:270px; background:#FAFAFA; width:182px; padding:10px 8px 0;}
+.lunwen-index .tab-container .showarea .s3 .sch-list li{color:#13A9A4; border-bottom:1px dashed #DEDEDE; cursor:pointer; padding-bottom:3px;*margin-bottom:1px; overflow:hidden;}
+.lunwen-index .tab-container .showarea .s3 .sch-list li span{display:block; height:30px; line-height:30px;}
+.lunwen-index .tab-container .showarea .s3 .sch-list li a{display:none; width:182px; height:60px;}
+.lunwen-index .tab-container .showarea .s3 .sch-list li img{display:block; border:1px solid #EBEBEB;}
+.lunwen-index .tab-container .showarea .s3 .sch-list .mr span{display:none;}
+.lunwen-index .tab-container .showarea .s3 .sch-list .mr a{display:block;}
+.lunwen-index .tab-container .showarea .s3 .sch-list .nobor{ border-bottom:none;}

@@ -1,0 +1,713 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- saved from url=(0013)about:internet -->
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/result.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/history.js"></script>
+</head>
+<body>
+	<!--head-->
+	<div class="head-wrap">
+    	<div class="head-fen clearfix">
+        	<div class="head-logo left"><img src="images/result/result_logo.jpg" width="115" height="40"></div>
+            <div class="search-item left">
+            	<div class="result-nav positionR"><a href="#" class="active">全部</a>|<a href="#">文献</a>|<a href="#">百科</a>|<a href="#">期刊</a>|<a href="#">学位论文</a>|<a href="#">会议</a>|<a href="#">年鉴</a>|<a href="#">专利</a>|<a href="#">标准</a>|<a href="#" class="more">更多</a>
+                      <ul class="positionA"><li class="jiao positionA"></li><li><a href="#">学术图片</a></li><li><a href="#">科技成果</a></li><li class="nborder"><a href="#">文集专著</a></li></ul>
+            <script>
+                $(".more").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".result-nav ul").hide()
+                })
+            </script>
+            </div>
+            	<div class="clearfix choose positionR">
+            	<div class="xiugai clearfix">
+                    <div class="btn" id="btn">
+                        <a class="add" href="#"></a>   
+                    </div>
+                    <div class="selectwrap" id="selectwrap">
+                        <div class="select positionR"> 
+                            <input class="left kj" type="text" value="">
+                            
+                            <a class="positionA sweep" href="#"></a>
+                         </div>
+                         <div class="searchwrap positionA"><a class="search" href="#" id="search">远见搜索</a></div>
+                        </div>
+                    </div>
+                  
+          </div>
+            </div>      
+            <div class="headfen-right right positionR"><a href="#" class="home">远见首页</a><i class="left">|</i><a href="#">登录</a><a href="#">注册</a><i class="left">|</i><span class="sz left"><a href="#">设置</a></span>
+             <ul class="positionA">
+                	<li class="jiao positionA"></li>
+                	<li>关闭历史记录</li>
+                    <li>清除历史记录</li>
+                </ul>
+                <script>
+                $(".headfen-right .sz").click(
+                    function(event){
+                    $(this).siblings("ul").show();
+                    event.stopPropagation();//阻止子元素继承父级事件
+                    /*return false;  //阻止子元素继承父级事件*/
+                })
+                $("body").click(
+             function(){ 
+                $(".headfen-right ul").hide()
+                })
+            </script>
+            
+            
+            </div>
+        </div>   
+    </div>
+    <!--content-->
+    <div class="resault-cont clearfix">
+    	<div class="cont-left cont-left-wide left">
+        	<div class="filtrate-wrap">
+                <div class="filtrate">
+                        <div class="ti">筛选：</div>
+          				 <div  class="itemm">
+      						<span class="see1">文献类型</span>	
+                            <span class="see2">文献类型</span>
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+      						<span class="see1">学科分类</span>	
+                             <span class="see2">学科分类</span>
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+      						<span class="see1">发表年度</span>
+                             <span class="see2">发表年度</span>	
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+      						<span class="see1">作者</span>	
+                            <span class="see2">作者</span>	
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+      						<span class="see1">机构</span>
+                             <span class="see2">机构</span>	
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+      						<span class="see1">基金</span>
+                             <span class="see2">基金</span>	
+                         </div>
+                         <div class="line1"></div>
+                         <div  class="itemm">
+      						<span class="see1">研究层次</span>	
+                            <span class="see2">研究层次</span>
+                         </div>
+                </div>
+              </div>
+             <div class="pop2 clearfix positionR">
+             	<a class="close1 positionA" href="javascript:void(0)"></a>
+             	<div class="classes">
+        		<a href="javascript:void(0)">全部</a><span class="num">(8)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">工业经济</a><span class="num">(282440)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">金融</a><span class="num">(211520)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">轻工业手工业</a><span class="num">(21)</span>
+        		</div>
+                    <div class="classes">
+        		<a href="javascript:void(0)">投资</a><span class="num">(2121212)</span>
+        		</div>
+                 <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                 
+                <div class="classes">
+        		<a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span>
+        		</div>
+                
+                  <div class="classes">
+        		<a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span>
+        		</div>
+                <span class="unfold left"></span>
+                <div class="hide">
+                	 <div class="classes">
+        		<a href="javascript:void(0)">工业经济</a><span class="num">(282440)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">金融</a><span class="num">(211520)</span>
+        		</div>
+                <div class="classes">
+        		<a href="javascript:void(0)">农业经济</a><span class="num">(2015)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">宏观经济管理与可持续发展</a><span class="num">(2121520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">轻工业手工业</a><span class="num">(21)</span>
+        		</div>
+                    <div class="classes">
+        		<a href="javascript:void(0)">投资</a><span class="num">(2121212)</span>
+        		</div>
+                 <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                 <div class="classes">
+        		<a href="javascript:void(0)">企业经济</a><span class="num">(272520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">贸易经济</a><span class="num">(2520)</span>
+        		</div>
+                  <div class="classes">
+        		<a href="javascript:void(0)">金融</a><span class="num">(211520)</span>
+        		</div>
+                <span class="fold left"></span>
+                </div>
+             </div>
+             <script>
+			 	$(".filtrate .itemm").click(
+					function(){
+					$(".filtrate .itemm .see2").css({"display":"none"})
+					$(this).children(".see2").css({"display":"block"})
+					$(".pop2").css({"display":"block"})
+					})
+				$(".pop2 .classes a").click(
+					function(){
+					$(".pop2 .classes a").removeClass("yellow")
+					 $(this).addClass("yellow")
+				})
+				$(".pop2 .unfold").click(
+					function(){
+						$(this).siblings(".hide").show()
+						$(this).hide()
+					})
+				$(".pop2 .fold").click(
+					function(){
+						$(this).parent(".hide").hide()
+						$(".pop2 .unfold").show()
+					})
+				$(".pop2 .close1").click(
+					function(){
+					$(".pop2").css({"display":"none"})
+					$(".pop2 .hide").css({"display":"none"})	
+					$(".pop2 .unfold").css({"display":"block"})	
+					$(".filtrate .itemm .see2").css({"display":"none"})
+					})			
+             </script>
+             <div class="yx clearfix">
+             	<span class="bt left">已选：</span>
+                <p class="tm left positionR">文献类型：<i>期刊文献</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">发表年度：<i>2014年</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">学科分类：<i>企业经济</i><a href="#" class="close2 positionA"></a></p>
+                <p class="tm left positionR">作者：<i>厉以宁</i><a href="#" class="close2 positionA"></a></p>
+                <script>
+					$(".yx .tm").hover(
+						function(){
+						 $(this).addClass("hover").children(".close2").addClass("close2red")},
+						function(){
+						 $(this).removeClass("hover").children(".close2").removeClass("close2red")})
+                </script>
+             </div>
+             <div class="px clearfix">
+             	<span class="bt left">排序：</span>
+                <div class="rank left">
+        			<p>按相关度排序</p>
+                    <ul>
+                        <li><a href="#">按相关度排序</a></li>
+                        <li><a href="#">按发表时间排序</a></li>
+                        <li><a href="#">按下载次数排序</a></li>
+                        <li><a href="#">按被引次数排序</a></li>
+                  </ul>
+                  <script>
+				  	$(".px .rank p").click(
+						function(event){
+						$(this).siblings("ul").show()
+						event.stopPropagation()})
+					$(".rank ul li a").click(
+						function(){
+						 var Text1= $(this).text()
+						$(".rank p").text(Text1)	
+						$(this).parent("ul").hide()
+						})
+					$(document).click(function(){
+						$(".rank ul").hide()
+					})
+                  </script>
+        	</div>
+            	<div class="mode left clearfix">
+                    <span class="bt left">显示：</span>
+                    <a title="详细显示" href="#" class="lb1 left"></a>
+                    <a title="列表显示" href="#" class="zyxz1 left"></a>
+                </div>
+                <div class="count right">CNKI为你找到相关结果<i>118,252</i>条</div>
+             </div>
+             <div><table class="re-table" cellpadding="0" cellspacing="0" width="734">
+      <tr>
+        <th width="32"></th>
+        <th width="290">题&nbsp;&nbsp;名</th>
+        <th width="64">作者</th>
+        <th width="95">来&nbsp;&nbsp;源</th>
+        <th width="79">发表时间</th>
+        <th width="40">类型</th>
+        <th width="37">被引</th>
+        <th width="50">下载</th>
+        <th class="bdgray" width="42">操作</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr class="even-row">
+        <td>2</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究装饰研究装饰研究装饰研究装饰研究装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td><div class="name"><a href="#">近代岭南<span class="red">建筑</span>装饰研究</a></div></td>
+        <td><div><a class="author" href="#">薛莹</a></div></td>
+        <td><div><a class="source-i" href="#">华南理工大学</a></div></td>
+        <td><div>2012-08-18</div></td>
+        <td><div>博士</div></td>
+        <td><div>2224</div></td>
+        <td><div>233489</div></td>
+        <td class="bdgray"><a class="download" href="#"></a></td>
+      </tr>
+    </table></div>
+<script>
+//表格隔行变色
+$(".re-table tr:nth-child(odd)").addClass("even-row");
+</script>    
+	
+    <table class="re-table re-table1" cellpadding="0" cellspacing="0">
+	  <tr>
+      	<td width="32">21</td>
+      	<td width="288" class="td1"><div class="name"><span class="red">市场营销</span>__CNKI百科</div></td>
+        <td colspan="7" width="" class="td2"><div><a href="#">《市场经济学大辞典》</a> <a href="#">《财经大辞典》</a> <a href="#">《现代经济大辞典》</a></div></td>
+      </tr>
+      <tr>
+      	<td width="32">21</td>
+      	<td width="288" class="td1"><div class="name"><span class="red">市场营销</span>__CNKI文集</div></td>
+        <td colspan="7" width="" class="td2"><div><a href="#">《市场经济学大辞典》</a> <a href="#">《财经大辞典》</a></div></td>
+      </tr>
+      <tr>
+      	<td width="32">21</td>
+      	<td width="288" class="td1"><div class="name"><span class="red">市场营销</span>__CNKI图片</div></td>
+        <td colspan="7" width="" class="td2"><div><a href="#">市场经济学大辞典<span class="red">市场营销</span></a> </div></td>
+      </tr>
+    </table>
+<script>
+//表格隔行变色
+$(".re-table1 tr:nth-child(even)").addClass("even-row");
+</script> 
+
+<!--<div class="encyclopedia">
+             	<div class="title">
+                  <a href="#" class="name"><span class="red">市场营销</span>__CNKI百科</a>
+                  <a href="#" class="checkAll">查看全部512个相关百科</a>
+                </div>
+                <div class="source">来源：<a href="#">《市场经济学大辞典》</a>  <a href="#">《财经大辞典》</a>  <a href="#">《现代经济大辞典》</a>  <a href="#">《统计与管理辞典》</a></div>
+          </div>
+          
+          <div class="encyclopedia">
+             	<div class="title">
+                  <a href="#" class="name"><span class="red">市场营销</span>__CNKI文集</a>
+                  <a href="#" class="checkAll">查看全部512个相关百科</a>
+                </div>
+                <table class="table1" border="0" cellspacing="0" cellpadding="0" width="612">
+                        	<tr height="24">
+                            	<td width="8"></td>
+                                <td width="196"><a href="#"><span class="red">微赢家</span>——玩转微博<i>营销</i></a></td>
+                                <td width="10"></td>
+                                <td width="8"></td>
+                                <td width="196"><a href="#">粉丝<i>营销</i>：一部新的点钞机</a></td>
+                                <td width="10"></td>
+                                 <td width="8"></td>
+                                <td width="196"><a href="#">色彩<i>营销</i>：让企业制胜的色彩法宝</a></td>
+                            </tr>
+                          	<tr height="24">
+                            	<td width="8"></td>
+                                <td width="196"><a href="#">口碑<i>营销</i>：用别人的嘴树己的品牌</a></td>
+                                <td width="10"></td>
+                                <td width="8"></td>
+                                <td width="196"><a href="#">视觉<i>营销</i>：为消费加温</a></td>
+                                <td width="10"></td>
+                                 <td width="8"></td>
+                                <td width="196"><a href="#">珞珈管理评论（<i>市场营销</i>管理卷）</a></td>
+                            </tr>
+                        </table>
+          </div>
+          
+          <div class="encyclopedia">
+             	<div class="title">
+                  <a href="#" class="name"><span class="red">市场营销</span>__CNKI学术图片</a>
+                  <a href="#" class="checkAll">查看全部512个相关百科</a>
+                </div>
+                <div class="list-item xspic">
+                        <div class="picbox clearfix">
+                        	<ul class="left">
+                           		<li><a href="#"><img src="imagesTemp/result/related-pic.jpg" width="145" height="109"></a></li>
+                                <li class="ms"><a href="#">企业市场<i>营销战略</i>管理过程</a></li>
+                            </ul>
+                            <ul class="left">
+                           		<li><a href="#"><img src="imagesTemp/result/related-pic.jpg" width="145" height="109"></a></li>
+                                <li class="ms"><a href="#">企业市场<i>营销战略</i>管理过程</a></li>
+                            </ul>
+                            <ul class="left">
+                           		<li><a href="#"><img src="imagesTemp/result/related-pic.jpg" width="145" height="109"></a></li>
+                                <li class="ms"><a href="#">企业市场<i>营销战略</i>管理过程</a></li>
+                            </ul>
+                            <ul class="left nomargin">
+                           		<li><a href="#"><img src="imagesTemp/result/related-pic.jpg" width="145" height="109"></a></li>
+                                <li class="ms"><a href="#">企业市场<i>营销战略</i>管理过程</a></li>
+                            </ul>
+                        </div>
+                        
+                	</div>
+          </div>-->
+          
+          <div class="dotted-line"></div>
+             <div class="xgss">
+             	<h1>相关搜索</h1>
+                <table class="table2" border="0" cellspacing="0" cellpadding="0" width="632">
+                	<tr height="26">
+                    	<td width="158"><a href="#">市场营销策略</a></td>
+                        <td width="158"><a href="#">市场营销战略</a></td>
+                        <td width="158"><a href="#">市场营销学</a></td>
+                        <td width="158"><a href="#">市场营销策略研究</a></td>
+                    </tr>
+                    <tr height="26">
+                    	<td width="158"><a href="#">市场营销管理</a></td>
+                        <td width="158"><a href="#">市场营销专业</a></td>
+                        <td width="158"><a href="#">市场营销策划</a></td>
+                        <td width="158"><a href="#">市场营销论文</a></td>
+                    </tr>
+                </table>
+             </div>
+        </div>
+        <div class="cont-right right rightWidth425">
+        	<div class="slogan"><img src="images/result/slogan.jpg" width="290" height="26"></div>
+            <div class="translate">
+      <h1>相关翻译</h1>
+      <div class="fanyi"> 
+      	<div class="fanyi-inner">
+          <span class="icon positionA">CNKI翻译助手</span>
+          <p class="word">市场营销</p>
+          <p class="shiyi positionR"><span class="tip positionA">[释义]</span>marketing;  marketing management;</p>
+          <p class="shiyi from positionR textAlignR">来源：<a href="#">英汉大字典</a></p> 
+          <p class="shiyi positionR"><span class="tip positionA">[释义]</span>marketing;  marketing management;</p>
+          <p class="shiyi from positionR textAlignR">来源：<a href="#">英汉大字典</a></p> 
+        </div>
+        </div>
+        <div class="fanyi-btm"></div>
+    </div>
+            <div class="xgqk">
+            	<h1 class="positionR">相关期刊 <a href="#" class="positionA more">更多&gt;&gt;</a></h1>
+                <div class="book-list clearfix">
+                	<ul>
+                    	<li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                    <ul>
+                    	<li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                    <ul>
+                    	<li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                    <ul>
+                    	<li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                    <ul>
+                    	<li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                    <ul>
+                    	<li class="withFrame"><a href="#"><img src="imagesTemp/result/book.jpg" width="81" height="112"></a></li>
+                        <li><a href="#" class="name">销售与市场</a></li>
+                        <li class="year">1985-2015</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ad">
+            	<a href="#"><img src="imagesTemp/result/ad1.jpg" width="289" height="204"></a>
+                <a href="#"><img src="imagesTemp/result/ad2.jpg" width="289" height="204"></a>
+            </div>
+        </div>
+        
+        <!--page-->
+        <div class="page">
+        	<a href="#" class="n">&lt;上一页</a>
+            <a href="#"><span class="fk fkd"></span><span class="pc">1</span></a>
+        	<strong>
+            <span class="fk fk_cur"><i class="c-icon c-icon-bear-p"></i></span>
+            <span class="pc">2</span>
+            </strong>
+            <a href="#"><span class="fk fkd"></span><span class="pc">3</span></a><a href="#"><span class="fk"></span><span class="pc">4</span></a><a href="#"><span class="fk fkd"></span><span class="pc">5</span></a><a href="#"><span class="fk"></span><span class="pc">6</span></a><a href="#"><span class="fk fkd"></span><span class="pc">7</span></a><a href="#"><span class="fk"></span><span class="pc">8</span></a><a href="#"><span class="fk fkd"></span><span class="pc">9</span></a><a href="#"><span class="fk"></span><span class="pc">10</span></a><a href="#" class="n">下一页&gt;</a>
+        </div>
+    </div>
+     <!--footer-->
+     <div class="foot-wrap">
+     	<div class="footer-fen">
+        	<a href="#">关于CNKI</a>|<a href="#">收藏远见</a>|<a href="#">创建快捷方式</a>|<a href="#">意见反馈</a>|<a href="#">使用帮助</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2015 中国知网  京ICP证040431号 互联网出版许可证 新出网证(京)字008号
+        </div>
+     </div>
+     <div class="top-icon top-widthmax">
+     	<a href="#" class="top1"></a>
+        <a href="#" class="top2"></a>
+        <script>
+        	$(".top-icon").hover(
+				function(){
+					$(this).children(".top1").css({"display":"none"})
+					$(this).children(".top2").css({"display":"block"})
+					},
+				function(){
+					$(this).children(".top2").css({"display":"none"})
+					$(this).children(".top1").css({"display":"block"})
+					})
+        </script>
+     </div>
+</body>
+</html>

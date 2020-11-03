@@ -1,0 +1,6 @@
+/*.springBg {background:url(../images/spring/spring_2017.jpg) no-repeat bottom center #fee0a4;}
+.springBg .closeSpringBg { position:absolute; left:50%; top:77px; margin-left:300px; background:red; width:23px; height:23px; background:url(../images/spring/close.jpg) no-repeat bottom center; display:block;}
+.home-cont .tab-wrap {background-color:#fff;}
+.header-wrap {background-color:#fff;}*/
+.springBg {}
+.springBg .closeSpringBg {}
